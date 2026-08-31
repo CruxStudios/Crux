@@ -28,9 +28,9 @@
   --font-brand-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Containers & Spacing */
-  --container-max-wide: 1260px;
-  --container-max-narrow: 860px;
-  --container-pad: 30px;
+  --container-max-wide: min(1380px, 94vw);
+  --container-max-narrow: 900px;
+  --container-pad: clamp(16px, 3vw, 36px);
 
   /* Shadows */
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.03);
@@ -993,8 +993,8 @@ body.has-grid-bg {
   border-radius: 50%;
   aspect-ratio: 1 / 1;
   width: 100%;
-  max-width: clamp(280px, 28vw, 360px);
-  padding: clamp(28px, 3.5vw, 44px) clamp(24px, 3vw, 38px);
+  max-width: clamp(310px, 26vw, 380px);
+  padding: clamp(26px, 2.6vw, 40px) clamp(20px, 2vw, 32px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1053,7 +1053,7 @@ body.has-grid-bg {
 @media (min-width: 901px) {
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(20px, 3vw, 44px);
+    gap: clamp(20px, 2.5vw, 44px);
     align-items: start;
     justify-items: center;
   }
@@ -1065,23 +1065,40 @@ body.has-grid-bg {
   }
 
   .service-pos-col2-top {
-    margin-top: clamp(60px, 7.5vw, 100px);
+    margin-top: clamp(50px, 6vw, 90px);
   }
 
   /* Bottom Row: Straight (Low) - Up (Center) - Straight (Low) */
   .service-pos-col1-bottom,
   .service-pos-col3-bottom {
-    margin-top: clamp(100px, 11vw, 160px);
+    margin-top: clamp(80px, 9vw, 140px);
   }
 
   .service-pos-col2-bottom {
-    margin-top: clamp(20px, 2.5vw, 36px);
+    margin-top: clamp(16px, 2vw, 30px);
   }
 
   .service-card:hover {
     transform: scale(1.06) translateY(-6px);
     box-shadow: 0 34px 76px rgba(0, 0, 0, 0.4);
     border-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1180px) {
+  .service-card {
+    max-width: clamp(285px, 27vw, 330px);
+    padding: 22px 18px;
+  }
+  
+  .service-title {
+    font-size: 16.5px;
+    margin-bottom: 6px;
+  }
+
+  .service-desc {
+    font-size: 12.5px;
+    line-height: 1.38;
   }
 }
 
@@ -1093,14 +1110,14 @@ body.has-grid-bg {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   flex-shrink: 0;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .service-icon-box svg {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
 }
 
 .service-card:hover .service-icon-box {
@@ -1109,19 +1126,19 @@ body.has-grid-bg {
 
 .service-title {
   font-family: var(--font-heading);
-  font-size: clamp(17px, 1.7vw, 20px);
+  font-size: clamp(17px, 1.5vw, 20px);
   font-weight: 700;
-  margin-bottom: 10px;
-  line-height: 1.25;
+  margin-bottom: 8px;
+  line-height: 1.22;
   text-align: center;
 }
 
 .service-desc {
-  font-size: clamp(12.5px, 1.2vw, 14px);
-  line-height: 1.45;
+  font-size: clamp(12.5px, 1.08vw, 14px);
+  line-height: 1.42;
   margin: 0;
   text-align: center;
-  max-width: 88%;
+  max-width: 92%;
 }
 
 .section-bottom-cta {
@@ -1950,8 +1967,8 @@ body.has-grid-bg {
 }
 
 .persona-frost-card {
-  width: clamp(290px, 24vw, 350px);
-  height: clamp(390px, 32vw, 460px);
+  width: clamp(300px, 22vw, 360px);
+  height: clamp(400px, 29vw, 470px);
   border-radius: 28px;
   overflow: hidden;
   position: relative;
