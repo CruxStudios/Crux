@@ -4,44 +4,53 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. "Snake Line to Full Letter" Character Growth Animation on Hero Title
-  initSnakeTextAnimation();
+  // 1. Hero Title Character Stroke-Draw & Flood-Fill Animation
+  initStrokeTextHero();
 
-  function initSnakeTextAnimation() {
+  function initStrokeTextHero() {
     const heroTitle = document.querySelector('.hero-title');
     if (!heroTitle) return;
 
-    // Split text into words and characters while preserving highlight span
-    const highlightSpan = heroTitle.querySelector('.title-highlight');
-    const highlightText = highlightSpan ? highlightSpan.textContent : '';
+    let charCount = 0;
+    const processNode = (node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const text = node.textContent;
+        if (!text) return document.createTextNode('');
+        const fragment = document.createDocumentFragment();
+        const tokens = text.split(/(\s+)/);
+        tokens.forEach(token => {
+          if (!token) return;
+          if (/^\s+$/.test(token)) {
+            fragment.appendChild(document.createTextNode(token));
+          } else {
+            const wordSpan = document.createElement('span');
+            wordSpan.className = 'stroke-word';
+            for (let i = 0; i < token.length; i++) {
+              const charSpan = document.createElement('span');
+              charSpan.className = 'stroke-char';
+              charSpan.style.setProperty('--char-index', charCount.toString());
+              charSpan.textContent = token[i];
+              wordSpan.appendChild(charSpan);
+              charCount++;
+            }
+            fragment.appendChild(wordSpan);
+          }
+        });
+        return fragment;
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        const span = document.createElement('span');
+        span.className = node.className;
+        Array.from(node.childNodes).forEach(child => {
+          span.appendChild(processNode(child));
+        });
+        return span;
+      }
+      return node.cloneNode(true);
+    };
 
-    // Full text structure
-    const rawHTML = heroTitle.innerHTML;
-
-    // We parse nodes carefully:
-    let globalCharIndex = 0;
-
-    function processTextNode(text, isHighlight = false) {
-      const words = text.trim().split(/\s+/);
-      const wordSpans = words.map(word => {
-        if (!word) return '';
-        const charSpans = word.split('').map(char => {
-          const delayIndex = globalCharIndex++;
-          return `<span class="snake-char" style="--char-index: ${delayIndex};">${char}</span>`;
-        }).join('');
-        return `<span class="split-word ${isHighlight ? 'title-highlight' : ''}">${charSpans}</span>`;
-      });
-      return wordSpans.join('<span class="split-space">&nbsp;</span>');
-    }
-
-    const part1 = "We build & launch your ";
-    const part2 = "web & mobile app.";
-
-    const animatedPart1 = processTextNode(part1, false);
-    const animatedPart2 = processTextNode(part2, true);
-
-    heroTitle.innerHTML = `${animatedPart1}<span class="split-space">&nbsp;</span>${animatedPart2}`;
-    heroTitle.classList.add('snake-animated');
+    const newChildren = Array.from(heroTitle.childNodes).map(processNode);
+    heroTitle.innerHTML = '';
+    newChildren.forEach(child => heroTitle.appendChild(child));
   }
 
   // 2. Scroll Reveal Intersection Observer (Framer-Matched Physics)
@@ -166,4 +175,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // 7. Interactive Projects Atmospheric Spotlight & 3D Card Physics
+  const projectsCard = document.querySelector('.projects-atmospheric-card');
+  if (projectsCard) {
+    projectsCard.addEventListener('mousemove', (e) => {
+      const rect = projectsCard.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      projectsCard.style.setProperty('--mouse-x', `${x.toFixed(1)}%`);
+      projectsCard.style.setProperty('--mouse-y', `${y.toFixed(1)}%`);
+    });
+  }
+
+  // 8. 3D Tilt Physics for Project Cards
+  const darkCards = document.querySelectorAll('.project-card-dark');
+  darkCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-6px) scale(1.01)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+
 });
+
