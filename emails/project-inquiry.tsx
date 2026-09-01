@@ -40,21 +40,8 @@ export const ProjectInquiryEmail = ({
         body {
           margin: 0 !important;
           padding: 0 !important;
+          width: 100% !important;
           -webkit-text-size-adjust: 100% !important;
-        }
-        @media only screen and (max-width: 600px) {
-          .mobile-outer {
-            padding: 12px 8px !important;
-          }
-          .mobile-card {
-            width: 100% !important;
-            max-width: 100% !important;
-            border-radius: 8px !important;
-          }
-          .mobile-pad {
-            padding-left: 16px !important;
-            padding-right: 16px !important;
-          }
         }
       `}</style>
     </Head>
@@ -62,84 +49,58 @@ export const ProjectInquiryEmail = ({
     <Preview>Got your inquiry, {firstName}. Here is what happens next.</Preview>
 
     <Body style={s.body}>
-      <table
-        width="100%"
-        cellPadding="0"
-        cellSpacing="0"
-        border={0}
-        className="mobile-outer"
-        style={{ width: "100%", padding: "30px 10px" }}
-      >
-        <tr>
-          <td align="center" style={{ verticalAlign: "top" }}>
-            <Container style={s.container} className="mobile-card">
+      <Container style={s.container}>
 
-              {/* Header */}
-              <Section style={s.header} className="mobile-pad">
-                <table
-                  width="100%"
-                  cellPadding="0"
-                  cellSpacing="0"
-                  border={0}
-                  style={{ width: "100%", tableLayout: "auto" }}
-                >
+        {/* Branded Header */}
+        <Section style={s.header}>
+          <table
+            width="100%"
+            cellPadding="0"
+            cellSpacing="0"
+            border={0}
+            style={{ width: "100%" }}
+          >
+            <tr>
+              <td align="left" style={{ verticalAlign: "middle" }}>
+                <table cellPadding="0" cellSpacing="0" border={0}>
                   <tr>
-                    <td align="left" style={{ verticalAlign: "middle" }}>
-                      <table cellPadding="0" cellSpacing="0" border={0}>
-                        <tr>
-                          <td
-                            style={{
-                              verticalAlign: "middle",
-                              width: "32px",
-                              paddingRight: "10px",
-                            }}
-                          >
-                            <div
-                              style={{
-                                width: "28px",
-                                height: "28px",
-                                borderRadius: "50%",
-                                backgroundColor: "#0d0f11",
-                                display: "inline-block",
-                                overflow: "hidden",
-                                lineHeight: 0,
-                              }}
-                            >
-                              <Img
-                                src={LOGO_URL}
-                                alt="Crux Studios"
-                                width={28}
-                                height={28}
-                                style={{
-                                  display: "block",
-                                  borderRadius: "50%",
-                                  backgroundColor: "#0d0f11",
-                                  border: "0",
-                                }}
-                              />
-                            </div>
-                          </td>
-                          <td style={{ verticalAlign: "middle" }}>
-                            <Text style={s.brandTitle}>Crux Studios</Text>
-                          </td>
-                        </tr>
-                      </table>
+                    <td style={{ verticalAlign: "middle", width: "32px", paddingRight: "10px" }}>
+                      <Img
+                        src={LOGO_URL}
+                        alt="Crux Studios"
+                        width={28}
+                        height={28}
+                        style={{
+                          display: "block",
+                          borderRadius: "50%",
+                          backgroundColor: "#121417",
+                        }}
+                      />
                     </td>
-                    <td align="right" style={{ verticalAlign: "middle", textAlign: "right" }}>
-                      <Text style={s.headerMeta}>Message Received</Text>
+                    <td style={{ verticalAlign: "middle" }}>
+                      <Text style={s.brandTitle}>Crux Studios</Text>
                     </td>
                   </tr>
                 </table>
-              </Section>
+              </td>
+              <td align="right" style={{ verticalAlign: "middle", textAlign: "right" }}>
+                <Text style={s.headerMeta}>Message Received</Text>
+              </td>
+            </tr>
+          </table>
+        </Section>
 
-        {/* Dark hero */}
+        {/* Cyan accent separator */}
+        <div style={s.accentBar} />
+
+        {/* Dark Hero Section */}
         <Section style={s.hero}>
           <Heading as="h1" style={s.heroH1}>
             Got it, {firstName}.
           </Heading>
           <Text style={s.heroBody}>
             Your message is with us. We read every inquiry personally and you will
-            hear back within <span style={{ color: "#fff", fontWeight: 600 }}>24 hours</span> with
+            hear back within <span style={{ color: "#00F0FF", fontWeight: 600 }}>24 hours</span> with
             a direct, honest response.
           </Text>
           <Button href={`${SITE_URL}#projects`} style={s.heroCta}>
@@ -147,9 +108,7 @@ export const ProjectInquiryEmail = ({
           </Button>
         </Section>
 
-
-
-        {/* Process */}
+        {/* Process Section */}
         <Section style={s.section}>
           <Text style={s.overline}>What happens next</Text>
 
@@ -199,7 +158,7 @@ export const ProjectInquiryEmail = ({
         </Section>
 
         {/* Stats row */}
-        <Section style={{ padding: "32px 40px 0" }}>
+        <Section style={{ padding: "28px 20px 0" }}>
           <table
             width="100%"
             cellPadding="0"
@@ -233,35 +192,40 @@ export const ProjectInquiryEmail = ({
         {/* Footer */}
         <Hr style={s.footerRule} />
         <Section style={s.footer}>
-          <Row>
-            <Column>
-              <Text style={s.footerBrand}>Crux Studios</Text>
-              <Text style={s.footerSub}>Bangalore, India</Text>
-            </Column>
-            <Column align="right" style={{ verticalAlign: "top" }}>
-              <Link href={SITE_URL} style={s.footerLink}>Website</Link>
-              {"  ·  "}
-              <Link href={`mailto:${CONTACT_EMAIL}`} style={s.footerLink}>Email us</Link>
-            </Column>
-          </Row>
+          <table
+            width="100%"
+            cellPadding="0"
+            cellSpacing="0"
+            border={0}
+            style={{ width: "100%" }}
+          >
+            <tr>
+              <td align="left" style={{ verticalAlign: "top" }}>
+                <Text style={s.footerBrand}>Crux Studios</Text>
+                <Text style={s.footerSub}>Bangalore, India</Text>
+              </td>
+              <td align="right" style={{ verticalAlign: "top", textAlign: "right" }}>
+                <Link href={SITE_URL} style={s.footerLink}>Website</Link>
+                <span style={{ color: "#8E99A0", padding: "0 6px" }}>·</span>
+                <Link href={`mailto:${CONTACT_EMAIL}`} style={s.footerLink}>Email us</Link>
+              </td>
+            </tr>
+          </table>
           <Text style={s.footerDisclaimer}>
             You're getting this because you submitted a project inquiry at
             cruxstudios.dev. Just reply here to reach our team directly.
           </Text>
         </Section>
 
-              </Container>
-            </td>
-          </tr>
-        </table>
-      </Body>
-    </Html>
+      </Container>
+    </Body>
+  </Html>
 );
 
 export default ProjectInquiryEmail;
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
-const FONT = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+const FONT = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
 const DARK   = "#121417";
 const CYAN   = "#00F0FF";
 const SLATE  = "#8E99A0";
@@ -270,70 +234,62 @@ const BORDER = "#E8ECEF";
 
 const s: Record<string, React.CSSProperties> = {
   body: {
-    backgroundColor: "#EDF1F4",
+    backgroundColor: "#ffffff",
     fontFamily: FONT,
-    margin: "0",
+    margin: "0 auto",
     padding: "0",
     width: "100%",
   },
   container: {
     backgroundColor: "#ffffff",
-    borderRadius: "14px",
-    borderTop: `3px solid ${CYAN}`,
-    borderBottom: `3px solid ${CYAN}`,
-    borderLeft: `1px solid ${BORDER}`,
-    borderRight: `1px solid ${BORDER}`,
     margin: "0 auto",
-    maxWidth: "560px",
+    maxWidth: "600px",
     width: "100%",
-    overflow: "hidden",
   },
-
-  // Header
   header: {
-    borderBottom: `1px solid ${BORDER}`,
-    padding: "20px 40px",
-  },
-  logoImg: {
-    display: "block",
-    borderRadius: "6px",
+    padding: "24px 20px 20px",
+    backgroundColor: "#ffffff",
   },
   brandTitle: {
-    color: "#121417",
-    fontSize: "15px",
+    color: DARK,
+    fontSize: "16px",
     fontWeight: "700",
-    letterSpacing: "-0.2px",
+    letterSpacing: "-0.3px",
     margin: "0",
     lineHeight: "1",
   },
   headerMeta: {
-    color: "#8E99A0",
-    fontSize: "10px",
-    fontWeight: "500",
+    color: SLATE,
+    fontSize: "11px",
+    fontWeight: "600",
     letterSpacing: "1px",
     lineHeight: "1",
     margin: "0",
     textTransform: "uppercase",
+    whiteSpace: "nowrap",
   },
-
-  // Hero
+  accentBar: {
+    backgroundColor: CYAN,
+    height: "3px",
+    width: "100%",
+  },
   hero: {
     backgroundColor: DARK,
-    padding: "48px 40px 44px",
+    padding: "36px 20px 32px",
   },
   heroH1: {
     color: "#fff",
-    fontSize: "28px",
+    fontSize: "26px",
     fontWeight: "700",
     letterSpacing: "-0.4px",
     lineHeight: "1.2",
-    margin: "0 0 16px",
+    margin: "0 0 14px",
   },
   heroBody: {
-    color: SLATE,
+    color: "#C5D0D6",
     fontSize: "15px",
-    lineHeight: "1.7",
-    margin: "0 0 32px",
+    lineHeight: "1.65",
+    margin: "0 0 24px",
   },
   heroCta: {
     backgroundColor: CYAN,
@@ -342,69 +298,55 @@ const s: Record<string, React.CSSProperties> = {
     display: "inline-block",
     fontSize: "13px",
     fontWeight: "700",
-    padding: "12px 26px",
+    padding: "12px 24px",
     textDecoration: "none",
   },
-
-  // Sections
   section: {
-    padding: "32px 40px 0",
+    padding: "28px 20px 0",
   },
   overline: {
     color: SLATE,
     fontSize: "10px",
     fontWeight: "700",
     letterSpacing: "1.6px",
-    margin: "0 0 12px",
+    margin: "0 0 16px",
     textTransform: "uppercase",
   },
-
-
-
-  // Steps
   stepRow: {
-    marginBottom: "20px",
+    marginBottom: "18px",
   },
   stepIndex: {
     verticalAlign: "top",
-    width: "32px",
-    paddingTop: "1px",
+    width: "28px",
+    paddingTop: "2px",
   },
   stepNum: {
     backgroundColor: DARK,
-    borderRadius: "5px",
+    borderRadius: "4px",
     color: CYAN,
     display: "inline-block",
     fontSize: "10px",
     fontWeight: "700",
     margin: "0",
-    padding: "3px 7px",
+    padding: "3px 6px",
     textAlign: "center",
   },
   stepBody: {
-    paddingLeft: "12px",
+    paddingLeft: "10px",
     verticalAlign: "top",
   },
   stepTitle: {
-    color: "#1D1D1D",
-    fontSize: "14px",
+    color: DARK,
+    fontSize: "14.5px",
     fontWeight: "600",
     lineHeight: "1.4",
-    margin: "0 0 3px",
+    margin: "0 0 2px",
   },
   stepDesc: {
     color: MUTED,
     fontSize: "13px",
-    lineHeight: "1.65",
+    lineHeight: "1.6",
     margin: "0",
-  },
-
-  // Stats
-  statsSection: {
-    backgroundColor: DARK,
-    borderRadius: "10px",
-    margin: "32px 40px 0",
-    padding: "20px 0",
   },
   statColLeft: {
     textAlign: "center",
@@ -428,7 +370,7 @@ const s: Record<string, React.CSSProperties> = {
   },
   statNum: {
     color: CYAN,
-    fontSize: "24px",
+    fontSize: "22px",
     fontWeight: "700",
     letterSpacing: "-0.4px",
     margin: "0 0 4px",
@@ -441,20 +383,18 @@ const s: Record<string, React.CSSProperties> = {
     margin: "0",
     lineHeight: "1.3",
   },
-
-  // Footer
   footerRule: {
     borderColor: BORDER,
-    margin: "32px 40px 0",
+    margin: "28px 20px 0",
   },
   footer: {
-    padding: "24px 40px 32px",
+    padding: "20px 20px 36px",
   },
   footerBrand: {
-    color: "#1D1D1D",
+    color: DARK,
     fontSize: "13px",
     fontWeight: "700",
-    margin: "0 0 1px",
+    margin: "0 0 2px",
   },
   footerSub: {
     color: SLATE,
