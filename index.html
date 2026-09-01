@@ -10,6 +10,10 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+  <!-- High-Priority Asset Preloads for Instant First-Paint -->
+  <link rel="preload" as="image" href="/assets/bg-light-mesh.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/logo.webp" type="image/webp" fetchpriority="high">
+
   <!-- Typography: Bricolage Grotesque (Headings) + Inter (UI) + Plus Jakarta Sans (Modern Display) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,21 +33,21 @@
   <header class="navbar-wrapper">
     <nav class="navbar-island">
       <a href="#" class="brand-logo" aria-label="Crux Studios Home">
-        <img src="/logo.png" alt="Crux Studios Logo" class="logo-img" />
+        <img src="/logo.webp" alt="Crux Studios Logo" class="logo-img" width="120" height="30" decoding="async" />
         <span class="brand-name-text">Crux Studios</span>
       </a>
 
       <div class="nav-links">
         <a href="#services" class="nav-pill-link">Services</a>
         <a href="#projects" class="nav-pill-link">Work</a>
-        <a href="#why-crux" class="nav-pill-link">Why Crux</a>
         <a href="#who-it-is-for" class="nav-pill-link">Who It's For</a>
+        <a href="#why-crux" class="nav-pill-link">Why Crux</a>
         <a href="#team" class="nav-pill-link">Team</a>
         <a href="#faqs" class="nav-pill-link">FAQs</a>
       </div>
 
       <div class="nav-actions">
-        <a href="#contact" class="nav-cta-capsule">
+        <a href="mailto:contact@cruxstudios.dev?subject=Project%20Inquiry%20Crux%20Studios&body=Hi%20Team%20Crux%2C%0A%0AI%20have%20an%20app%20idea%20I%20would%20like%20to%20build%20with%20Crux%20Studios.%0A%0A1.%20Project%20Summary%20/%20Core%20Idea%3A%0A2.%20Target%20Platforms%20%28Web%20/%20iOS%20/%20Android%29%3A%0A3.%20Estimated%20Timeline%20/%20Target%20Launch%3A%0A%0ALooking%20forward%20to%20discussing%20further%21%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D" class="nav-cta-capsule">
           <span>Start a Project</span>
           <div class="capsule-icon-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -66,11 +70,11 @@
     <div class="mobile-drawer" id="mobile-drawer">
       <a href="#services" class="mobile-link">Services</a>
       <a href="#projects" class="mobile-link">Work (Shipped)</a>
-      <a href="#why-crux" class="mobile-link">Why Crux</a>
       <a href="#who-it-is-for" class="mobile-link">Who It's For</a>
+      <a href="#why-crux" class="mobile-link">Why Crux</a>
       <a href="#team" class="mobile-link">Team</a>
       <a href="#faqs" class="mobile-link">FAQs</a>
-      <a href="#contact" class="mobile-cta-btn">Start a Project</a>
+      <a href="mailto:contact@cruxstudios.dev?subject=Project%20Inquiry%20Crux%20Studios&body=Hi%20Team%20Crux%2C%0A%0AI%20have%20an%20app%20idea%20I%20would%20like%20to%20build%20with%20Crux%20Studios.%0A%0A1.%20Project%20Summary%20/%20Core%20Idea%3A%0A2.%20Target%20Platforms%20%28Web%20/%20iOS%20/%20Android%29%3A%0A3.%20Estimated%20Timeline%20/%20Target%20Launch%3A%0A%0ALooking%20forward%20to%20discussing%20further%21%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D" class="mobile-cta-btn">Start a Project</a>
     </div>
   </header>
 
@@ -88,36 +92,39 @@
 
       <div class="container container-wide hero-content">
 
-        <!-- High-Impact Value Proposition Headline -->
-        <h1 class="hero-title">
-          We build only what moves the needle, and figure out what you haven't.
-        </h1>
+        <!-- Hero 1st Screen Content Wrapper (Full Viewport on Mobile) -->
+        <div class="hero-intro-wrapper">
+          <!-- High-Impact Value Proposition Headline -->
+          <h1 class="hero-title">
+            We build only what moves the needle, and figure out what you haven't.
+          </h1>
 
-        <!-- High-Agency Problem-Solving Subheadline -->
-        <p class="hero-subhead reveal">
-          Don’t have a full specification or technical blueprint? You don’t need one. We identify your core problem,
-          eliminate unnecessary bloat, and engineer lean, rock-solid web &amp; mobile apps with an exceptional user
-          experience.
-        </p>
+          <!-- High-Agency Problem-Solving Subheadline -->
+          <p class="hero-subhead reveal">
+            Don’t have a full specification or technical blueprint? You don’t need one. We identify your core problem,
+            eliminate unnecessary bloat, and engineer lean, rock-solid web &amp; mobile apps with an exceptional user
+            experience.
+          </p>
 
-        <!-- Action Button Group -->
-        <div class="hero-btn-group reveal">
-          <a href="#contact" class="btn-capsule-primary">
-            <span>Discuss Your Idea</span>
-            <div class="btn-arrow-badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </div>
-          </a>
-          <a href="#projects" class="btn-solid-pill">
-            <span>Explore Shipped Work</span>
-          </a>
+          <!-- Action Button Group -->
+          <div class="hero-btn-group reveal">
+            <a href="mailto:contact@cruxstudios.dev?subject=Project%20Inquiry%20Crux%20Studios&body=Hi%20Team%20Crux%2C%0A%0AI%20have%20an%20app%20idea%20I%20would%20like%20to%20build%20with%20Crux%20Studios.%0A%0A1.%20Project%20Summary%20/%20Core%20Idea%3A%0A2.%20Target%20Platforms%20%28Web%20/%20iOS%20/%20Android%29%3A%0A3.%20Estimated%20Timeline%20/%20Target%20Launch%3A%0A%0ALooking%20forward%20to%20discussing%20further%21%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D" class="btn-capsule-primary">
+              <span>Discuss Your Idea</span>
+              <div class="btn-arrow-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </a>
+            <a href="#projects" class="btn-solid-pill">
+              <span>Explore Shipped Work</span>
+            </a>
+          </div>
         </div>
 
-        <!-- Hero 3D Dashboard Mockup -->
+        <!-- Hero 3D Dashboard Mockup (Comes After 1st Screen on Mobile) -->
         <div class="hero-mockup-wrapper reveal">
           <div class="mockup-glass-card">
             <div class="mockup-window-header">
@@ -131,7 +138,7 @@
                   <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                   <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                 </svg>
-                <span>yourapp.com/dashboard</span>
+                <span>yourapp.com/admin/dashboard</span>
               </div>
               <div class="window-right-actions"></div>
             </div>
@@ -684,148 +691,7 @@
       </div>
     </section>
 
-    <!-- ============================================================== -->
-    <!-- SECTION 5: BENTO GRID FEATURE MATRIX                           -->
-    <!-- ============================================================== -->
-    <section class="section-bento" id="why-crux">
-      <div class="container container-wide">
 
-        <div class="section-header centered reveal">
-          <span class="section-badge">Why Founders Choose Crux</span>
-          <h2 class="section-title">Everything you need, in one place</h2>
-          <p class="section-subhead">
-            We built Crux to eliminate the delays, bloated retainers, and miscommunication common with traditional
-            software agencies.
-          </p>
-        </div>
-
-        <div class="bento-grid">
-
-          <!-- Bento Card 1 (Wide) -->
-          <div class="bento-card bento-wide reveal">
-            <div class="bento-text">
-              <div class="bento-pill-tag">Direct Collaboration</div>
-              <h3 class="bento-title">Work 1-on-1 with senior engineers. No middlemen.</h3>
-              <p class="bento-desc">
-                You collaborate directly with Suprateek and Ullas - the actual engineers architecting and writing your
-                code. We map your user flows, outline core features, eliminate bloat, and build your product with zero
-                lost
-                context.
-              </p>
-            </div>
-
-            <!-- Team Avatar Row -->
-            <div class="team-avatar-row">
-              <div class="founder-card">
-                <div class="founder-avatar">SY</div>
-                <div>
-                  <strong>Suprateek Yawagal</strong>
-                  <span>Full-Stack & Product Architecture</span>
-                </div>
-              </div>
-              <div class="founder-card">
-                <div class="founder-avatar">UM</div>
-                <div>
-                  <strong>Ullas M</strong>
-                  <span>Backend & Systems Infrastructure</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="visual-chat">
-              <div class="chat-bubble left">
-                <span class="chat-sender">You (Founder)</span>
-                <p>Can we add a one-click payment checkout for our beta users?</p>
-              </div>
-              <div class="chat-bubble right">
-                <span class="chat-sender">Crux Team</span>
-                <p>Done. Added to your test build with Stripe ready to test.</p>
-                <span class="chat-status">Updated in Live Build</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bento Card 2 (Compact) -->
-          <div class="bento-card bento-compact reveal">
-            <div class="bento-text">
-              <div class="bento-pill-tag">Execution Excellence</div>
-              <h3 class="bento-title">Lean, Reliable Software</h3>
-              <p class="bento-desc">
-                We turn your idea into production-grade software through focused engineering cycles, rigorous quality
-                testing, and clean architecture ready for real users.
-              </p>
-            </div>
-            <div class="bento-stat-ring">
-              <div class="ring-number">100%</div>
-              <span class="ring-label">Production Ready Code</span>
-              <div class="sprint-progress-bar">
-                <div class="bar-fill"></div>
-              </div>
-              <span class="sprint-milestones">Scope Blueprint → Rapid Build → Quality Test → Live Launch</span>
-            </div>
-          </div>
-
-          <!-- Bento Card 3 (Compact) -->
-          <div class="bento-card bento-compact reveal">
-            <div class="bento-text">
-              <div class="bento-pill-tag">Full Ownership</div>
-              <h3 class="bento-title">100% Code & IP Ownership</h3>
-              <p class="bento-desc">
-                You own 100% of the IP, source code, and cloud infrastructure. We deploy your app live, connect your
-                domain, submit to the App Store, and transfer all repos to you.
-              </p>
-            </div>
-            <div class="bento-badge-box">
-              <div class="shield-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-              </div>
-              <span>Full GitHub Repo, Domain & Account Hand-Off</span>
-            </div>
-          </div>
-
-          <!-- Bento Card 4 (Wide) -->
-          <div class="bento-card bento-wide reveal">
-            <div class="bento-text">
-              <div class="bento-pill-tag">Zero Jargon</div>
-              <h3 class="bento-title">Plain English updates. Zero tech confusion.</h3>
-              <p class="bento-desc">
-                You don't need any coding background. We handle the databases, hosting, and store approvals behind the
-                scenes, and send you simple live demo links to test on your phone.
-              </p>
-            </div>
-            <div class="visual-checklist">
-              <div class="check-item">
-                <div class="check-icon">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <div>
-                  <strong>Working Live Demos</strong>
-                  <span>Test real progress and user flows directly on your own device</span>
-                </div>
-              </div>
-              <div class="check-item">
-                <div class="check-icon">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <div>
-                  <strong>Transparent Milestones</strong>
-                  <span>Well-defined scope and deliverables with zero surprise hourly bills</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
 
     <!-- ============================================================== -->
     <!-- SECTION 7: WHO WE BUILD FOR (PERSONAS)                         -->
@@ -850,7 +716,7 @@
 
           <!-- Card 1: Early-Stage Founders -->
           <div class="persona-frost-card">
-            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-founders.jpg');"></div>
+            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-founders.webp');"></div>
             <div class="persona-card-frost-overlay">
               <div class="frost-content-top">
                 <h3 class="frost-persona-title">Early-Stage Founders</h3>
@@ -868,7 +734,7 @@
 
           <!-- Card 2: Non-Technical Business Owners -->
           <div class="persona-frost-card">
-            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-portals.jpg');"></div>
+            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-portals.webp');"></div>
             <div class="persona-card-frost-overlay">
               <div class="frost-content-top">
                 <h3 class="frost-persona-title">Non-Technical Founders</h3>
@@ -886,7 +752,7 @@
 
           <!-- Card 3: Growing Product Teams -->
           <div class="persona-frost-card">
-            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-scale.jpg');"></div>
+            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-scale.webp');"></div>
             <div class="persona-card-frost-overlay">
               <div class="frost-content-top">
                 <h3 class="frost-persona-title">Growing Product Teams</h3>
@@ -904,7 +770,7 @@
 
           <!-- Card 4: Solo Operators & Creators -->
           <div class="persona-frost-card">
-            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-creators.jpg');"></div>
+            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-creators.webp');"></div>
             <div class="persona-card-frost-overlay">
               <div class="frost-content-top">
                 <h3 class="frost-persona-title">Solo Operators &amp; Creators</h3>
@@ -922,7 +788,7 @@
 
           <!-- Card 5: Digital Agencies & Studios -->
           <div class="persona-frost-card">
-            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-enterprise.jpg');"></div>
+            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-enterprise.webp');"></div>
             <div class="persona-card-frost-overlay">
               <div class="frost-content-top">
                 <h3 class="frost-persona-title">Agencies &amp; Studios</h3>
@@ -940,7 +806,7 @@
 
           <!-- Card 6: E-Commerce & Retail Brands -->
           <div class="persona-frost-card">
-            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-commerce.jpg');"></div>
+            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-commerce.webp');"></div>
             <div class="persona-card-frost-overlay">
               <div class="frost-content-top">
                 <h3 class="frost-persona-title">E-Commerce &amp; Brands</h3>
@@ -959,7 +825,7 @@
           <!-- DUPLICATE SET FOR SEAMLESS INFINITE ROLLING -->
           <!-- Card 1 Duplicate -->
           <div class="persona-frost-card" aria-hidden="true">
-            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-founders.jpg');"></div>
+            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-founders.webp');"></div>
             <div class="persona-card-frost-overlay">
               <div class="frost-content-top">
                 <h3 class="frost-persona-title">Early-Stage Founders</h3>
@@ -977,7 +843,7 @@
 
           <!-- Card 2 Duplicate -->
           <div class="persona-frost-card" aria-hidden="true">
-            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-portals.jpg');"></div>
+            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-portals.webp');"></div>
             <div class="persona-card-frost-overlay">
               <div class="frost-content-top">
                 <h3 class="frost-persona-title">Non-Technical Founders</h3>
@@ -995,7 +861,7 @@
 
           <!-- Card 3 Duplicate -->
           <div class="persona-frost-card" aria-hidden="true">
-            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-scale.jpg');"></div>
+            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-scale.webp');"></div>
             <div class="persona-card-frost-overlay">
               <div class="frost-content-top">
                 <h3 class="frost-persona-title">Growing Product Teams</h3>
@@ -1013,7 +879,7 @@
 
           <!-- Card 4 Duplicate -->
           <div class="persona-frost-card" aria-hidden="true">
-            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-creators.jpg');"></div>
+            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-creators.webp');"></div>
             <div class="persona-card-frost-overlay">
               <div class="frost-content-top">
                 <h3 class="frost-persona-title">Solo Operators &amp; Creators</h3>
@@ -1031,7 +897,7 @@
 
           <!-- Card 5 Duplicate -->
           <div class="persona-frost-card" aria-hidden="true">
-            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-enterprise.jpg');"></div>
+            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-enterprise.webp');"></div>
             <div class="persona-card-frost-overlay">
               <div class="frost-content-top">
                 <h3 class="frost-persona-title">Agencies &amp; Studios</h3>
@@ -1049,7 +915,7 @@
 
           <!-- Card 6 Duplicate -->
           <div class="persona-frost-card" aria-hidden="true">
-            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-commerce.jpg');"></div>
+            <div class="persona-card-bg-layer" style="background-image: url('/assets/persona-commerce.webp');"></div>
             <div class="persona-card-frost-overlay">
               <div class="frost-content-top">
                 <h3 class="frost-persona-title">E-Commerce &amp; Brands</h3>
@@ -1251,15 +1117,14 @@
     <!-- ============================================================== -->
     <!-- SECTION 9: STATS MATRIX (5-CARD HIGH CONTRAST GRID)            -->
     <!-- ============================================================== -->
-    <section class="section-stats" id="stats">
+    <section class="section-stats" id="why-crux">
       <div class="container container-wide">
 
         <div class="section-header centered reveal">
-          <span class="section-badge">By the Numbers</span>
+          <span class="section-badge">Why Crux</span>
           <h2 class="section-title">Built for speed, clarity, and reliability</h2>
           <p class="section-subhead">
-            Our boutique dev model ensures every project is delivered with senior-level attention and complete
-            code ownership.
+            We eliminate delays, bloated retainers, and miscommunication by putting you directly with senior engineers.
           </p>
         </div>
 
@@ -1496,7 +1361,7 @@
               <p class="support-desc">
                 Reach out directly and let's talk through your app idea, timeline, and budget.
               </p>
-              <a href="#contact" class="btn-capsule-primary">
+              <a href="mailto:contact@cruxstudios.dev?subject=Project%20Inquiry%20Crux%20Studios&body=Hi%20Team%20Crux%2C%0A%0AI%20have%20an%20app%20idea%20I%20would%20like%20to%20build%20with%20Crux%20Studios.%0A%0A1.%20Project%20Summary%20/%20Core%20Idea%3A%0A2.%20Target%20Platforms%20%28Web%20/%20iOS%20/%20Android%29%3A%0A3.%20Estimated%20Timeline%20/%20Target%20Launch%3A%0A%0ALooking%20forward%20to%20discussing%20further%21%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D" class="btn-capsule-primary">
                 <span>Contact Us</span>
                 <div class="btn-arrow-badge">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -1602,7 +1467,7 @@
               application.
             </p>
             <div class="cta-btn-row">
-              <a href="mailto:hello@cruxstudios.dev" class="btn-capsule-primary">
+              <a href="mailto:contact@cruxstudios.dev?subject=Project%20Inquiry%20Crux%20Studios&body=Hi%20Team%20Crux%2C%0A%0AI%20have%20an%20app%20idea%20I%20would%20like%20to%20build%20with%20Crux%20Studios.%0A%0A1.%20Project%20Summary%20/%20Core%20Idea%3A%0A2.%20Target%20Platforms%20%28Web%20/%20iOS%20/%20Android%29%3A%0A3.%20Estimated%20Timeline%20/%20Target%20Launch%3A%0A%0ALooking%20forward%20to%20discussing%20further%21%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D" class="btn-capsule-primary">
                 <span>Start a Project</span>
                 <div class="btn-arrow-badge">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -1612,9 +1477,11 @@
                   </svg>
                 </div>
               </a>
-              <a href="mailto:hello@cruxstudios.dev" class="btn-solid-pill btn-pill-white">
-                <span>hello@cruxstudios.dev</span>
-              </a>
+              <div class="copy-email-wrapper">
+                <button type="button" class="btn-solid-pill btn-pill-white email-copy-trigger" id="email-copy-btn" aria-label="Copy email address">
+                  <span class="email-text">contact@cruxstudios.dev</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1622,7 +1489,7 @@
         <!-- Clean Minimal Footer Row -->
         <div class="footer-minimal-row">
           <div class="footer-min-brand">
-            <img src="/logo.png" alt="Crux Studios" class="min-logo-img" />
+            <img src="/logo.webp" alt="Crux Studios" class="min-logo-img" width="96" height="24" loading="lazy" decoding="async" />
             <span class="min-brand-title">Crux Studios</span>
             <span class="min-location">Bangalore, India</span>
           </div>
@@ -1630,10 +1497,10 @@
           <div class="footer-min-links">
             <a href="#services">Services</a>
             <a href="#projects">Work</a>
+            <a href="#who-it-is-for">Who It's For</a>
             <a href="#why-crux">Why Crux</a>
             <a href="#team">Team</a>
             <a href="#faqs">FAQs</a>
-            <a href="mailto:hello@cruxstudios.dev">Email Us</a>
           </div>
 
           <div class="footer-min-right">
@@ -1652,6 +1519,18 @@
     </footer>
 
   </main>
+
+  <!-- Global Floating Cursor Badge for Copy Email -->
+  <div class="email-cursor-badge" id="email-cursor-badge" aria-hidden="true">
+    <svg class="copy-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5.5" y="5.5" width="8" height="8" rx="1.5"></rect>
+      <path d="M3.5 10.5H2.5C1.94772 10.5 1.5 10.0523 1.5 9.5V2.5C1.5 1.94772 1.94772 1.5 2.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5"></path>
+    </svg>
+    <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M13.5 4.5L6.5 11.5L2.5 7.5"></path>
+    </svg>
+    <span class="badge-text">Copy Email</span>
+  </div>
 
   <script type="module" src="/src/scripts/main.js"></script>
 </body>

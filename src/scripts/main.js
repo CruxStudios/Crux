@@ -136,44 +136,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. Mobile Menu Drawer
+  // 5. Mobile Menu Drawer & Hamburger to X Morph
   const mobileToggle = document.getElementById('mobile-toggle');
   const mobileDrawer = document.getElementById('mobile-drawer');
 
   if (mobileToggle && mobileDrawer) {
     mobileToggle.addEventListener('click', () => {
-      mobileDrawer.classList.toggle('open');
+      const isOpen = mobileDrawer.classList.toggle('open');
+      mobileToggle.classList.toggle('active', isOpen);
+      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
     mobileDrawer.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileDrawer.classList.remove('open');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
 
-  // 6. Floating Navbar Scroll Shadow & Atmospheric Parallax
+  // 6. Floating Navbar Scroll Shadow & Atmospheric Parallax (Optimized 60/120fps)
   const navbar = document.querySelector('.navbar-island');
   const heroMesh = document.querySelector('.hero-mesh-image');
+  let isScrolling = false;
 
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
 
-    // Navbar transition
-    if (navbar) {
-      if (scrollY > 40) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.08)';
-      } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.9)';
-        navbar.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.04)';
-      }
-    }
+        // Navbar transition
+        if (navbar) {
+          if (scrollY > 40) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.08)';
+          } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.9)';
+            navbar.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.04)';
+          }
+        }
 
-    if (heroMesh) {
-      heroMesh.style.transform = `translateY(${scrollY * 0.08}px)`;
+        // Parallax on hero mesh (only when hero is in view)
+        if (heroMesh && scrollY < 1200) {
+          heroMesh.style.transform = `translate3d(0, ${(scrollY * 0.08).toFixed(1)}px, 0)`;
+        }
+
+        isScrolling = false;
+      });
+      isScrolling = true;
     }
-  });
+  }, { passive: true });
 
   // 7. Interactive Projects Atmospheric Spotlight & 3D Card Physics
   const projectsCard = document.querySelector('.projects-atmospheric-card');
@@ -206,6 +219,70 @@ document.addEventListener('DOMContentLoaded', () => {
       card.style.transform = '';
     });
   });
+
+  // 9. Floating Cursor Badge & Copy to Clipboard for Email Button
+  const emailBtn = document.getElementById('email-copy-btn');
+  const cursorBadge = document.getElementById('email-cursor-badge');
+
+  if (emailBtn && cursorBadge) {
+    let copyTimeout = null;
+
+    const setPosition = (e) => {
+      cursorBadge.style.left = `${e.clientX}px`;
+      cursorBadge.style.top = `${e.clientY}px`;
+    };
+
+    emailBtn.addEventListener('mouseenter', (e) => {
+      setPosition(e);
+      cursorBadge.classList.add('visible');
+    });
+
+    emailBtn.addEventListener('mousemove', (e) => {
+      setPosition(e);
+    });
+
+    emailBtn.addEventListener('mouseleave', () => {
+      cursorBadge.classList.remove('visible');
+      if (copyTimeout) {
+        clearTimeout(copyTimeout);
+        cursorBadge.classList.remove('copied');
+        cursorBadge.querySelector('.badge-text').textContent = 'Copy Email';
+      }
+    });
+
+    emailBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const email = 'contact@cruxstudios.dev';
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          const textarea = document.createElement('textarea');
+          textarea.value = email;
+          textarea.style.position = 'fixed';
+          textarea.style.left = '-999999px';
+          textarea.style.top = '-999999px';
+          document.body.appendChild(textarea);
+          textarea.focus();
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+        }
+      } catch (err) {
+        console.warn('Clipboard write failed:', err);
+      }
+
+      // Visual Feedback
+      cursorBadge.classList.add('copied');
+      cursorBadge.querySelector('.badge-text').textContent = 'Copied!';
+
+      if (copyTimeout) clearTimeout(copyTimeout);
+      copyTimeout = setTimeout(() => {
+        cursorBadge.classList.remove('copied');
+        cursorBadge.querySelector('.badge-text').textContent = 'Copy Email';
+      }, 2000);
+    });
+  }
 
 });
 
