@@ -6,7 +6,7 @@ import {
   sendInquiryConfirmation,
   sendSuprateekDirect,
   sendUllasDirect,
-} from "./lib/email.ts";
+} from "../lib/email.ts";
 
 const rl = readline.createInterface({
   input: process.stdin,

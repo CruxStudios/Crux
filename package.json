@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "email": "email dev",
-    "send": "node --env-file=.env src/scripts/send-mail.js",
+    "send": "tsx --env-file=.env src/scripts/send-mail.ts",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -16,6 +16,7 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-email": "^6.9.3",
+    "tsx": "^4.23.13",
     "vite": "^5.4.2"
   },
   "dependencies": {
