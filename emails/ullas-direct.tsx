@@ -169,19 +169,11 @@ const s: Record<string, React.CSSProperties> = {
   container: {
     backgroundColor: "#fff",
     borderRadius: "14px",
+    borderTop: `3px solid ${CYAN}`,
+    borderBottom: `3px solid ${CYAN}`,
     margin: "0 auto",
     maxWidth: "580px",
     overflow: "hidden",
-  },
-  topRule: {
-    backgroundColor: CYAN,
-    height: "3px",
-    width: "100%",
-  },
-  bottomRule: {
-    backgroundColor: CYAN,
-    height: "3px",
-    width: "100%",
   },
   header: {
     borderBottom: `1px solid ${BORDER}`,

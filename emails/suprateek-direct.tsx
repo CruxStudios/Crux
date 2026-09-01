@@ -49,9 +49,6 @@ export const SuprateekDirectEmail = ({
       <Body style={s.body}>
         <Container style={s.container}>
 
-          {/* Cyan top rule */}
-          <Section style={s.topRule} />
-
           {/* Header */}
           <Section style={s.header}>
             <table width="100%" cellPadding="0" cellSpacing="0" border={0} style={{ width: "100%" }}>
@@ -140,9 +137,6 @@ export const SuprateekDirectEmail = ({
             </Text>
           </Section>
 
-          {/* Cyan bottom rule */}
-          <Section style={s.bottomRule} />
-
         </Container>
       </Body>
     </Html>
@@ -169,19 +163,11 @@ const s: Record<string, React.CSSProperties> = {
   container: {
     backgroundColor: "#fff",
     borderRadius: "14px",
+    borderTop: `3px solid ${CYAN}`,
+    borderBottom: `3px solid ${CYAN}`,
     margin: "0 auto",
     maxWidth: "580px",
     overflow: "hidden",
-  },
-  topRule: {
-    backgroundColor: CYAN,
-    height: "3px",
-    width: "100%",
-  },
-  bottomRule: {
-    backgroundColor: CYAN,
-    height: "3px",
-    width: "100%",
   },
   header: {
     borderBottom: `1px solid ${BORDER}`,
