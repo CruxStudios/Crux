@@ -33,19 +33,44 @@ export const ProjectInquiryEmail = ({
   <Html lang="en" dir="ltr">
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');`}</style>
+      <meta name="color-scheme" content="light dark" />
+      <meta name="supported-color-schemes" content="light dark" />
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+          margin: 0 !important;
+          padding: 0 !important;
+          -webkit-text-size-adjust: 100% !important;
+        }
+        table {
+          border-collapse: collapse !important;
+          mso-table-lspace: 0pt !important;
+          mso-table-rspace: 0pt !important;
+        }
+        @media screen and (max-width: 600px) {
+          .mobile-card {
+            width: 100% !important;
+            max-width: 100% !important;
+            border-radius: 0 !important;
+          }
+          .mobile-pad {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+          }
+        }
+      `}</style>
     </Head>
 
     <Preview>Got your inquiry, {firstName}. Here is what happens next.</Preview>
 
     <Body style={s.body}>
-      <Container style={s.container}>
+      <Container style={s.container} className="mobile-card">
 
         {/* Cyan top rule */}
-        <Section style={s.topRule} />
+        <div style={s.topRule} />
 
         {/* Header */}
-        <Section style={s.header}>
+        <Section style={s.header} className="mobile-pad">
           <Row>
             <Column style={{ verticalAlign: "middle" }}>
               <table cellPadding="0" cellSpacing="0" border={0}>

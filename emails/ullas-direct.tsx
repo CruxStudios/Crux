@@ -41,19 +41,44 @@ export const UllasDirectEmail = ({
     <Html lang="en" dir="ltr">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <style>{`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');`}</style>
+        <meta name="color-scheme" content="light dark" />
+        <meta name="supported-color-schemes" content="light dark" />
+        <style>{`
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+          body {
+            margin: 0 !important;
+            padding: 0 !important;
+            -webkit-text-size-adjust: 100% !important;
+          }
+          table {
+            border-collapse: collapse !important;
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+          }
+          @media screen and (max-width: 600px) {
+            .mobile-card {
+              width: 100% !important;
+              max-width: 100% !important;
+              border-radius: 0 !important;
+            }
+            .mobile-pad {
+              padding-left: 20px !important;
+              padding-right: 20px !important;
+            }
+          }
+        `}</style>
       </Head>
 
       <Preview>{subjectLine}</Preview>
 
       <Body style={s.body}>
-        <Container style={s.container}>
+        <Container style={s.container} className="mobile-card">
 
           {/* Cyan top rule */}
-          <Section style={s.topRule} />
+          <div style={s.topRule} />
 
           {/* Header */}
-          <Section style={s.header}>
+          <Section style={s.header} className="mobile-pad">
             <Row>
               <Column style={{ verticalAlign: "middle" }}>
                 <table cellPadding="0" cellSpacing="0" border={0}>
@@ -64,7 +89,7 @@ export const UllasDirectEmail = ({
                         alt="Crux Studios"
                         width={30}
                         height={30}
-                        style={{ display: "block", borderRadius: "50%" }}
+                        style={{ display: "block", borderRadius: "50%", backgroundColor: DARK }}
                       />
                     </td>
                     <td style={{ verticalAlign: "middle" }}>
@@ -80,7 +105,7 @@ export const UllasDirectEmail = ({
           </Section>
 
           {/* Body content */}
-          <Section style={s.mainSection}>
+          <Section style={s.mainSection} className="mobile-pad">
             <Heading as="h1" style={s.greetingHeading}>
               Hi {recipientName},
             </Heading>
@@ -93,12 +118,23 @@ export const UllasDirectEmail = ({
           </Section>
 
           {/* Sender Signature */}
-          <Section style={s.signatureSection}>
+          <Section style={s.signatureSection} className="mobile-pad">
             <Hr style={s.signatureDivider} />
             <table cellPadding="0" cellSpacing="0" border={0}>
               <tr>
                 <td style={{ width: "40px", verticalAlign: "middle", paddingRight: "14px" }}>
-                  <div style={s.avatarBadge}>UM</div>
+                  <table
+                    cellPadding="0"
+                    cellSpacing="0"
+                    border={0}
+                    style={s.avatarBadgeTable}
+                  >
+                    <tr>
+                      <td align="center" style={s.avatarBadgeTd}>
+                        UM
+                      </td>
+                    </tr>
+                  </table>
                 </td>
                 <td style={{ verticalAlign: "middle" }}>
                   <Text style={s.senderName}>Ullas M</Text>
@@ -110,7 +146,7 @@ export const UllasDirectEmail = ({
 
           {/* Footer */}
           <Hr style={s.footerRule} />
-          <Section style={s.footer}>
+          <Section style={s.footer} className="mobile-pad">
             <Row>
               <Column>
                 <Text style={s.footerBrand}>Crux Studios</Text>
@@ -128,7 +164,7 @@ export const UllasDirectEmail = ({
           </Section>
 
           {/* Cyan bottom rule */}
-          <Section style={s.bottomRule} />
+          <div style={s.bottomRule} />
 
         </Container>
       </Body>
@@ -151,23 +187,30 @@ const s: Record<string, React.CSSProperties> = {
     backgroundColor: "#EDF1F4",
     fontFamily: FONT,
     margin: "0",
-    padding: "40px 0",
+    padding: "24px 0",
+    width: "100%",
   },
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "#ffffff",
     borderRadius: "14px",
     margin: "0 auto",
     maxWidth: "580px",
+    width: "100%",
     overflow: "hidden",
+    border: `1px solid ${BORDER}`,
   },
   topRule: {
     backgroundColor: CYAN,
     height: "3px",
+    lineHeight: "3px",
+    fontSize: "1px",
     width: "100%",
   },
   bottomRule: {
     backgroundColor: CYAN,
     height: "3px",
+    lineHeight: "3px",
+    fontSize: "1px",
     width: "100%",
   },
   header: {
@@ -208,17 +251,6 @@ const s: Record<string, React.CSSProperties> = {
     lineHeight: "1.7",
     margin: "0 0 18px",
   },
-  primaryButton: {
-    backgroundColor: DARK,
-    border: `1px solid rgba(255,255,255,0.1)`,
-    borderRadius: "100px",
-    color: CYAN,
-    display: "inline-block",
-    fontSize: "13px",
-    fontWeight: "700",
-    padding: "12px 24px",
-    textDecoration: "none",
-  },
   signatureSection: {
     padding: "16px 40px 0",
   },
@@ -226,19 +258,23 @@ const s: Record<string, React.CSSProperties> = {
     borderColor: BORDER,
     margin: "0 0 24px",
   },
-  avatarBadge: {
+  avatarBadgeTable: {
     width: "40px",
     height: "40px",
-    borderRadius: "50%",
+    borderRadius: "20px",
     backgroundColor: DARK,
+    borderCollapse: "separate" as const,
+  },
+  avatarBadgeTd: {
+    width: "40px",
+    height: "40px",
+    textAlign: "center" as const,
+    verticalAlign: "middle" as const,
     color: CYAN,
     fontSize: "13px",
     fontWeight: "700",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    textAlign: "center" as const,
-    lineHeight: "40px",
+    fontFamily: FONT,
+    lineHeight: "1",
   },
   senderName: {
     color: DARK,
@@ -250,16 +286,6 @@ const s: Record<string, React.CSSProperties> = {
     color: SLATE,
     fontSize: "12px",
     margin: "0 0 4px",
-  },
-  senderLinks: {
-    color: SLATE,
-    fontSize: "12px",
-    margin: "0",
-  },
-  senderLink: {
-    color: "#0284C7",
-    fontSize: "12px",
-    textDecoration: "none",
   },
   footerRule: {
     borderColor: BORDER,
