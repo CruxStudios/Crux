@@ -41,44 +41,19 @@ export const SuprateekDirectEmail = ({
     <Html lang="en" dir="ltr">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="color-scheme" content="light dark" />
-        <meta name="supported-color-schemes" content="light dark" />
-        <style>{`
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-          body {
-            margin: 0 !important;
-            padding: 0 !important;
-            -webkit-text-size-adjust: 100% !important;
-          }
-          table {
-            border-collapse: collapse !important;
-            mso-table-lspace: 0pt !important;
-            mso-table-rspace: 0pt !important;
-          }
-          @media screen and (max-width: 600px) {
-            .mobile-card {
-              width: 100% !important;
-              max-width: 100% !important;
-              border-radius: 0 !important;
-            }
-            .mobile-pad {
-              padding-left: 20px !important;
-              padding-right: 20px !important;
-            }
-          }
-        `}</style>
+        <style>{`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');`}</style>
       </Head>
 
       <Preview>{subjectLine}</Preview>
 
       <Body style={s.body}>
-        <Container style={s.container} className="mobile-card">
+        <Container style={s.container}>
 
           {/* Cyan top rule */}
-          <div style={s.topRule} />
+          <Section style={s.topRule} />
 
           {/* Header */}
-          <Section style={s.header} className="mobile-pad">
+          <Section style={s.header}>
             <Row>
               <Column style={{ verticalAlign: "middle" }}>
                 <table cellPadding="0" cellSpacing="0" border={0}>
@@ -89,7 +64,7 @@ export const SuprateekDirectEmail = ({
                         alt="Crux Studios"
                         width={30}
                         height={30}
-                        style={{ display: "block", borderRadius: "50%", backgroundColor: DARK }}
+                        style={{ display: "block", borderRadius: "50%" }}
                       />
                     </td>
                     <td style={{ verticalAlign: "middle" }}>
@@ -105,7 +80,7 @@ export const SuprateekDirectEmail = ({
           </Section>
 
           {/* Body content */}
-          <Section style={s.mainSection} className="mobile-pad">
+          <Section style={s.mainSection}>
             <Heading as="h1" style={s.greetingHeading}>
               Hi {recipientName},
             </Heading>
@@ -118,7 +93,7 @@ export const SuprateekDirectEmail = ({
           </Section>
 
           {/* Sender Signature */}
-          <Section style={s.signatureSection} className="mobile-pad">
+          <Section style={s.signatureSection}>
             <Hr style={s.signatureDivider} />
             <table cellPadding="0" cellSpacing="0" border={0}>
               <tr>
@@ -146,7 +121,7 @@ export const SuprateekDirectEmail = ({
 
           {/* Footer */}
           <Hr style={s.footerRule} />
-          <Section style={s.footer} className="mobile-pad">
+          <Section style={s.footer}>
             <Row>
               <Column>
                 <Text style={s.footerBrand}>Crux Studios</Text>
@@ -164,7 +139,7 @@ export const SuprateekDirectEmail = ({
           </Section>
 
           {/* Cyan bottom rule */}
-          <div style={s.bottomRule} />
+          <Section style={s.bottomRule} />
 
         </Container>
       </Body>
@@ -187,30 +162,23 @@ const s: Record<string, React.CSSProperties> = {
     backgroundColor: "#EDF1F4",
     fontFamily: FONT,
     margin: "0",
-    padding: "24px 0",
-    width: "100%",
+    padding: "40px 0",
   },
   container: {
-    backgroundColor: "#ffffff",
+    backgroundColor: "#fff",
     borderRadius: "14px",
     margin: "0 auto",
     maxWidth: "580px",
-    width: "100%",
     overflow: "hidden",
-    border: `1px solid ${BORDER}`,
   },
   topRule: {
     backgroundColor: CYAN,
     height: "3px",
-    lineHeight: "3px",
-    fontSize: "1px",
     width: "100%",
   },
   bottomRule: {
     backgroundColor: CYAN,
     height: "3px",
-    lineHeight: "3px",
-    fontSize: "1px",
     width: "100%",
   },
   header: {
