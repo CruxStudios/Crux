@@ -1,6 +1,3 @@
-import { config } from "dotenv";
-config();
-
 import readline from "readline";
 import {
   sendInquiryConfirmation,
