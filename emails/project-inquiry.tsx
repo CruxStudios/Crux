@@ -46,29 +46,31 @@ export const ProjectInquiryEmail = ({
 
         {/* Header */}
         <Section style={s.header}>
-          <Row>
-            <Column style={{ verticalAlign: "middle" }}>
-              <table cellPadding="0" cellSpacing="0" border={0}>
-                <tr>
-                  <td style={{ verticalAlign: "middle", width: "32px", paddingRight: "10px" }}>
-                    <Img
-                      src={LOGO_URL}
-                      alt="Crux Studios"
-                      width={30}
-                      height={30}
-                      style={{ display: "block", borderRadius: "50%" }}
-                    />
-                  </td>
-                  <td style={{ verticalAlign: "middle" }}>
-                    <Text style={s.brandTitle}>Crux Studios</Text>
-                  </td>
-                </tr>
-              </table>
-            </Column>
-            <Column align="right" style={{ verticalAlign: "middle" }}>
-              <Text style={s.headerMeta}>Message Received</Text>
-            </Column>
-          </Row>
+          <table width="100%" cellPadding="0" cellSpacing="0" border={0} style={{ width: "100%" }}>
+            <tr>
+              <td align="left" style={{ verticalAlign: "middle" }}>
+                <table cellPadding="0" cellSpacing="0" border={0}>
+                  <tr>
+                    <td style={{ verticalAlign: "middle", width: "26px", paddingRight: "10px" }}>
+                      <Img
+                        src={LOGO_URL}
+                        alt="Crux Studios"
+                        width={26}
+                        height={26}
+                        style={{ display: "block", borderRadius: "50%" }}
+                      />
+                    </td>
+                    <td style={{ verticalAlign: "middle" }}>
+                      <Text style={s.brandTitle}>Crux Studios</Text>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td align="right" style={{ verticalAlign: "middle" }}>
+                <Text style={s.headerMeta}>Message Received</Text>
+              </td>
+            </tr>
+          </table>
         </Section>
 
         {/* Dark hero */}
@@ -252,10 +254,10 @@ const s: Record<string, React.CSSProperties> = {
     lineHeight: "1",
   },
   headerMeta: {
-    color: SLATE,
-    fontSize: "11px",
-    fontWeight: "600",
-    letterSpacing: "1.4px",
+    color: "#8E99A0",
+    fontSize: "10px",
+    fontWeight: "500",
+    letterSpacing: "1px",
     lineHeight: "1",
     margin: "0",
     textTransform: "uppercase",
