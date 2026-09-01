@@ -33,45 +33,104 @@ export const ProjectInquiryEmail = ({
   <Html lang="en" dir="ltr">
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');`}</style>
+      <meta name="color-scheme" content="light dark" />
+      <meta name="supported-color-schemes" content="light dark" />
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+          margin: 0 !important;
+          padding: 0 !important;
+          -webkit-text-size-adjust: 100% !important;
+        }
+        @media only screen and (max-width: 600px) {
+          .mobile-outer {
+            padding: 12px 8px !important;
+          }
+          .mobile-card {
+            width: 100% !important;
+            max-width: 100% !important;
+            border-radius: 8px !important;
+          }
+          .mobile-pad {
+            padding-left: 16px !important;
+            padding-right: 16px !important;
+          }
+        }
+      `}</style>
     </Head>
 
     <Preview>Got your inquiry, {firstName}. Here is what happens next.</Preview>
 
     <Body style={s.body}>
-      <Container style={s.container}>
+      <table
+        width="100%"
+        cellPadding="0"
+        cellSpacing="0"
+        border={0}
+        className="mobile-outer"
+        style={{ width: "100%", padding: "30px 10px" }}
+      >
+        <tr>
+          <td align="center" style={{ verticalAlign: "top" }}>
+            <Container style={s.container} className="mobile-card">
 
-        {/* Cyan top rule */}
-        <Section style={s.topRule} />
-
-        {/* Header */}
-        <Section style={s.header}>
-          <table width="100%" cellPadding="0" cellSpacing="0" border={0} style={{ width: "100%" }}>
-            <tr>
-              <td align="left" style={{ verticalAlign: "middle" }}>
-                <table cellPadding="0" cellSpacing="0" border={0}>
+              {/* Header */}
+              <Section style={s.header} className="mobile-pad">
+                <table
+                  width="100%"
+                  cellPadding="0"
+                  cellSpacing="0"
+                  border={0}
+                  style={{ width: "100%", tableLayout: "auto" }}
+                >
                   <tr>
-                    <td style={{ verticalAlign: "middle", width: "26px", paddingRight: "10px" }}>
-                      <Img
-                        src={LOGO_URL}
-                        alt="Crux Studios"
-                        width={26}
-                        height={26}
-                        style={{ display: "block", borderRadius: "50%" }}
-                      />
+                    <td align="left" style={{ verticalAlign: "middle" }}>
+                      <table cellPadding="0" cellSpacing="0" border={0}>
+                        <tr>
+                          <td
+                            style={{
+                              verticalAlign: "middle",
+                              width: "32px",
+                              paddingRight: "10px",
+                            }}
+                          >
+                            <div
+                              style={{
+                                width: "28px",
+                                height: "28px",
+                                borderRadius: "50%",
+                                backgroundColor: "#0d0f11",
+                                display: "inline-block",
+                                overflow: "hidden",
+                                lineHeight: 0,
+                              }}
+                            >
+                              <Img
+                                src={LOGO_URL}
+                                alt="Crux Studios"
+                                width={28}
+                                height={28}
+                                style={{
+                                  display: "block",
+                                  borderRadius: "50%",
+                                  backgroundColor: "#0d0f11",
+                                  border: "0",
+                                }}
+                              />
+                            </div>
+                          </td>
+                          <td style={{ verticalAlign: "middle" }}>
+                            <Text style={s.brandTitle}>Crux Studios</Text>
+                          </td>
+                        </tr>
+                      </table>
                     </td>
-                    <td style={{ verticalAlign: "middle" }}>
-                      <Text style={s.brandTitle}>Crux Studios</Text>
+                    <td align="right" style={{ verticalAlign: "middle", textAlign: "right" }}>
+                      <Text style={s.headerMeta}>Message Received</Text>
                     </td>
                   </tr>
                 </table>
-              </td>
-              <td align="right" style={{ verticalAlign: "middle" }}>
-                <Text style={s.headerMeta}>Message Received</Text>
-              </td>
-            </tr>
-          </table>
-        </Section>
+              </Section>
 
         {/* Dark hero */}
         <Section style={s.hero}>
@@ -191,12 +250,12 @@ export const ProjectInquiryEmail = ({
           </Text>
         </Section>
 
-        {/* Cyan bottom rule */}
-        <Section style={s.bottomRule} />
-
-      </Container>
-    </Body>
-  </Html>
+              </Container>
+            </td>
+          </tr>
+        </table>
+      </Body>
+    </Html>
 );
 
 export default ProjectInquiryEmail;
@@ -214,26 +273,20 @@ const s: Record<string, React.CSSProperties> = {
     backgroundColor: "#EDF1F4",
     fontFamily: FONT,
     margin: "0",
-    padding: "40px 0",
+    padding: "0",
+    width: "100%",
   },
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "#ffffff",
     borderRadius: "14px",
+    borderTop: `3px solid ${CYAN}`,
+    borderBottom: `3px solid ${CYAN}`,
+    borderLeft: `1px solid ${BORDER}`,
+    borderRight: `1px solid ${BORDER}`,
     margin: "0 auto",
-    maxWidth: "580px",
+    maxWidth: "560px",
+    width: "100%",
     overflow: "hidden",
-  },
-
-  // Rules
-  topRule: {
-    backgroundColor: CYAN,
-    height: "3px",
-    width: "100%",
-  },
-  bottomRule: {
-    backgroundColor: CYAN,
-    height: "3px",
-    width: "100%",
   },
 
   // Header
