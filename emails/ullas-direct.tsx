@@ -1,0 +1,293 @@
+import {
+  Body,
+  Button,
+  Container,
+  Column,
+  Head,
+  Heading,
+  Hr,
+  Html,
+  Img,
+  Link,
+  Preview,
+  Row,
+  Section,
+  Text,
+} from "@react-email/components";
+import * as React from "react";
+
+// ─── Props ────────────────────────────────────────────────────────────────────
+interface UllasDirectEmailProps {
+  recipientName?: string;
+  subjectLine?: string;
+  content?: string;
+}
+
+// ─── Constants ────────────────────────────────────────────────────────────────
+const SITE_URL = "https://cruxstudios.dev";
+const LOGO_URL = "https://cruxstudios.dev/favicon.png";
+const SENDER_EMAIL = "ullas@cruxstudios.dev";
+const LINKEDIN_URL = "https://www.linkedin.com/in/ull0s-m/";
+
+// ─── Component ────────────────────────────────────────────────────────────────
+export const UllasDirectEmail = ({
+  recipientName = "there",
+  subjectLine = "Technical update on your system architecture",
+  content = "\nFollowing up on our architecture review. We have mapped out the backend infrastructure, database models, and deployment pipeline for the application.\n\nLet me know if you want to review the technical specification together.",
+}: UllasDirectEmailProps) => {
+  const paragraphs = content.split("\n\n").filter(Boolean);
+
+  return (
+    <Html lang="en" dir="ltr">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>{`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');`}</style>
+      </Head>
+
+      <Preview>{subjectLine}</Preview>
+
+      <Body style={s.body}>
+        <Container style={s.container}>
+
+          {/* Cyan top rule */}
+          <Section style={s.topRule} />
+
+          {/* Header */}
+          <Section style={s.header}>
+            <Row>
+              <Column style={{ verticalAlign: "middle" }}>
+                <table cellPadding="0" cellSpacing="0" border={0}>
+                  <tr>
+                    <td style={{ verticalAlign: "middle", width: "32px", paddingRight: "10px" }}>
+                      <Img
+                        src={LOGO_URL}
+                        alt="Crux Studios"
+                        width={30}
+                        height={30}
+                        style={{ display: "block", borderRadius: "50%" }}
+                      />
+                    </td>
+                    <td style={{ verticalAlign: "middle" }}>
+                      <Text style={s.brandTitle}>Crux Studios</Text>
+                    </td>
+                  </tr>
+                </table>
+              </Column>
+              <Column align="right" style={{ verticalAlign: "middle" }}>
+                <Text style={s.headerMeta}>Direct Message</Text>
+              </Column>
+            </Row>
+          </Section>
+
+          {/* Body content */}
+          <Section style={s.mainSection}>
+            <Heading as="h1" style={s.greetingHeading}>
+              Hi {recipientName},
+            </Heading>
+
+            {paragraphs.map((p, i) => (
+              <Text key={i} style={s.paragraphText}>
+                {p}
+              </Text>
+            ))}
+          </Section>
+
+          {/* Sender Signature */}
+          <Section style={s.signatureSection}>
+            <Hr style={s.signatureDivider} />
+            <table cellPadding="0" cellSpacing="0" border={0}>
+              <tr>
+                <td style={{ width: "40px", verticalAlign: "middle", paddingRight: "14px" }}>
+                  <div style={s.avatarBadge}>UM</div>
+                </td>
+                <td style={{ verticalAlign: "middle" }}>
+                  <Text style={s.senderName}>Ullas M</Text>
+                  <Text style={s.senderRole}>Studio Lead &amp; Full-Stack Developer</Text>
+                </td>
+              </tr>
+            </table>
+          </Section>
+
+          {/* Footer */}
+          <Hr style={s.footerRule} />
+          <Section style={s.footer}>
+            <Row>
+              <Column>
+                <Text style={s.footerBrand}>Crux Studios</Text>
+                <Text style={s.footerSub}>Bangalore, India</Text>
+              </Column>
+              <Column align="right" style={{ verticalAlign: "top" }}>
+                <Link href={SITE_URL} style={s.footerLink}>Website</Link>
+                {"  ·  "}
+                <Link href="mailto:contact@cruxstudios.dev" style={s.footerLink}>contact@cruxstudios.dev</Link>
+              </Column>
+            </Row>
+            <Text style={s.footerDisclaimer}>
+              Crux Studios · Custom Web &amp; Mobile App Development.
+            </Text>
+          </Section>
+
+          {/* Cyan bottom rule */}
+          <Section style={s.bottomRule} />
+
+        </Container>
+      </Body>
+    </Html>
+  );
+};
+
+export default UllasDirectEmail;
+
+// ─── Styles ───────────────────────────────────────────────────────────────────
+const FONT = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+const DARK = "#121417";
+const CYAN = "#00F0FF";
+const SLATE = "#8E99A0";
+const MUTED = "#4D585F";
+const BORDER = "#E8ECEF";
+
+const s: Record<string, React.CSSProperties> = {
+  body: {
+    backgroundColor: "#EDF1F4",
+    fontFamily: FONT,
+    margin: "0",
+    padding: "40px 0",
+  },
+  container: {
+    backgroundColor: "#fff",
+    borderRadius: "14px",
+    margin: "0 auto",
+    maxWidth: "580px",
+    overflow: "hidden",
+  },
+  topRule: {
+    backgroundColor: CYAN,
+    height: "3px",
+    width: "100%",
+  },
+  bottomRule: {
+    backgroundColor: CYAN,
+    height: "3px",
+    width: "100%",
+  },
+  header: {
+    borderBottom: `1px solid ${BORDER}`,
+    padding: "20px 40px",
+  },
+  brandTitle: {
+    color: DARK,
+    fontSize: "15px",
+    fontWeight: "700",
+    letterSpacing: "-0.2px",
+    margin: "0",
+    lineHeight: "1",
+  },
+  headerMeta: {
+    color: SLATE,
+    fontSize: "11px",
+    fontWeight: "600",
+    letterSpacing: "1.4px",
+    lineHeight: "1",
+    margin: "0",
+    textTransform: "uppercase",
+  },
+  mainSection: {
+    padding: "36px 40px 10px",
+  },
+  greetingHeading: {
+    color: DARK,
+    fontSize: "22px",
+    fontWeight: "700",
+    letterSpacing: "-0.3px",
+    lineHeight: "1.3",
+    margin: "0 0 20px",
+  },
+  paragraphText: {
+    color: "#2C3437",
+    fontSize: "15px",
+    lineHeight: "1.7",
+    margin: "0 0 18px",
+  },
+  primaryButton: {
+    backgroundColor: DARK,
+    border: `1px solid rgba(255,255,255,0.1)`,
+    borderRadius: "100px",
+    color: CYAN,
+    display: "inline-block",
+    fontSize: "13px",
+    fontWeight: "700",
+    padding: "12px 24px",
+    textDecoration: "none",
+  },
+  signatureSection: {
+    padding: "16px 40px 0",
+  },
+  signatureDivider: {
+    borderColor: BORDER,
+    margin: "0 0 24px",
+  },
+  avatarBadge: {
+    width: "40px",
+    height: "40px",
+    borderRadius: "50%",
+    backgroundColor: DARK,
+    color: CYAN,
+    fontSize: "13px",
+    fontWeight: "700",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center" as const,
+    lineHeight: "40px",
+  },
+  senderName: {
+    color: DARK,
+    fontSize: "14px",
+    fontWeight: "700",
+    margin: "0 0 2px",
+  },
+  senderRole: {
+    color: SLATE,
+    fontSize: "12px",
+    margin: "0 0 4px",
+  },
+  senderLinks: {
+    color: SLATE,
+    fontSize: "12px",
+    margin: "0",
+  },
+  senderLink: {
+    color: "#0284C7",
+    fontSize: "12px",
+    textDecoration: "none",
+  },
+  footerRule: {
+    borderColor: BORDER,
+    margin: "32px 40px 0",
+  },
+  footer: {
+    padding: "24px 40px 32px",
+  },
+  footerBrand: {
+    color: DARK,
+    fontSize: "13px",
+    fontWeight: "700",
+    margin: "0 0 1px",
+  },
+  footerSub: {
+    color: SLATE,
+    fontSize: "12px",
+    margin: "0",
+  },
+  footerLink: {
+    color: SLATE,
+    fontSize: "12px",
+    textDecoration: "none",
+  },
+  footerDisclaimer: {
+    color: "#BABABA",
+    fontSize: "11px",
+    lineHeight: "1.5",
+    margin: "18px 0 0",
+  },
+};
