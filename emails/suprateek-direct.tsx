@@ -23,8 +23,6 @@ interface SuprateekDirectEmailProps {
 // ─── Constants ────────────────────────────────────────────────────────────────
 const SITE_URL = "https://cruxstudios.dev";
 const LOGO_URL = "https://cruxstudios.dev/favicon.png";
-const SENDER_EMAIL = "suprateek@cruxstudios.dev";
-const PORTFOLIO_URL = "https://suprateekyawagal.in";
 
 // ─── Component ────────────────────────────────────────────────────────────────
 export const SuprateekDirectEmail = ({
@@ -45,29 +43,8 @@ export const SuprateekDirectEmail = ({
           body {
             margin: 0 !important;
             padding: 0 !important;
+            width: 100% !important;
             -webkit-text-size-adjust: 100% !important;
-          }
-          @media only screen and (max-width: 600px) {
-            .mobile-outer {
-              padding: 12px 8px !important;
-            }
-            .mobile-card {
-              width: 100% !important;
-              max-width: 100% !important;
-              border-radius: 8px !important;
-            }
-            .mobile-pad {
-              padding-left: 16px !important;
-              padding-right: 16px !important;
-            }
-            .mobile-h1 {
-              font-size: 19px !important;
-              margin-bottom: 14px !important;
-            }
-            .mobile-text {
-              font-size: 14px !important;
-              line-height: 1.6 !important;
-            }
           }
         `}</style>
       </Head>
@@ -75,157 +52,122 @@ export const SuprateekDirectEmail = ({
       <Preview>{subjectLine}</Preview>
 
       <Body style={s.body}>
-        <table
-          width="100%"
-          cellPadding="0"
-          cellSpacing="0"
-          border={0}
-          className="mobile-outer"
-          style={{ width: "100%", padding: "30px 10px" }}
-        >
-          <tr>
-            <td align="center" style={{ verticalAlign: "top" }}>
-              <Container style={s.container} className="mobile-card">
+        <Container style={s.container}>
 
-                {/* Header */}
-                <Section style={s.header} className="mobile-pad">
-                  <table
-                    width="100%"
-                    cellPadding="0"
-                    cellSpacing="0"
-                    border={0}
-                    style={{ width: "100%", tableLayout: "auto" }}
-                  >
-                    <tr>
-                      <td align="left" style={{ verticalAlign: "middle" }}>
-                        <table cellPadding="0" cellSpacing="0" border={0}>
-                          <tr>
-                            <td
-                              style={{
-                                verticalAlign: "middle",
-                                width: "32px",
-                                paddingRight: "10px",
-                              }}
-                            >
-                              <div
-                                style={{
-                                  width: "28px",
-                                  height: "28px",
-                                  borderRadius: "50%",
-                                  backgroundColor: "#0d0f11",
-                                  display: "inline-block",
-                                  overflow: "hidden",
-                                  lineHeight: 0,
-                                }}
-                              >
-                                <Img
-                                  src={LOGO_URL}
-                                  alt="Crux Studios"
-                                  width={28}
-                                  height={28}
-                                  style={{
-                                    display: "block",
-                                    borderRadius: "50%",
-                                    backgroundColor: "#0d0f11",
-                                    border: "0",
-                                  }}
-                                />
-                              </div>
-                            </td>
-                            <td style={{ verticalAlign: "middle" }}>
-                              <Text style={s.brandTitle}>Crux Studios</Text>
-                            </td>
-                          </tr>
-                        </table>
-                      </td>
-                      <td align="right" style={{ verticalAlign: "middle", textAlign: "right" }}>
-                        <Text style={s.headerMeta}>Direct Message</Text>
-                      </td>
-                    </tr>
-                  </table>
-                </Section>
-
-                {/* Body content */}
-                <Section style={s.mainSection} className="mobile-pad">
-                  <Heading as="h1" style={s.greetingHeading} className="mobile-h1">
-                    Hi {recipientName},
-                  </Heading>
-
-                  {paragraphs.map((p, i) => (
-                    <Text key={i} style={s.paragraphText} className="mobile-text">
-                      {p}
-                    </Text>
-                  ))}
-                </Section>
-
-                {/* Sender Signature */}
-                <Section style={s.signatureSection} className="mobile-pad">
-                  <Hr style={s.signatureDivider} />
+          {/* Branded Header */}
+          <Section style={s.header}>
+            <table
+              width="100%"
+              cellPadding="0"
+              cellSpacing="0"
+              border={0}
+              style={{ width: "100%" }}
+            >
+              <tr>
+                <td align="left" style={{ verticalAlign: "middle" }}>
                   <table cellPadding="0" cellSpacing="0" border={0}>
                     <tr>
-                      <td
-                        style={{
-                          width: "40px",
-                          verticalAlign: "middle",
-                          paddingRight: "14px",
-                        }}
-                      >
-                        <table
-                          cellPadding="0"
-                          cellSpacing="0"
-                          border={0}
-                          style={s.avatarBadgeTable}
-                        >
-                          <tr>
-                            <td align="center" style={s.avatarBadgeTd}>
-                              SY
-                            </td>
-                          </tr>
-                        </table>
+                      <td style={{ verticalAlign: "middle", width: "32px", paddingRight: "10px" }}>
+                        <Img
+                          src={LOGO_URL}
+                          alt="Crux Studios"
+                          width={28}
+                          height={28}
+                          style={{
+                            display: "block",
+                            borderRadius: "50%",
+                            backgroundColor: "#121417",
+                          }}
+                        />
                       </td>
                       <td style={{ verticalAlign: "middle" }}>
-                        <Text style={s.senderName}>Suprateek Yawagal</Text>
-                        <Text style={s.senderRole}>Studio Lead &amp; Full-Stack Developer</Text>
+                        <Text style={s.brandTitle}>Crux Studios</Text>
                       </td>
                     </tr>
                   </table>
-                </Section>
+                </td>
+                <td align="right" style={{ verticalAlign: "middle", textAlign: "right" }}>
+                  <Text style={s.headerMeta}>Direct Message</Text>
+                </td>
+              </tr>
+            </table>
+          </Section>
 
-                {/* Footer */}
-                <Hr style={s.footerRule} />
-                <Section style={s.footer} className="mobile-pad">
+          {/* Cyan accent separator */}
+          <div style={s.accentBar} />
+
+          {/* Main Body */}
+          <Section style={s.mainSection}>
+            <Heading as="h1" style={s.greetingHeading}>
+              Hi {recipientName},
+            </Heading>
+
+            {paragraphs.map((p, i) => (
+              <Text key={i} style={s.paragraphText}>
+                {p}
+              </Text>
+            ))}
+          </Section>
+
+          {/* Sender Signature */}
+          <Section style={s.signatureSection}>
+            <Hr style={s.signatureDivider} />
+            <table cellPadding="0" cellSpacing="0" border={0}>
+              <tr>
+                <td style={{ width: "40px", verticalAlign: "middle", paddingRight: "14px" }}>
                   <table
-                    width="100%"
                     cellPadding="0"
                     cellSpacing="0"
                     border={0}
-                    style={{ width: "100%" }}
+                    style={s.avatarBadgeTable}
                   >
                     <tr>
-                      <td align="left" style={{ verticalAlign: "top" }}>
-                        <Text style={s.footerBrand}>Crux Studios</Text>
-                        <Text style={s.footerSub}>Bangalore, India</Text>
-                      </td>
-                      <td align="right" style={{ verticalAlign: "top", textAlign: "right" }}>
-                        <Link href={SITE_URL} style={s.footerLink}>
-                          Website
-                        </Link>
-                        <span style={{ color: "#8E99A0", padding: "0 6px" }}>·</span>
-                        <Link href="mailto:contact@cruxstudios.dev" style={s.footerLink}>
-                          contact@cruxstudios.dev
-                        </Link>
+                      <td align="center" style={s.avatarBadgeTd}>
+                        SY
                       </td>
                     </tr>
                   </table>
-                  <Text style={s.footerDisclaimer}>
-                    Crux Studios · Custom Web &amp; Mobile App Development.
-                  </Text>
-                </Section>
+                </td>
+                <td style={{ verticalAlign: "middle" }}>
+                  <Text style={s.senderName}>Suprateek Yawagal</Text>
+                  <Text style={s.senderRole}>Studio Lead &amp; Full-Stack Developer</Text>
+                </td>
+              </tr>
+            </table>
+          </Section>
 
-              </Container>
-            </td>
-          </tr>
-        </table>
+          {/* Footer */}
+          <Hr style={s.footerRule} />
+          <Section style={s.footer}>
+            <table
+              width="100%"
+              cellPadding="0"
+              cellSpacing="0"
+              border={0}
+              style={{ width: "100%" }}
+            >
+              <tr>
+                <td align="left" style={{ verticalAlign: "top" }}>
+                  <Text style={s.footerBrand}>Crux Studios</Text>
+                  <Text style={s.footerSub}>Bangalore, India</Text>
+                </td>
+                <td align="right" style={{ verticalAlign: "top", textAlign: "right" }}>
+                  <Link href={SITE_URL} style={s.footerLink}>
+                    Website
+                  </Link>
+                  <span style={{ color: "#8E99A0", padding: "0 6px" }}>·</span>
+                  <Link href="mailto:contact@cruxstudios.dev" style={s.footerLink}>
+                    contact@cruxstudios.dev
+                  </Link>
+                </td>
+              </tr>
+            </table>
+            <Text style={s.footerDisclaimer}>
+              Crux Studios · Custom Web &amp; Mobile App Development.
+            </Text>
+          </Section>
+
+        </Container>
       </Body>
     </Html>
   );
@@ -242,102 +184,101 @@ const BORDER = "#E8ECEF";
 
 const s: Record<string, React.CSSProperties> = {
   body: {
-    backgroundColor: "#EDF1F4",
+    backgroundColor: "#ffffff",
     fontFamily: FONT,
-    margin: "0",
+    margin: "0 auto",
     padding: "0",
     width: "100%",
   },
   container: {
     backgroundColor: "#ffffff",
-    borderRadius: "14px",
-    borderTop: `3px solid ${CYAN}`,
-    borderBottom: `3px solid ${CYAN}`,
-    borderLeft: `1px solid ${BORDER}`,
-    borderRight: `1px solid ${BORDER}`,
     margin: "0 auto",
-    maxWidth: "560px",
+    maxWidth: "600px",
     width: "100%",
-    overflow: "hidden",
   },
   header: {
-    borderBottom: `1px solid ${BORDER}`,
-    padding: "16px 28px",
+    padding: "24px 20px 20px",
+    backgroundColor: "#ffffff",
   },
   brandTitle: {
     color: DARK,
-    fontSize: "14px",
+    fontSize: "16px",
     fontWeight: "700",
-    letterSpacing: "-0.2px",
+    letterSpacing: "-0.3px",
     margin: "0",
     lineHeight: "1",
   },
   headerMeta: {
-    color: "#8E99A0",
-    fontSize: "10px",
+    color: SLATE,
+    fontSize: "11px",
     fontWeight: "600",
-    letterSpacing: "0.8px",
+    letterSpacing: "1px",
     lineHeight: "1",
     margin: "0",
     textTransform: "uppercase",
     whiteSpace: "nowrap",
   },
+  accentBar: {
+    backgroundColor: CYAN,
+    height: "3px",
+    width: "100%",
+  },
   mainSection: {
-    padding: "28px 28px 8px",
+    padding: "28px 20px 10px",
   },
   greetingHeading: {
     color: DARK,
-    fontSize: "20px",
+    fontSize: "22px",
     fontWeight: "700",
-    letterSpacing: "-0.3px",
+    letterSpacing: "-0.4px",
     lineHeight: "1.3",
-    margin: "0 0 16px",
+    margin: "0 0 20px",
   },
   paragraphText: {
     color: "#2C3437",
-    fontSize: "14.5px",
+    fontSize: "15px",
     lineHeight: "1.65",
-    margin: "0 0 16px",
+    margin: "0 0 18px",
   },
   signatureSection: {
-    padding: "12px 28px 0",
+    padding: "16px 20px 0",
   },
   signatureDivider: {
     borderColor: BORDER,
-    margin: "0 0 20px",
+    margin: "0 0 22px",
   },
   avatarBadgeTable: {
-    width: "38px",
-    height: "38px",
-    borderRadius: "19px",
+    width: "42px",
+    height: "42px",
+    borderRadius: "21px",
     backgroundColor: DARK,
     borderCollapse: "separate" as const,
   },
   avatarBadgeTd: {
-    width: "38px",
-    height: "38px",
+    width: "42px",
+    height: "42px",
     textAlign: "center" as const,
     verticalAlign: "middle" as const,
     color: CYAN,
-    fontSize: "12px",
+    fontSize: "13px",
     fontWeight: "700",
     fontFamily: FONT,
     lineHeight: "1",
   },
   senderName: {
     color: DARK,
-    fontSize: "14px",
+    fontSize: "15px",
     fontWeight: "700",
     margin: "0 0 2px",
   },
   senderRole: {
     color: SLATE,
-    fontSize: "12px",
+    fontSize: "13px",
     margin: "0",
   },
   footerRule: {
     borderColor: BORDER,
-    margin: "24px 28px 0",
+    margin: "28px 20px 0",
   },
   footer: {
     padding: "24px 40px 32px",
