@@ -259,7 +259,7 @@
   align-items: center;
   pointer-events: none;
   user-select: none;
-  margin: clamp(36px, 5vw, 64px) 0 clamp(10px, 1.8vw, 22px);
+  margin: clamp(16px, 2.2vw, 32px) 0 clamp(36px, 4.5vw, 64px);
   padding: 0 10px;
 }
 
@@ -267,25 +267,37 @@
   font-family: var(--font-brand-display);
   font-weight: 800;
   font-size: clamp(50px, 12.5vw, 170px);
-  line-height: 1.02;
+  line-height: 1;
   letter-spacing: -0.035em;
   color: #000000;
   white-space: nowrap;
   text-align: center;
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
+  display: block;
 }
 
 .x-brand-accent {
   color: var(--color-electric-cyan);
   position: relative;
   display: inline-block;
+  vertical-align: baseline;
+  line-height: 1;
+  margin: 0 0.015em;
+}
+
+.giant-x-svg {
+  display: inline-block;
+  height: 1.02em;
+  width: auto;
+  aspect-ratio: 322 / 327;
+  color: var(--color-electric-cyan);
+  vertical-align: -0.255em;
+  filter: drop-shadow(0 0 24px rgba(0, 240, 255, 0.45));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
 }
 
 .wordmark-space-gap {
   display: inline-block;
-  width: clamp(12px, 2.8vw, 42px);
+  width: clamp(20px, 4vw, 68px);
 }
 
 /* Scroll Reveal Animations */

@@ -687,7 +687,7 @@
 
   .footer-giant-wordmark-container {
     height: auto;
-    margin: 28px 0 10px;
+    margin: 16px 0 24px;
   }
 
   .giant-wordmark-text {
@@ -696,7 +696,7 @@
   }
 
   .wordmark-space-gap {
-    width: clamp(10px, 2.5vw, 20px);
+    width: clamp(16px, 3.5vw, 32px);
   }
 }
 
@@ -752,7 +752,7 @@
   }
   .footer-giant-wordmark-container {
     height: auto;
-    margin: 22px 0 8px;
+    margin: 12px 0 20px;
   }
   .giant-wordmark-text {
     font-size: clamp(30px, 9.5vw, 42px);
