@@ -1,0 +1,174 @@
+/* ==============================================================
+   SECTION: CAPABILITY & WHAT WE BUILD (SERVICES)
+   ============================================================== */
+.section-services {
+  padding: clamp(60px, 8vw, 140px) 0;
+  position: relative;
+  background: #FFFFFF;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 3.5vw, 48px);
+  margin-bottom: clamp(50px, 7vw, 80px);
+  align-items: start;
+  justify-items: center;
+}
+
+.service-card {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: clamp(310px, 26vw, 380px);
+  padding: clamp(26px, 2.6vw, 40px) clamp(20px, 2vw, 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.25s ease;
+  margin: 0 auto;
+}
+
+/* Grey Circular Cards (Sleek Matte Graphite Slate) */
+.service-card-grey {
+  background: linear-gradient(145deg, #505A6B 0%, #343C4A 100%);
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.16), 0 2px 8px rgba(0, 0, 0, 0.06);
+  color: #FFFFFF;
+}
+
+.service-card-grey .service-title {
+  color: #FFFFFF;
+}
+
+.service-card-grey .service-desc {
+  color: #E2E8F0;
+}
+
+.service-card-grey .service-icon-box {
+  color: #FFFFFF;
+}
+
+/* Black Circular Cards (Rich Obsidian Slate) */
+.service-card-black {
+  background: linear-gradient(145deg, #181C26 0%, #0A0C10 100%);
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.32), 0 2px 8px rgba(0, 0, 0, 0.12);
+  color: #FFFFFF;
+}
+
+.service-card-black .service-title {
+  color: #FFFFFF;
+}
+
+.service-card-black .service-desc {
+  color: #94A3B8;
+}
+
+.service-card-black .service-icon-box {
+  color: #00F0FF;
+}
+
+/* Desktop Staggering: 
+   Row 1: Straight (High) - Down (Middle) - Straight (High)
+   Row 2: Straight (Low) - Up (Middle) - Straight (Low)
+*/
+@media (min-width: 901px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 2.5vw, 44px);
+    align-items: start;
+    justify-items: center;
+  }
+
+  /* Top Row: Straight (High) - Down (Center) - Straight (High) */
+  .service-pos-col1-top,
+  .service-pos-col3-top {
+    margin-top: 0;
+  }
+
+  .service-pos-col2-top {
+    margin-top: clamp(50px, 6vw, 90px);
+  }
+
+  /* Bottom Row: Straight (Low) - Up (Center) - Straight (Low) */
+  .service-pos-col1-bottom,
+  .service-pos-col3-bottom {
+    margin-top: clamp(80px, 9vw, 140px);
+  }
+
+  .service-pos-col2-bottom {
+    margin-top: clamp(16px, 2vw, 30px);
+  }
+
+  .service-card:hover {
+    transform: scale(1.06) translateY(-6px);
+    box-shadow: 0 34px 76px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1180px) {
+  .service-card {
+    max-width: clamp(285px, 27vw, 330px);
+    padding: 22px 18px;
+  }
+  
+  .service-title {
+    font-size: 16.5px;
+    margin-bottom: 6px;
+  }
+
+  .service-desc {
+    font-size: 12.5px;
+    line-height: 1.38;
+  }
+}
+
+.service-icon-box {
+  width: auto;
+  height: auto;
+  background: transparent !important;
+  border: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-icon-box svg {
+  width: 30px;
+  height: 30px;
+}
+
+.service-card:hover .service-icon-box {
+  transform: translateY(-2px) scale(1.12);
+}
+
+.service-title {
+  font-family: var(--font-heading);
+  font-size: clamp(17px, 1.5vw, 20px);
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.22;
+  text-align: center;
+}
+
+.service-desc {
+  font-size: clamp(12.5px, 1.08vw, 14px);
+  line-height: 1.42;
+  margin: 0;
+  text-align: center;
+  max-width: 92%;
+}
+
+.section-bottom-cta {
+  display: flex;
+  justify-content: center;
+}

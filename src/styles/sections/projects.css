@@ -1,0 +1,358 @@
+/* ==============================================================
+   SECTION: SHIPPED & IN-PRODUCTION PROJECTS (ATMOSPHERIC SHOWCASE)
+   The Heart of Crux: Live Commercial Products & Production Builds
+   ============================================================== */
+.section-projects-featured {
+  padding: clamp(40px, 6vw, 60px) 0 clamp(60px, 8vw, 100px);
+  background: #FFFFFF;
+}
+
+.projects-atmospheric-card {
+  position: relative;
+  background: #0B0D11;
+  border-radius: clamp(24px, 3.5vw, 36px);
+  padding: clamp(36px, 6vw, 72px) clamp(20px, 4vw, 50px);
+  color: #FFFFFF;
+  overflow: hidden;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.projects-card-backdrop-mesh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/assets/bg-projects-mesh.webp');
+  background-size: cover;
+  background-position: center 25%;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 0;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.projects-card-ambient-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x, 70%) var(--mouse-y, 30%), rgba(0, 240, 255, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.14) 0%, transparent 55%),
+    radial-gradient(circle at 85% 75%, rgba(147, 51, 234, 0.12) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+  transition: background 0.15s ease-out;
+}
+
+.projects-matrix-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.projects-content-layer {
+  position: relative;
+  z-index: 2;
+}
+
+.pulse-dot-cyan {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00F0FF;
+  box-shadow: 0 0 10px #00F0FF;
+  flex-shrink: 0;
+  animation: pulse-beacon 2s infinite ease-in-out;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #00F0FF 0%, #38BDF8 50%, #34D399 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Category Filter Bar */
+.projects-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94A3B8;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 100px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.filter-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+}
+
+.filter-pill.active {
+  background: rgba(0, 240, 255, 0.15);
+  color: #00F0FF;
+  border-color: rgba(0, 240, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.filter-count {
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 100px;
+  color: inherit;
+}
+
+.filter-pill.active .filter-count {
+  background: rgba(0, 240, 255, 0.3);
+  color: #FFFFFF;
+}
+
+/* Flagship Project Card (Dark Glassmorphism) */
+.flagship-project-card-dark {
+  background: rgba(18, 22, 29, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: clamp(20px, 2.5vw, 28px);
+  padding: clamp(24px, 3.5vw, 36px);
+  margin: 32px 0 clamp(24px, 3.5vw, 36px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease, opacity 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.flagship-project-card-dark:hover {
+  border-color: rgba(0, 240, 255, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 35px rgba(0, 240, 255, 0.12);
+}
+
+.flagship-badge-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Shipped Projects Dark Grid */
+.projects-dark-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 2.2vw, 24px);
+  margin-bottom: 36px;
+}
+
+.project-card-dark {
+  background: rgba(18, 22, 28, 0.76);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 22px 24px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, opacity 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-dark:hover {
+  transform: translateY(-5px) scale(1.01);
+  border-color: rgba(0, 240, 255, 0.45);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 240, 255, 0.12);
+}
+
+.project-card-dark.card-hidden {
+  display: none !important;
+}
+
+.project-card-header {
+  margin-bottom: 8px;
+}
+
+.project-num-dark {
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #00F0FF;
+  opacity: 0.85;
+}
+
+.project-name-dark {
+  font-family: var(--font-heading);
+  font-size: clamp(19px, 2vw, 22px);
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.project-category-tag {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #38BDF8;
+  margin-bottom: 4px;
+  letter-spacing: 0.3px;
+}
+
+.project-tagline-dark {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #F1F5F9;
+  margin-bottom: 8px;
+}
+
+.project-desc-dark {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #94A3B8;
+  margin-bottom: 14px;
+}
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.tech-pill-mini {
+  font-size: 11px;
+  font-weight: 500;
+  color: #94A3B8;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.project-footer-dark {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 12px;
+  margin-top: auto;
+  gap: 12px;
+}
+
+.project-view-link-dark {
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+  transition: color 0.2s ease;
+}
+
+.project-card-dark:hover .project-view-link-dark {
+  color: #00F0FF;
+}
+
+.project-link-badge-dark {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card-dark:hover .project-link-badge-dark {
+  background: #00F0FF;
+  color: #0B0D11;
+  transform: translateX(3px) rotate(45deg);
+}
+
+/* Bottom Projects Pitch Banner */
+.projects-bottom-pitch {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  padding: 24px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pitch-badge {
+  font-size: 11px;
+  font-weight: 800;
+  color: #00F0FF;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.pitch-title {
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.pitch-desc {
+  font-size: 13.5px;
+  color: #94A3B8;
+}
+
+.btn-pitch-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #FFFFFF;
+  color: #0B0D11;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 6px 6px 6px 18px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.25s ease;
+}
+
+.btn-pitch-cta:hover {
+  transform: scale(1.03);
+  background: #00F0FF;
+  color: #0B0D11;
+  box-shadow: 0 0 24px rgba(0, 240, 255, 0.4);
+}

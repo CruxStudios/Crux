@@ -1,0 +1,85 @@
+/* ==============================================================
+   BUTTON & CAPSULE SYSTEM
+   ============================================================== */
+.btn-capsule-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--color-dark);
+  color: var(--color-bg-white);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.3vw, 18px);
+  font-weight: 600;
+  padding: 6px 6px 6px 24px;
+  border-radius: 100px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-capsule-primary:hover {
+  transform: scale(1.02);
+  background: #000000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.btn-capsule-white {
+  background: #FFFFFF;
+  color: var(--color-dark);
+}
+
+.btn-capsule-white:hover {
+  background: #F4F6F8;
+}
+
+.btn-capsule-white .btn-arrow-badge {
+  background: var(--color-dark);
+  color: #FFFFFF;
+}
+
+.btn-arrow-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-bg-white);
+  color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.btn-capsule-primary:hover .btn-arrow-badge {
+  transform: translateX(3px);
+}
+
+.btn-solid-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-white);
+  color: var(--color-dark);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.3vw, 18px);
+  font-weight: 600;
+  padding: 16px 36px;
+  border-radius: 100px;
+  border: 1px solid var(--color-border-subdued);
+  box-shadow: var(--shadow-pill);
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.btn-solid-pill:hover {
+  background: var(--color-bg-neutral);
+  transform: translateY(-1px);
+}
+
+.btn-pill-white {
+  background: var(--color-bg-white);
+  color: var(--color-dark);
+  border: none;
+}
