@@ -696,7 +696,7 @@
   }
 
   .wordmark-space-gap {
-    width: clamp(16px, 3.5vw, 32px);
+    width: clamp(8px, 1.8vw, 16px);
   }
 }
 
