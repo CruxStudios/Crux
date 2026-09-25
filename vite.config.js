@@ -34,5 +34,9 @@ function htmlInject() {
 }
 
 export default defineConfig({
-  plugins: [htmlInject()]
+  plugins: [htmlInject()],
+  server: {
+    port: 5174,
+    host: true
+  }
 });

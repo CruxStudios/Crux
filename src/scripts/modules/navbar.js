@@ -32,15 +32,9 @@ export function initNavbar() {
       window.requestAnimationFrame(() => {
         const scrollY = window.scrollY;
 
-        // Navbar transition
+        // Navbar transition via CSS class to respect light and dark themes
         if (navbar) {
-          if (scrollY > 40) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.08)';
-          } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.9)';
-            navbar.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.04)';
-          }
+          navbar.classList.toggle('scrolled', scrollY > 40);
         }
 
         // Parallax on hero mesh (only when hero is in view)

@@ -2,6 +2,7 @@
 // CRUX STUDIOS - MOTION & INTERACTION ORCHESTRATOR
 // ==============================================================
 
+import { initTheme } from './modules/theme.js';
 import { initHeroText } from './modules/hero-text.js';
 import { initScrollReveal } from './modules/scroll-reveal.js';
 import { initFaqAccordion } from './modules/accordion.js';
@@ -9,7 +10,10 @@ import { initTiltEffects } from './modules/tilt-effects.js';
 import { initNavbar } from './modules/navbar.js';
 import { initCopyClipboard } from './modules/copy-clipboard.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+function init() {
+  // 0. Dark / Light Theme Controller
+  initTheme();
+
   // 1. Hero Title Character Stroke-Draw & Fill Animation
   initHeroText();
 
@@ -27,4 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 6. Floating Cursor Badge & Copy-to-Clipboard
   initCopyClipboard();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
