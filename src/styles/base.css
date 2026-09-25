@@ -8,7 +8,7 @@
   --color-dark-surface: #121417;
   --color-slate-body: #4D585F;
   --color-slate-muted: #8E99A0;
-  --color-gray-subtle: #BABABA;
+  --color-gray-subtle: #CBD5E1;
   --color-bg-neutral: #EDF1F4;
   --color-bg-light-surface: #F8FAFB;
   --color-bg-white: #FFFFFF;
@@ -17,10 +17,10 @@
   --color-glass-pill-hover: rgba(242, 245, 247, 0.85);
   --color-electric-cyan: #00F0FF;
 
-  /* Typography */
-  --font-heading: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-brand-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography: Official Google Typefaces */
+  --font-heading: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Google Sans Text', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-brand-display: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Containers & Spacing */
   --container-max-wide: min(1380px, 94vw);
@@ -64,8 +64,9 @@ body {
 
 /* Subtle Geometric Dot Grid Matrix */
 body.has-grid-bg {
-  background-image: radial-gradient(rgba(29, 29, 29, 0.06) 1.2px, transparent 1.2px);
-  background-size: 28px 28px;
+  background-color: #FFFFFF;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.2) 1.3px, transparent 1.3px);
+  background-size: 26px 26px;
   background-position: center top;
 }
 

@@ -34,14 +34,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/bg-light-mesh.webp');
+  background-image: var(--hero-bg-image, url('/assets/hero-bg-corian.jpg'));
   background-size: cover;
-  background-position: center top;
+  background-position: center 25%;
   background-repeat: no-repeat;
-  opacity: 0.75;
-  filter: contrast(1.18) brightness(1.02);
-  mask-image: radial-gradient(ellipse 75% 55% at 50% 30%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0.75) 65%, transparent 95%);
-  -webkit-mask-image: radial-gradient(ellipse 75% 55% at 50% 30%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0.75) 65%, transparent 95%);
+  opacity: 0.72;
+  filter: contrast(1.06) brightness(1.02);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 32%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0.7) 65%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 32%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0.7) 65%, transparent 95%);
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   will-change: transform;
@@ -134,9 +134,9 @@
   font-size: clamp(16px, 1.6vw, 19.5px);
   line-height: 1.55;
   font-weight: 500;
-  color: var(--color-slate-body);
+  color: #2C353D;
   max-width: 780px;
-  margin-bottom: 36px;
+  margin-bottom: clamp(46px, 5vw, 62px);
 }
 
 .hero-btn-group {
@@ -144,8 +144,23 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
+  margin-top: 8px;
   margin-bottom: clamp(44px, 5.5vw, 64px);
   flex-wrap: wrap;
+}
+
+.hero-btn-group .btn-solid-pill {
+  background: rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: var(--color-dark);
+}
+
+.hero-btn-group .btn-solid-pill:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.22);
+  color: #000000;
 }
 
 .hero-pillars-row {
@@ -433,6 +448,10 @@
 
 .text-purple {
   color: #7C3AED;
+}
+
+.text-cyan {
+  color: #0284C7;
 }
 
 .mockup-app-preview {

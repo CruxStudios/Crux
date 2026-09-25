@@ -3,7 +3,7 @@
    ============================================================== */
 .section-team-featured {
   padding: clamp(40px, 6vw, 60px) 0 clamp(60px, 8vw, 100px);
-  background: #FFFFFF;
+  background: transparent;
 }
 
 .team-atmospheric-card {
@@ -46,6 +46,14 @@
 .team-content-layer {
   position: relative;
   z-index: 2;
+}
+
+.team-atmospheric-card .section-subhead,
+.team-atmospheric-card .text-gray {
+  color: #CBD5E1 !important;
+  opacity: 0.95;
+  font-weight: 400;
+  max-width: 680px;
 }
 
 .team-leads-grid {

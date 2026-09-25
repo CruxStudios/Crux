@@ -3,40 +3,36 @@
    ============================================================== */
 .section-architecture {
   padding: clamp(60px, 8vw, 100px) 0;
-  background: #FFFFFF;
+  background: transparent;
 }
 
-.architecture-flow-wrapper {
-  background: #FAFCFD;
-  border: 1px solid var(--color-border-subdued);
-  border-radius: clamp(20px, 3vw, 30px);
-  padding: clamp(24px, 4vw, 50px) clamp(20px, 3vw, 40px);
-  box-shadow: var(--shadow-card);
-}
 
 .architecture-grid {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-  gap: 16px;
+  gap: clamp(10px, 1.3vw, 16px);
 }
 
 .arch-node {
   flex: 1;
   background: #FFFFFF;
-  border: 1px solid var(--color-border-subdued);
+  border: 1.5px solid rgba(15, 23, 42, 0.14);
   border-radius: 20px;
-  padding: clamp(20px, 2.5vw, 30px) clamp(16px, 2vw, 24px);
+  padding: clamp(20px, 2.5vw, 30px) clamp(10px, 1.4vw, 18px);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  min-width: 0;
 }
 
 .arch-node:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
+  border-color: rgba(15, 23, 42, 0.25);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
 }
 
 .arch-node-highlight {
@@ -83,12 +79,19 @@
 }
 
 .node-pill {
-  font-size: 12px;
+  font-size: clamp(10.5px, 0.9vw, 12px);
   font-weight: 600;
   background: #EDF1F4;
   color: var(--color-dark);
-  padding: 4px 12px;
+  padding: 5px clamp(8px, 1vw, 12px);
   border-radius: 100px;
+  white-space: nowrap;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.15px;
+  margin-top: auto;
 }
 
 .highlight-pill {
@@ -103,6 +106,7 @@
   position: relative;
   color: var(--color-slate-body);
   flex-shrink: 0;
+  align-self: center;
 }
 
 .signal-dot {

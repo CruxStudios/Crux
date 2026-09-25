@@ -3,7 +3,7 @@
    ============================================================== */
 .section-faqs {
   padding: clamp(60px, 8vw, 120px) 0;
-  background: #FFFFFF;
+  background: transparent;
   border-top: 1px solid var(--color-border-subdued);
 }
 

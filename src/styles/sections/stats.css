@@ -3,7 +3,7 @@
    ============================================================== */
 .section-stats {
   padding: clamp(60px, 8vw, 120px) 0;
-  background: #FAFCFD;
+  background: transparent;
 }
 
 .stats-grid-5 {

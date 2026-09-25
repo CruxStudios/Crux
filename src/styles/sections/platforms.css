@@ -3,7 +3,7 @@
    ============================================================== */
 .section-platforms {
   padding: clamp(60px, 8vw, 120px) 0;
-  background: #FFFFFF;
+  background: transparent;
 }
 
 .platform-split-grid {

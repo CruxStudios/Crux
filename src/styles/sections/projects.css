@@ -4,7 +4,7 @@
    ============================================================== */
 .section-projects-featured {
   padding: clamp(40px, 6vw, 60px) 0 clamp(60px, 8vw, 100px);
-  background: #FFFFFF;
+  background: transparent;
 }
 
 .projects-atmospheric-card {

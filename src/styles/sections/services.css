@@ -4,7 +4,7 @@
 .section-services {
   padding: clamp(60px, 8vw, 140px) 0;
   position: relative;
-  background: #FFFFFF;
+  background: transparent;
 }
 
 .services-grid {
