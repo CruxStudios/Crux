@@ -1,0 +1,825 @@
+/* ==============================================================
+   CRUX STUDIOS - DARK MODE ARCHITECTURE & COMPONENT INVERSIONS
+   Designed for rich obsidian depth, refined contrast & luminance
+   ============================================================== */
+
+/* --- 1. Global Dark Tokens & Page Background --- */
+[data-theme="dark"] {
+  --color-dark: #FFFFFF;
+  --color-dark-surface: #0E1217;
+  --color-slate-body: #CBD5E1;
+  --color-slate-muted: #94A3B8;
+  --color-gray-subtle: #CBD5E1;
+  --color-bg-white: #090B0E;
+  --color-bg-neutral: rgba(255, 255, 255, 0.06);
+  --color-bg-light-surface: #0E1218;
+  --color-border-subdued: rgba(255, 255, 255, 0.1);
+  --color-border-dark: rgba(255, 255, 255, 0.16);
+  --color-glass-pill-hover: rgba(255, 255, 255, 0.08);
+
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow-mockup: 0 40px 100px rgba(0, 0, 0, 0.7);
+  --shadow-pill: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] body {
+  background-color: #090B0E;
+  color: #F8FAFC;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] body.has-grid-bg {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.065) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+}
+
+/* Smooth transition for theme switching */
+body,
+.navbar-island,
+.stat-card,
+.arch-node,
+.accordion-item,
+.platform-tag,
+.mockup-glass-card,
+.final-cta-banner,
+.giant-wordmark-text {
+  transition: background 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- 2. Typography & Headings in Dark Mode --- */
+[data-theme="dark"] .section-title {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .section-subhead {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .section-badge {
+  background: rgba(255, 255, 255, 0.08);
+  color: #00F0FF;
+  border: 1px solid rgba(0, 240, 255, 0.25);
+}
+
+/* --- 3. Theme Toggle Button Styling (Light & Dark) --- */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: transparent;
+  color: #4D585F;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #121417;
+  border-color: rgba(0, 0, 0, 0.16);
+  transform: scale(1.05);
+}
+
+.theme-toggle-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-icon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+/* In light mode: Sun is rotated away, Moon is visible (ready to switch to dark) */
+.icon-sun {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+}
+
+.icon-moon {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+/* In dark mode: Pure minimal monochrome, soft silver icon, zero garish cyan */
+[data-theme="dark"] .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #CBD5E1;
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  box-shadow: none;
+  transform: scale(1.05);
+}
+
+[data-theme="dark"] .navbar-theme-toggle {
+  background: rgba(14, 18, 23, 0.92);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  color: #E2E8F0;
+}
+
+[data-theme="dark"] .navbar-theme-toggle:hover {
+  transform: scale(1.08);
+  background: rgba(24, 30, 42, 0.98);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .navbar-theme-toggle:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+[data-theme="dark"] .icon-sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+[data-theme="dark"] .icon-moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.6);
+}
+
+/* Mobile Theme Row */
+.mobile-theme-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 14px 12px;
+  border-bottom: 1px solid var(--color-border-subdued);
+  margin-bottom: 4px;
+}
+
+.mobile-theme-label {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-slate-body);
+}
+
+[data-theme="dark"] .mobile-theme-label {
+  color: #94A3B8;
+}
+
+/* --- 4. Floating Navbar & Mobile Menu in Dark Mode --- */
+[data-theme="dark"] .navbar-island {
+  background: rgba(14, 18, 24, 0.88);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .navbar-island.scrolled {
+  background: rgba(10, 13, 19, 0.95);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .brand-name-text {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .nav-pill-link {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .nav-pill-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+/* Nav CTA Capsule: Reverted High-Contrast White Pill in Dark Mode */
+[data-theme="dark"] .nav-cta-capsule {
+  background: #FFFFFF;
+  color: #090B0E;
+}
+
+[data-theme="dark"] .nav-cta-capsule:hover {
+  background: #F1F5F9;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+}
+
+[data-theme="dark"] .nav-cta-capsule .capsule-icon-badge {
+  background: #090B0E;
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .mobile-toggle span {
+  background: #FFFFFF;
+}
+
+[data-theme="dark"] .mobile-drawer {
+  background: rgba(14, 18, 24, 0.98);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .mobile-link {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .mobile-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .mobile-cta-btn {
+  background: #FFFFFF;
+  color: #090B0E;
+}
+
+/* --- 5. Hero Section in Dark Mode --- */
+[data-theme="dark"] .hero-title {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .stroke-char {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #FFFFFF;
+  animation-name: strokeDrawAndFillDark;
+}
+
+@keyframes strokeDrawAndFillDark {
+  0% {
+    opacity: 0;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.2);
+    transform: translateY(6px);
+  }
+  30% {
+    opacity: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px #FFFFFF;
+    transform: translateY(0);
+  }
+  60% {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #FFFFFF;
+  }
+  100% {
+    opacity: 1;
+    color: #FFFFFF;
+    -webkit-text-stroke: 0px transparent;
+    transform: translateY(0);
+  }
+}
+
+[data-theme="dark"] .hero-subhead {
+  color: #CBD5E1;
+}
+
+/* Hero Primary CTA: Reverted to Crisp White Capsule with Dark Arrow */
+[data-theme="dark"] .hero-btn-group .btn-capsule-primary {
+  background: #FFFFFF;
+  color: #090B0E;
+}
+
+[data-theme="dark"] .hero-btn-group .btn-capsule-primary:hover {
+  background: #F1F5F9;
+  box-shadow: 0 8px 28px rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .hero-btn-group .btn-capsule-primary .btn-arrow-badge {
+  background: #090B0E;
+  color: #FFFFFF;
+}
+
+/* Hero Secondary Pill Button: Sleek Translucent Dark Glass */
+[data-theme="dark"] .hero-btn-group .btn-solid-pill {
+  background: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+[data-theme="dark"] .hero-btn-group .btn-solid-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .hero-pillar-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .hero-ambient-spotlight {
+  background: radial-gradient(ellipse at center, rgba(0, 240, 255, 0.12) 0%, rgba(99, 102, 241, 0.06) 45%, rgba(0, 0, 0, 0) 75%);
+  opacity: 0.85;
+}
+
+[data-theme="dark"] .hero-mesh-image {
+  filter: contrast(1.15) brightness(0.6) hue-rotate(185deg);
+  opacity: 0.6;
+}
+
+/* Hero 3D Mockup Card: Inverted from White Canvas to Sleek Dark SaaS Studio */
+[data-theme="dark"] .mockup-glass-card {
+  background: rgba(14, 18, 25, 0.92);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 240, 255, 0.05);
+}
+
+[data-theme="dark"] .mockup-window-header {
+  background: rgba(10, 13, 19, 0.96);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .window-url-bar {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .mockup-sidebar {
+  background: rgba(10, 13, 19, 0.95);
+  border-right-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .sidebar-brand {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .sidebar-brand .mini-logo {
+  background: #00F0FF;
+  color: #090B0E;
+}
+
+[data-theme="dark"] .sidebar-item {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .sidebar-item.active {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .mockup-main {
+  background: rgba(14, 18, 25, 0.96);
+}
+
+[data-theme="dark"] .stat-mini-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .mini-label {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .mini-value {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .text-green {
+  color: #34D399;
+}
+
+[data-theme="dark"] .text-blue {
+  color: #38BDF8;
+}
+
+[data-theme="dark"] .text-cyan {
+  color: #00F0FF;
+}
+
+[data-theme="dark"] .mockup-app-preview {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .mockup-banner h4 {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .mockup-banner p {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .badge-pill-light {
+  background: rgba(0, 240, 255, 0.12);
+  color: #00F0FF;
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+[data-theme="dark"] .mockup-feature-box {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .mockup-feature-box p {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .box-icon {
+  background: rgba(255, 255, 255, 0.08);
+  color: #00F0FF;
+}
+
+/* --- 6. Section 2: Shipped Work Showcase in Dark Mode --- */
+[data-theme="dark"] .section-projects-featured {
+  background: transparent;
+}
+
+[data-theme="dark"] .projects-atmospheric-card {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.65), 0 0 35px rgba(0, 240, 255, 0.06);
+}
+
+/* --- 7. Section 3: Why Crux Stats Matrix (REVERTED ALTERNATION) --- */
+[data-theme="dark"] .section-stats {
+  background: transparent;
+}
+
+/* Baseline Cards (Cards 1, 3, 5): Revert to Sleek Obsidian Cards */
+[data-theme="dark"] .stat-card.stat-light {
+  background: rgba(18, 22, 30, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #FFFFFF;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .stat-card.stat-light .stat-number {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .stat-card.stat-light .stat-title {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .stat-card.stat-light .stat-desc {
+  color: #94A3B8;
+}
+
+/* Highlight Cards (Cards 2, 4, 6): Revert to Standout High-Contrast White Cards */
+[data-theme="dark"] .stat-card.stat-dark {
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  color: #0B0D11;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .stat-card.stat-dark .stat-number {
+  color: #0B0D11;
+}
+
+[data-theme="dark"] .stat-card.stat-dark .stat-title {
+  color: #0B0D11;
+}
+
+[data-theme="dark"] .stat-card.stat-dark .stat-desc {
+  color: #334155;
+}
+
+/* --- 8. Section 4: What We Build (Services) Circular Cards in Dark Mode --- */
+[data-theme="dark"] .section-services {
+  background: transparent;
+}
+
+[data-theme="dark"] .service-card-grey {
+  background: linear-gradient(145deg, #2D3748 0%, #1A202C 100%);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .service-card-black {
+  background: linear-gradient(145deg, #151C28 0%, #0B0E16 100%);
+  border-color: rgba(0, 240, 255, 0.35);
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.65), 0 0 25px rgba(0, 240, 255, 0.1);
+}
+
+[data-theme="dark"] .service-card-black .service-icon-box {
+  color: #00F0FF;
+}
+
+/* --- 9. Section 5: Cross-Platform in Dark Mode --- */
+[data-theme="dark"] .section-platforms {
+  background: transparent;
+}
+
+[data-theme="dark"] .platform-tag {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.09);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .platform-tag svg {
+  color: #00F0FF;
+}
+
+[data-theme="dark"] .platform-tag:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 240, 255, 0.35);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .platform-action .btn-capsule-primary {
+  background: #FFFFFF;
+  color: #0B0D11;
+}
+
+[data-theme="dark"] .platform-action .btn-capsule-primary:hover {
+  background: #F1F5F9;
+  box-shadow: 0 8px 28px rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .platform-action .btn-capsule-primary .btn-arrow-badge {
+  background: #0B0D11;
+  color: #FFFFFF;
+}
+
+/* --- 10. Section 6: Personas (Frosted Glass Overlay) in Dark Mode --- */
+[data-theme="dark"] .section-personas {
+  background: transparent;
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .persona-frost-card {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Luxury Dark Frosted Glass Overlay */
+[data-theme="dark"] .persona-card-frost-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(12, 16, 24, 0.90) 0%,
+    rgba(12, 16, 24, 0.65) 48%,
+    rgba(12, 16, 24, 0.94) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .frost-persona-title {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .frost-persona-desc {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .frost-content-bottom {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .frost-stat-number {
+  color: #00F0FF;
+}
+
+[data-theme="dark"] .frost-stat-label {
+  color: #94A3B8;
+}
+
+/* --- 11. Section 7: Process Flow (REVERTED STEP 2 HIGHLIGHT) --- */
+[data-theme="dark"] .section-architecture {
+  background: transparent;
+}
+
+
+/* Steps 1 & 3: Revert to Sleek Dark Nodes */
+[data-theme="dark"] .arch-node {
+  background: rgba(20, 25, 34, 0.9);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .arch-node h4 {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .arch-node p {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .arch-node .node-icon {
+  background: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .arch-node .node-pill {
+  background: rgba(255, 255, 255, 0.08);
+  color: #94A3B8;
+}
+
+/* Step 2 (Highlight): Revert to Standout High-Contrast White Node */
+[data-theme="dark"] .arch-node-highlight {
+  background: #FFFFFF !important;
+  border: 1px solid #FFFFFF !important;
+  color: #0B0D11 !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme="dark"] .arch-node-highlight h4 {
+  color: #0B0D11 !important;
+}
+
+[data-theme="dark"] .arch-node-highlight p {
+  color: #334155 !important;
+}
+
+[data-theme="dark"] .arch-node-highlight .node-icon.highlight-icon {
+  background: #0B0D11 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .arch-node-highlight .node-pill.highlight-pill {
+  background: rgba(0, 0, 0, 0.08) !important;
+  color: #0B0D11 !important;
+}
+
+[data-theme="dark"] .arch-connector {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- 12. Section 8: Team Section in Dark Mode --- */
+[data-theme="dark"] .section-team-featured {
+  background: transparent;
+}
+
+[data-theme="dark"] .team-atmospheric-card {
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
+}
+
+/* --- 13. Section 9: FAQs in Dark Mode --- */
+[data-theme="dark"] .section-faqs {
+  background: transparent;
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+/* FAQ Support Card: Glowing Obsidian Card */
+[data-theme="dark"] .faq-support-card {
+  background: linear-gradient(145deg, #151C28 0%, #0D121B 100%);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 240, 255, 0.08);
+}
+
+[data-theme="dark"] .faq-support-card .btn-capsule-primary {
+  background: #FFFFFF;
+  color: #0B0D11;
+}
+
+[data-theme="dark"] .faq-support-card .btn-capsule-primary:hover {
+  background: #F1F5F9;
+}
+
+[data-theme="dark"] .faq-support-card .btn-arrow-badge {
+  background: #0B0D11;
+  color: #FFFFFF;
+}
+
+/* Accordion Items: Inverted from Light to Sleek Dark Cards */
+[data-theme="dark"] .accordion-item {
+  background: rgba(18, 22, 30, 0.7);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .accordion-question {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .accordion-icon {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .accordion-item.active {
+  border-color: rgba(0, 240, 255, 0.4);
+}
+
+[data-theme="dark"] .accordion-item.active .accordion-icon {
+  background: #00F0FF;
+  color: #0B0D11;
+}
+
+[data-theme="dark"] .accordion-content p {
+  color: #94A3B8;
+}
+
+/* --- 14. Section 10: Final CTA & Giant Wordmark (CRITICAL INVERSION) --- */
+[data-theme="dark"] .footer-wrapper {
+  background: transparent;
+}
+
+[data-theme="dark"] .final-cta-banner {
+  background: linear-gradient(145deg, #131720 0%, #0A0C10 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6), 0 0 50px rgba(0, 240, 255, 0.08);
+}
+
+[data-theme="dark"] .final-cta-banner .btn-capsule-primary {
+  background: #FFFFFF;
+  color: #0B0D11;
+}
+
+[data-theme="dark"] .final-cta-banner .btn-capsule-primary:hover {
+  background: #F1F5F9;
+}
+
+[data-theme="dark"] .final-cta-banner .btn-arrow-badge {
+  background: #0B0D11;
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .final-cta-banner .email-copy-trigger {
+  background: #FFFFFF !important;
+  color: #0B0D11 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .final-cta-banner .email-copy-trigger:hover {
+  background: #F1F5F9 !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .faq-support-card .btn-capsule-primary {
+  background: #FFFFFF;
+  color: #0B0D11;
+}
+
+[data-theme="dark"] .faq-support-card .btn-arrow-badge {
+  background: #0B0D11;
+  color: #FFFFFF;
+}
+
+/* Giant Wordmark: Inverted from Pitch Black to Pure Luminous White with Cyan Glow */
+[data-theme="dark"] .giant-wordmark-text {
+  color: #FFFFFF;
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .giant-x-svg {
+  filter: drop-shadow(0 0 24px rgba(0, 240, 255, 0.7));
+}
+
+/* Minimal Bottom Footer Row */
+[data-theme="dark"] .footer-minimal-row {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .min-brand-title {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .min-location {
+  color: #64748B;
+  border-left-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .footer-min-links a {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .footer-min-links a:hover {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .min-copyright {
+  color: #64748B;
+}
+
+/* --- 15. Mobile Tweaks for Dark Mode --- */
+@media (max-width: 768px) {
+  [data-theme="dark"] .navbar-island {
+    background: rgba(14, 18, 24, 0.94);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  [data-theme="dark"] .mobile-toggle {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  [data-theme="dark"] .mobile-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  [data-theme="dark"] .mobile-theme-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
