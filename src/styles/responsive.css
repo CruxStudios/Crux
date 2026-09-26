@@ -31,7 +31,8 @@
     max-width: 100%;
   }
 
-  .nav-links {
+  .nav-links,
+  .nav-actions {
     display: none;
   }
 

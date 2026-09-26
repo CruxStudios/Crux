@@ -89,24 +89,38 @@
   }
 }
 
-@media (max-width: 868px) {
+@media (max-width: 960px) {
   .navbar-balance-spacer,
   .navbar-theme-toggle {
     display: none !important;
   }
 }
 
-/* Mobile Navbar Theme Toggle: visible only on mobile, sits inside the navbar island */
+/* Mobile Controls Wrapper: groups theme toggle and menu toggle together on the far right */
+.nav-mobile-controls {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 960px) {
+  .nav-mobile-controls {
+    display: flex;
+  }
+}
+
+/* Mobile Navbar Theme Toggle: visible only on mobile, sits inside the navbar island beside menu */
 .mobile-navbar-theme-toggle {
-  display: none; /* hidden on desktop */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.09);
-  background: transparent;
+  background: rgba(0, 0, 0, 0.04);
   cursor: pointer;
   color: #374151;
   padding: 0;
@@ -117,19 +131,13 @@
 }
 
 .mobile-navbar-theme-toggle:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.08);
   border-color: rgba(0, 0, 0, 0.14);
   color: #111827;
 }
 
 .mobile-navbar-theme-toggle:active {
   transform: scale(0.92);
-}
-
-@media (max-width: 868px) {
-  .mobile-navbar-theme-toggle {
-    display: inline-flex;
-  }
 }
 
 .brand-logo {
