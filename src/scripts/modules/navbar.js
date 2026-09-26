@@ -22,26 +22,17 @@ export function initNavbar() {
     });
   }
 
-  // Floating Navbar Scroll Shadow & Hero Parallax
+  // Floating Navbar Scroll Shadow
   const navbar = document.querySelector('.navbar-island');
-  const heroMesh = document.querySelector('.hero-mesh-image');
   let isScrolling = false;
 
   window.addEventListener('scroll', () => {
     if (!isScrolling) {
       window.requestAnimationFrame(() => {
-        const scrollY = window.scrollY;
-
         // Navbar transition via CSS class to respect light and dark themes
         if (navbar) {
-          navbar.classList.toggle('scrolled', scrollY > 40);
+          navbar.classList.toggle('scrolled', window.scrollY > 40);
         }
-
-        // Parallax on hero mesh (only when hero is in view)
-        if (heroMesh && scrollY < 1200) {
-          heroMesh.style.transform = `translate3d(0, ${(scrollY * 0.08).toFixed(1)}px, 0)`;
-        }
-
         isScrolling = false;
       });
       isScrolling = true;
