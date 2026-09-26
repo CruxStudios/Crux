@@ -148,7 +148,23 @@ body,
 }
 
 [data-theme="dark"] .navbar-theme-toggle:active {
-  transform: translateY(-50%) scale(0.96);
+  transform: scale(0.96);
+}
+
+[data-theme="dark"] .mobile-navbar-theme-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #CBD5E1;
+}
+
+[data-theme="dark"] .mobile-navbar-theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .mobile-navbar-theme-toggle:active {
+  transform: scale(0.92);
 }
 
 [data-theme="dark"] .icon-sun {
