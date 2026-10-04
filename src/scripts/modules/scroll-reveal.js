@@ -2,13 +2,17 @@
  * Scroll Reveal Intersection Observer (Physics Stagger)
  */
 export function initScrollReveal() {
+  // Signal to CSS that JS is running — enables hide-then-reveal behavior.
+  // Without this class, .reveal elements stay visible (crawler/no-JS fallback).
+  document.documentElement.classList.add('js-loaded');
+
   const revealElements = document.querySelectorAll('.reveal');
   if (!revealElements.length) return;
 
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -40px 0px',
-    threshold: 0.08
+    rootMargin: '0px 0px 60px 0px', // wider margin so in-viewport elements fire immediately
+    threshold: 0.05
   };
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
