@@ -5,6 +5,14 @@
 [build.environment]
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
+# 301-redirect the .in domain to .dev so Google consolidates all SEO signals
+# onto a single canonical domain ("Crux Studios" name signal won't be split)
+[[redirects]]
+  from = "https://cruxstudios.in/*"
+  to = "https://cruxstudios.dev/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
