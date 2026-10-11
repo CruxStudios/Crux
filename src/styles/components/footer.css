@@ -127,6 +127,30 @@
   transform: scale(0.96);
 }
 
+.email-copy-trigger .email-copied-feedback {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-weight: 700;
+  color: #059669;
+}
+
+.email-copy-trigger.is-copied {
+  background: #F0FDF4 !important;
+  color: #059669 !important;
+  border-color: rgba(5, 150, 105, 0.4) !important;
+  box-shadow: 0 4px 20px rgba(5, 150, 105, 0.25) !important;
+}
+
+.email-copy-trigger.is-copied .email-text {
+  display: none !important;
+}
+
+.email-copy-trigger.is-copied .email-copied-feedback {
+  display: inline-flex !important;
+}
+
 .email-cursor-badge {
   position: fixed;
   top: 0;
@@ -187,9 +211,16 @@
   display: inline-block;
 }
 
-@media (pointer: coarse) {
+@media (hover: none), (pointer: coarse) {
   .email-copy-trigger {
-    cursor: pointer;
+    cursor: pointer !important;
+    user-select: text;
+    -webkit-user-select: text;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .email-copy-trigger * {
+    user-select: text;
+    -webkit-user-select: text;
   }
   .email-cursor-badge {
     display: none !important;

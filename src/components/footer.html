@@ -27,8 +27,14 @@
             </div>
           </a>
           <div class="copy-email-wrapper">
-            <button type="button" class="btn-solid-pill btn-pill-white email-copy-trigger" id="email-copy-btn" aria-label="Copy email address">
+            <button type="button" class="btn-solid-pill btn-pill-white email-copy-trigger" id="email-copy-btn" aria-label="Copy email address" data-email="contact@cruxstudios.dev">
               <span class="email-text">contact@cruxstudios.dev</span>
+              <span class="email-copied-feedback" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13.5 4.5L6.5 11.5L2.5 7.5"></path>
+                </svg>
+                <span>Copied to clipboard!</span>
+              </span>
             </button>
           </div>
         </div>
