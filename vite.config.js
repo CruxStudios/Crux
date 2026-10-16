@@ -33,8 +33,26 @@ function htmlInject() {
   };
 }
 
+const isVercel = Boolean(process.env.VERCEL);
+
 export default defineConfig({
-  plugins: [htmlInject()],
+  plugins: [
+    htmlInject(),
+    {
+      name: 'vercel-karate-root',
+      apply: 'build',
+      closeBundle() {
+        if (isVercel) {
+          const karateDist = path.resolve(process.cwd(), 'dist/karate.html');
+          const indexDist = path.resolve(process.cwd(), 'dist/index.html');
+          if (fs.existsSync(karateDist)) {
+            fs.copyFileSync(karateDist, indexDist);
+            console.log('[vercel-karate-root] karate.html copied over index.html for Vercel deployment');
+          }
+        }
+      }
+    }
+  ],
   server: {
     port: 5174,
     host: true
