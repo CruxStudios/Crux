@@ -8,6 +8,7 @@
     "email": "email dev",
     "send": "tsx --env-file=.env src/scripts/send-mail.ts",
     "build": "vite build",
+    "build:karate": "vite build && node -e \"require('fs').copyFileSync('dist/karate.html', 'dist/index.html')\"",
     "preview": "vite preview"
   },
   "devDependencies": {
