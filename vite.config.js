@@ -38,5 +38,13 @@ export default defineConfig({
   server: {
     port: 5174,
     host: true
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(process.cwd(), 'index.html'),
+        karate: path.resolve(process.cwd(), 'karate.html'),
+      }
+    }
   }
 });

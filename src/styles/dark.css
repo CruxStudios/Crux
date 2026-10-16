@@ -742,35 +742,72 @@ body,
 }
 
 [data-theme="dark"] .final-cta-banner {
-  background: linear-gradient(145deg, #131720 0%, #0A0C10 100%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6), 0 0 50px rgba(0, 240, 255, 0.08);
+  background: #1D1D1D !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25) !important;
+}
+
+[data-theme="dark"] .final-cta-banner .cta-title {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .final-cta-banner .cta-subhead {
+  color: #CBD5E1 !important;
+}
+
+[data-theme="dark"] .final-cta-banner .section-badge {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #FFFFFF !important;
 }
 
 [data-theme="dark"] .final-cta-banner .btn-capsule-primary {
-  background: #FFFFFF;
-  color: #0B0D11;
+  background: #FFFFFF !important;
+  color: #1D1D1D !important;
 }
 
 [data-theme="dark"] .final-cta-banner .btn-capsule-primary:hover {
-  background: #F1F5F9;
+  background: #F4F6F8 !important;
 }
 
 [data-theme="dark"] .final-cta-banner .btn-arrow-badge {
-  background: #0B0D11;
-  color: #FFFFFF;
+  background: #1D1D1D !important;
+  color: #FFFFFF !important;
 }
 
 [data-theme="dark"] .final-cta-banner .email-copy-trigger {
   background: #FFFFFF !important;
-  color: #0B0D11 !important;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  color: #1D1D1D !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
 }
 
 [data-theme="dark"] .final-cta-banner .email-copy-trigger:hover {
-  background: #F1F5F9 !important;
-  color: #000000 !important;
+  background: #F4F6F8 !important;
+  color: #1D1D1D !important;
+  border-color: #CBD5E1 !important;
+}
+
+[data-theme="dark"] .final-cta-banner .ambient-glow.glow-cta {
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%) !important;
+}
+
+/* Secondary pitch block inside final-cta-banner (shared & karate) */
+[data-theme="dark"] .final-cta-banner .cta-secondary-pitch {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .final-cta-banner .cta-secondary-pitch .pitch-chip {
+  color: #00F0FF !important;
+}
+
+[data-theme="dark"] .final-cta-banner .cta-secondary-pitch .secondary-pitch-title {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .final-cta-banner .cta-secondary-pitch .secondary-pitch-desc {
+  color: rgba(255, 255, 255, 0.76) !important;
 }
 
 [data-theme="dark"] .faq-support-card .btn-capsule-primary {
