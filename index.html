@@ -4,52 +4,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crux Studios | Custom Web &amp; Mobile App Development</title>
+  <title>Karate Suite | Crux Studios</title>
   <meta name="description"
-    content="A boutique development studio in Bangalore. We build custom web apps, mobile apps, and MVPs for founders and businesses, then hand over 100% of the code." />
-  <link rel="canonical" href="https://cruxstudios.dev/" />
+    content="The Karate software suite by Crux Studios. HonorLog, RingFlow, and EntryDesk — unified digital infrastructure for martial arts academies, tournaments, and coaches." />
+  <link rel="canonical" href="https://karate.cruxstudios.dev/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <meta name="theme-color" content="#7c3aed" />
+  <meta name="theme-color" content="#00F0FF" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Crux Studios" />
-  <meta property="og:title" content="Crux Studios | Custom Web &amp; Mobile App Development" />
-  <meta property="og:description" content="A boutique development studio in Bangalore. We build custom web apps, mobile apps, and MVPs for founders and businesses, then hand over 100% of the code." />
-  <meta property="og:url" content="https://cruxstudios.dev/" />
+  <meta property="og:title" content="Karate Suite | Crux Studios" />
+  <meta property="og:description"
+    content="The Karate software suite by Crux Studios. HonorLog, RingFlow, and EntryDesk." />
+  <meta property="og:url" content="https://karate.cruxstudios.dev/" />
   <meta property="og:image" content="https://cruxstudios.dev/og-image.png" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@cruxstudios" />
-  <meta name="twitter:title" content="Crux Studios | Custom Web &amp; Mobile App Development" />
-  <meta name="twitter:description" content="A boutique development studio in Bangalore. We build custom web apps, mobile apps, and MVPs for founders and businesses, then hand over 100% of the code." />
-  <meta name="twitter:image" content="https://cruxstudios.dev/og-image.png" />
-
-  <!-- WebSite Structured Data — tells Google the preferred site name -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Crux Studios",
-    "alternateName": ["Crux"],
-    "url": "https://cruxstudios.dev/"
-  }
-  </script>
-
-  <!-- High-Priority Asset Preloads for Instant First-Paint -->
+  <!-- Preloads -->
   <link rel="preload" as="image" href="/assets/bg-light-mesh.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/bg-projects-mesh.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" as="image" href="/logo.webp" type="image/webp" fetchpriority="high">
 
-  <!-- Typography: Google Sans (Headings & Display) + Google Sans Text & Roboto (UI & Body) -->
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700;800&family=Google+Sans+Text:ital,wght@0,400;0,500;0,700;1,400&family=Roboto:wght@400;500;700;900&display=swap"
     rel="stylesheet">
 
+  <!-- Crux Master Styles -->
   <link rel="stylesheet" href="/src/styles/main.css" />
+
+  <!-- Anti-Flash Theme Script -->
   <script>
     (function () {
       try {
@@ -59,49 +46,2007 @@
       } catch (e) { }
     })();
   </script>
+  <style>
+    /* Full Page Hero Background Image */
+    .hero-section.karate-hero-fullpage {
+      min-height: 100vh !important;
+      min-height: 100svh !important;
+      padding-top: clamp(80px, 12vh, 130px) !important;
+      padding-bottom: clamp(40px, 7vh, 70px) !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section.karate-hero-fullpage .hero-backdrop-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    /* Light Mode Hero: White Corian Silk with high-contrast dark typography */
+    :root:not([data-theme="dark"]) .hero-section.karate-hero-fullpage .hero-mesh-image,
+    [data-theme="light"] .hero-section.karate-hero-fullpage .hero-mesh-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/assets/hero-bg-corian.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      opacity: 0.92;
+      filter: contrast(1.06) brightness(1.02);
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    :root:not([data-theme="dark"]) .hero-section.karate-hero-fullpage .hero-ambient-spotlight,
+    [data-theme="light"] .hero-section.karate-hero-fullpage .hero-ambient-spotlight {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 1400px;
+      height: 100%;
+      background: radial-gradient(ellipse at center, rgba(220, 235, 245, 0.75) 0%, rgba(255, 255, 255, 0) 75%);
+      filter: blur(80px);
+      opacity: 0.85;
+    }
+
+    :root:not([data-theme="dark"]) .hero-section.karate-hero-fullpage .hero-title,
+    [data-theme="light"] .hero-section.karate-hero-fullpage .hero-title {
+      color: #0F172A !important;
+    }
+
+    :root:not([data-theme="dark"]) .hero-section.karate-hero-fullpage .hero-subhead,
+    [data-theme="light"] .hero-section.karate-hero-fullpage .hero-subhead {
+      color: #475569 !important;
+    }
+
+    :root:not([data-theme="dark"]) .hero-section.karate-hero-fullpage .section-badge,
+    [data-theme="light"] .hero-section.karate-hero-fullpage .section-badge {
+      background: rgba(0, 0, 0, 0.06) !important;
+      color: #000000 !important;
+      font-weight: 600 !important;
+      border: 1px solid rgba(0, 0, 0, 0.1) !important;
+      box-shadow: none !important;
+    }
+
+    :root:not([data-theme="dark"]) .hero-section.karate-hero-fullpage .btn-capsule-primary,
+    [data-theme="light"] .hero-section.karate-hero-fullpage .btn-capsule-primary {
+      background: #000000 !important;
+      color: #FFFFFF !important;
+    }
+
+    :root:not([data-theme="dark"]) .hero-section.karate-hero-fullpage .btn-capsule-primary .btn-arrow-badge,
+    [data-theme="light"] .hero-section.karate-hero-fullpage .btn-capsule-primary .btn-arrow-badge {
+      background: #FFFFFF !important;
+      color: #000000 !important;
+    }
+
+    :root:not([data-theme="dark"]) .hero-section.karate-hero-fullpage .btn-capsule-secondary,
+    [data-theme="light"] .hero-section.karate-hero-fullpage .btn-capsule-secondary {
+      background: rgba(0, 0, 0, 0.05) !important;
+      color: #0F172A !important;
+      border: 1px solid rgba(0, 0, 0, 0.14) !important;
+    }
+
+    :root:not([data-theme="dark"]) .hero-section.karate-hero-fullpage .btn-capsule-secondary .btn-arrow-badge,
+    [data-theme="light"] .hero-section.karate-hero-fullpage .btn-capsule-secondary .btn-arrow-badge {
+      background: #0F172A !important;
+      color: #FFFFFF !important;
+    }
+
+    :root:not([data-theme="dark"]) .hero-scroll-indicator,
+    [data-theme="light"] .hero-scroll-indicator {
+      color: #64748B !important;
+    }
+
+    /* Dark Mode Hero: Sleek liquid obsidian silk background with luminous white typography */
+    [data-theme="dark"] .hero-section.karate-hero-fullpage .hero-mesh-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/assets/hero-bg-corian-dark.jpg') !important;
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      opacity: 0.95 !important;
+      filter: contrast(1.15) brightness(1.0) !important;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    [data-theme="dark"] .hero-section.karate-hero-fullpage .hero-ambient-spotlight {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 1400px;
+      height: 100%;
+      background: radial-gradient(ellipse at center, rgba(0, 240, 255, 0.18) 0%, rgba(15, 23, 42, 0) 70%) !important;
+      filter: blur(80px);
+      opacity: 0.85 !important;
+    }
+
+    [data-theme="dark"] .hero-section.karate-hero-fullpage .hero-title {
+      color: #FFFFFF !important;
+    }
+
+    [data-theme="dark"] .hero-section.karate-hero-fullpage .hero-subhead {
+      color: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    [data-theme="dark"] .hero-section.karate-hero-fullpage .section-badge {
+      background: rgba(255, 255, 255, 0.08) !important;
+      color: #FFFFFF !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      box-shadow: none !important;
+    }
+
+    [data-theme="dark"] .hero-section.karate-hero-fullpage .btn-capsule-primary {
+      background: #FFFFFF !important;
+      color: #0F172A !important;
+    }
+
+    [data-theme="dark"] .hero-section.karate-hero-fullpage .btn-capsule-primary .btn-arrow-badge {
+      background: #0F172A !important;
+      color: #FFFFFF !important;
+    }
+
+    [data-theme="dark"] .hero-section.karate-hero-fullpage .btn-capsule-secondary {
+      background: rgba(255, 255, 255, 0.08) !important;
+      color: #FFFFFF !important;
+      border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    }
+
+    [data-theme="dark"] .hero-section.karate-hero-fullpage .btn-capsule-secondary:hover {
+      background: rgba(255, 255, 255, 0.16) !important;
+      border-color: rgba(255, 255, 255, 0.4) !important;
+    }
+
+    [data-theme="dark"] .hero-section.karate-hero-fullpage .btn-capsule-secondary .btn-arrow-badge {
+      background: #FFFFFF !important;
+      color: #0F172A !important;
+    }
+
+    [data-theme="dark"] .hero-scroll-indicator {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    /* Scroll Down Indicator animation */
+    .hero-scroll-indicator {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.75;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      z-index: 2;
+    }
+
+    .hero-scroll-indicator:hover {
+      opacity: 1;
+      transform: translateX(-50%) translateY(2px);
+    }
+
+    .hero-scroll-indicator svg {
+      animation: bounce-down 2s infinite ease-in-out;
+    }
+
+    @keyframes bounce-down {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    /* Clean background for Products Showcase container */
+    .projects-atmospheric-card.karate-products-card {
+      background: radial-gradient(ellipse 90% 55% at 50% 0%, rgba(0, 240, 255, 0.09) 0%, transparent 65%),
+                  radial-gradient(ellipse 70% 50% at 50% 100%, rgba(16, 185, 129, 0.05) 0%, transparent 60%),
+                  #0A0D12 !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .projects-card-backdrop-mesh {
+      display: none !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .projects-matrix-grid {
+      opacity: 0.12 !important;
+      background-size: 28px 28px !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .projects-card-ambient-glow {
+      opacity: 0.65 !important;
+    }
+
+    /* Product cards with softened, glare-free titanium-slate surface (reduced whiteness) */
+    .projects-atmospheric-card.karate-products-card .project-card-dark {
+      background: linear-gradient(165deg, #E2E8F0 0%, #D4DFEB 100%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.45) !important;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.36), 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .project-card-dark:hover {
+      transform: translateY(-8px) scale(1.02) !important;
+      background: linear-gradient(165deg, #EBF1F7 0%, #DFE7F2 100%) !important;
+      border-color: #00D2E0 !important;
+      box-shadow: 0 26px 65px rgba(0, 0, 0, 0.5), 0 0 35px rgba(0, 240, 255, 0.28) !important;
+    }
+
+    /* Crisp dark typography inside the softened cards */
+    .projects-atmospheric-card.karate-products-card .project-num-dark {
+      color: #0369A1 !important;
+      font-weight: 700 !important;
+      opacity: 1 !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .project-name-dark {
+      color: #0A0F1D !important;
+      font-weight: 700 !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .project-category-tag {
+      color: #0284C7 !important;
+      font-weight: 700 !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .project-tagline-dark {
+      color: #0F172A !important;
+      font-weight: 700 !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .project-desc-dark {
+      color: #1E293B !important;
+      font-size: 13.5px !important;
+      line-height: 1.55 !important;
+      font-weight: 500 !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .project-footer-dark {
+      border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+      padding-top: 14px !important;
+      margin-top: auto !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .project-view-link-dark {
+      color: #0A0F1D !important;
+      font-weight: 600 !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .project-link-badge-dark {
+      background: #0A0F1D !important;
+      color: #FFFFFF !important;
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .project-card-dark:hover .project-link-badge-dark {
+      background: #00F0FF !important;
+      color: #0A0F1D !important;
+      transform: scale(1.08) !important;
+    }
+
+    /* Secondary capsule button base */
+    .btn-capsule-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-size: clamp(16px, 1.3vw, 18px);
+      font-weight: 600;
+      padding: 6px 6px 6px 24px;
+      border-radius: 100px;
+      white-space: nowrap;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-capsule-secondary:hover {
+      transform: scale(1.02);
+    }
+
+    .btn-capsule-secondary .btn-arrow-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
+    }
+
+    .btn-capsule-secondary:hover .btn-arrow-badge {
+      transform: translate(2px, -2px);
+    }
+
+    /* ============================================================== */
+    /* FINAL CTA BANNER (EXACT CRUX STUDIOS #1D1D1D COLOR)            */
+    /* ============================================================== */
+    .final-cta-banner {
+      background: #1D1D1D !important;
+      color: #FFFFFF !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+      padding: clamp(34px, 4vw, 54px) clamp(18px, 3.5vw, 36px) !important;
+      margin-bottom: clamp(24px, 3vw, 42px) !important;
+    }
+
+    .final-cta-banner .cta-title {
+      color: #FFFFFF !important;
+    }
+
+    .final-cta-banner .cta-subhead {
+      color: #CBD5E1 !important;
+    }
+
+    .final-cta-banner .section-badge {
+      background: rgba(255, 255, 255, 0.12) !important;
+      color: #FFFFFF !important;
+    }
+
+    .final-cta-banner .btn-capsule-primary {
+      background: #FFFFFF !important;
+      color: #1D1D1D !important;
+    }
+
+    .final-cta-banner .btn-capsule-primary:hover {
+      background: #F4F6F8 !important;
+    }
+
+    .final-cta-banner .btn-capsule-primary .btn-arrow-badge,
+    .final-cta-banner .btn-arrow-badge {
+      background: #1D1D1D !important;
+      color: #FFFFFF !important;
+    }
+
+    .final-cta-banner .email-copy-trigger {
+      background: #FFFFFF !important;
+      color: #1D1D1D !important;
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .final-cta-banner .email-copy-trigger:hover {
+      background: #F4F6F8 !important;
+      color: #1D1D1D !important;
+      border-color: #CBD5E1 !important;
+    }
+
+    /* Direct phone contact cards with anti-scrape protection (compact & zero overlap) */
+    .direct-contacts-wrapper {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 520px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .direct-contacts-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 2px;
+    }
+
+    .direct-label-line {
+      flex: 1;
+      max-width: 60px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .direct-label-text {
+      font-family: var(--font-heading);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+      white-space: nowrap;
+    }
+
+    .direct-contacts-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      width: 100%;
+    }
+
+    .phone-contact-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 9999px;
+      padding: 6px 10px 6px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+      box-sizing: border-box;
+      transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    .phone-contact-card:hover {
+      background: rgba(255, 255, 255, 0.13);
+      border-color: rgba(255, 255, 255, 0.28);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    }
+
+    .contact-card-main {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .contact-avatar-pill {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      color: #0B0D11;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 11.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+      min-width: 0;
+      text-align: left;
+    }
+
+    .contact-name {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: #FFFFFF;
+      line-height: 1.1;
+    }
+
+    .contact-number-pill {
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 13.5px;
+      font-weight: 600;
+      text-align: left;
+      transition: color 0.2s ease;
+    }
+
+    .contact-number-pill:hover {
+      color: #FFFFFF;
+    }
+
+    .contact-number-pill:focus-visible {
+      outline: 2px solid #00F0FF;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    .phone-digits-display {
+      letter-spacing: 0.3px;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .phone-digits-display.digit-revealed {
+      color: #FFFFFF;
+      animation: digitGlow 0.4s ease-out;
+    }
+
+    @keyframes digitGlow {
+      0% { opacity: 0.5; filter: blur(3px); transform: scale(0.96); }
+      100% { opacity: 1; filter: blur(0); transform: scale(1); }
+    }
+
+    .reveal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--font-heading);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      color: #FFFFFF;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .reveal-badge svg {
+      overflow: visible;
+      flex-shrink: 0;
+    }
+
+    .contact-number-pill:hover .reveal-badge {
+      background: #FFFFFF;
+      color: #0B0D11;
+    }
+
+    .contact-card-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .btn-contact-action {
+      height: 28px;
+      padding: 0 10px;
+      font-size: 11.5px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-contact-action:hover {
+      background: #FFFFFF;
+      color: #0B0D11;
+      border-color: #FFFFFF;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-contact-action:active {
+      transform: scale(0.96);
+    }
+
+    .btn-copy-trigger .check-icon {
+      display: none;
+    }
+
+    .btn-copy-trigger.is-copied {
+      background: #10B981 !important;
+      color: #FFFFFF !important;
+      border-color: #10B981 !important;
+    }
+
+    .btn-copy-trigger.is-copied .copy-icon {
+      display: none;
+    }
+
+    .btn-copy-trigger.is-copied .check-icon {
+      display: inline-block;
+    }
+
+    @media (max-width: 540px) {
+      .phone-contact-card {
+        flex-direction: column;
+        align-items: stretch;
+        border-radius: 20px;
+        padding: 12px 14px;
+        gap: 12px;
+      }
+
+      .contact-card-main {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .contact-card-actions {
+        width: 100%;
+        gap: 8px;
+      }
+
+      .btn-contact-action {
+        flex: 1;
+        height: 36px;
+        justify-content: center;
+      }
+    }
+
+    /* General secondary pitch block typography */
+    .cta-secondary-pitch {
+      border-radius: 18px;
+      padding: clamp(20px, 3vw, 28px) clamp(20px, 4vw, 36px);
+      margin: 8px auto 28px;
+      max-width: 660px;
+      text-align: center;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .cta-secondary-pitch .pitch-chip {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .cta-secondary-pitch .secondary-pitch-title {
+      font-family: var(--font-heading);
+      font-size: clamp(18px, 2.2vw, 22px);
+      font-weight: 600;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+    }
+
+    .cta-secondary-pitch .secondary-pitch-desc {
+      font-family: var(--font-body);
+      font-size: clamp(13px, 1.3vw, 15px);
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    /* Subtle background logo watermark inside product cards */
+    .project-card-dark {
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .project-card-watermark {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 112px;
+      height: 112px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.26 !important;
+      pointer-events: none;
+      z-index: 0;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+      filter: grayscale(1) contrast(1.4) brightness(0.65);
+      user-select: none;
+    }
+
+    .project-card-watermark .ringflow-watermark {
+      filter: contrast(1.4) brightness(0.65);
+    }
+
+    .project-card-dark:hover .project-card-watermark {
+      opacity: 0.45 !important;
+      transform: scale(1.08) rotate(-4deg);
+      filter: grayscale(0) contrast(1.2) brightness(0.85);
+    }
+
+    .project-card-watermark img,
+    .project-card-watermark svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .project-card-header,
+    .project-category-tag,
+    .project-tagline-dark,
+    .project-desc-dark,
+    .project-footer-dark {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Small favicon icon in title row */
+    .project-title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .project-mini-favicon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      object-fit: contain;
+      flex-shrink: 0;
+      opacity: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .project-mini-favicon.ringflow-mini-favicon {
+      width: 26px;
+      height: 26px;
+      border-radius: 4px;
+      object-fit: contain;
+    }
+
+    .project-card-dark:hover .project-mini-favicon {
+      transform: scale(1.1);
+    }
+
+    /* Clean, readable feature bullet points inside product cards */
+    .project-feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      line-height: 1.45;
+      color: #334155;
+    }
+
+    .feature-check-icon {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: #0284C7;
+    }
+
+    .project-card-dark:hover .feature-check-icon {
+      color: #0099B8;
+    }
+  
+    /* Floating "Visit" Pill Cursor Badge for the 3 Product Cards */
+    .projects-dark-grid .project-card-dark,
+    .projects-dark-grid .project-card-dark * {
+      cursor: none !important;
+    }
+
+    .product-cursor-badge {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999999;
+      background: #0B0D11;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      padding: 5px 6px 5px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65), 0 0 24px rgba(0, 240, 255, 0.25);
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(-50%, -50%) scale(0.65);
+      transition: opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.18s ease;
+      will-change: left, top, transform;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .product-cursor-badge.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .product-cursor-badge .product-cursor-text {
+      font-family: var(--font-heading);
+      font-size: 14.5px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      color: #FFFFFF;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .product-cursor-badge .product-cursor-arrow-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #00F0FF;
+      color: #0B0D11;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 14px rgba(0, 240, 255, 0.6);
+      flex-shrink: 0;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-cursor-badge.visible .product-cursor-arrow-badge {
+      transform: translate(1px, -1px);
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .projects-dark-grid .project-card-dark,
+      .projects-dark-grid .project-card-dark * {
+        cursor: pointer !important;
+      }
+      .product-cursor-badge {
+        display: none !important;
+      }
+    }
+  
+    /* ============================================================== */
+    /* 15" & 16" LAPTOPS & SHORT VIEWPORTS (NO ZOOM-OUT NEEDED)        */
+    /* Fits 1280px-1536px widths & 650px-880px heights seamlessly     */
+    /* ============================================================== */
+    
+    /* ============================================================== */
+    /* PROPER DESKTOP SCALE (PREVENTS ZOOMED-OUT APPEARANCE)          */
+    /* ============================================================== */
+    .hero-section.karate-hero-fullpage {
+      padding-top: clamp(100px, 14vh, 160px) !important;
+      padding-bottom: clamp(50px, 8vh, 90px) !important;
+    }
+
+    .hero-section.karate-hero-fullpage .hero-title {
+      font-size: clamp(48px, 5.6vw, 76px) !important;
+      line-height: 1.12 !important;
+      letter-spacing: -0.03em !important;
+      font-weight: 700 !important;
+      margin-bottom: 20px !important;
+    }
+
+    .hero-section.karate-hero-fullpage .hero-subhead {
+      font-size: clamp(16.5px, 1.5vw, 19.5px) !important;
+      line-height: 1.55 !important;
+      max-width: 680px !important;
+      margin-bottom: 34px !important;
+    }
+
+    .hero-section.karate-hero-fullpage .section-badge {
+      font-size: 13px !important;
+      padding: 6px 18px !important;
+      margin-bottom: 18px !important;
+    }
+
+    .hero-section.karate-hero-fullpage .hero-btn-group {
+      display: flex !important;
+      align-items: center !important;
+      gap: 16px !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+    }
+
+    .hero-section.karate-hero-fullpage .btn-capsule-primary,
+    .hero-section.karate-hero-fullpage .btn-capsule-secondary {
+      font-size: 16px !important;
+      padding: 6px 6px 6px 24px !important;
+    }
+
+    .hero-section.karate-hero-fullpage .btn-capsule-primary .btn-arrow-badge,
+    .hero-section.karate-hero-fullpage .btn-capsule-secondary .btn-arrow-badge {
+      width: 44px !important;
+      height: 44px !important;
+    }
+
+    /* Product Cards Proper Proportions */
+    .projects-atmospheric-card.karate-products-card {
+      padding: clamp(44px, 5vw, 68px) clamp(24px, 4vw, 52px) !important;
+      border-radius: 28px !important;
+    }
+
+    .projects-dark-grid {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+      gap: 28px !important;
+      margin-bottom: 36px !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .project-card-dark {
+      padding: 30px 28px 26px !important;
+      border-radius: 20px !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .project-name-dark {
+      font-size: 24px !important;
+      font-weight: 700 !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .project-category-tag {
+      font-size: 13px !important;
+      margin-bottom: 6px !important;
+    }
+
+    .projects-atmospheric-card.karate-products-card .project-tagline-dark {
+      font-size: 15px !important;
+      line-height: 1.45 !important;
+      margin-bottom: 10px !important;
+    }
+
+    .project-feature-list {
+      margin: 14px 0 22px !important;
+      gap: 10px !important;
+    }
+
+    .project-feature-item {
+      font-size: 14px !important;
+      line-height: 1.48 !important;
+      gap: 10px !important;
+    }
+
+    .feature-check-icon {
+      width: 15px !important;
+      height: 15px !important;
+      margin-top: 2px !important;
+    }
+
+    /* Final CTA Banner Proper Proportions */
+    .final-cta-banner {
+      padding: clamp(52px, 6vw, 84px) clamp(24px, 5vw, 48px) !important;
+      margin-bottom: clamp(32px, 4vw, 56px) !important;
+      border-radius: 28px !important;
+    }
+
+    .final-cta-banner .cta-title {
+      font-size: clamp(32px, 3.8vw, 46px) !important;
+      letter-spacing: -0.02em !important;
+      line-height: 1.2 !important;
+      margin-bottom: 14px !important;
+      max-width: 680px !important;
+    }
+
+    .final-cta-banner .cta-subhead {
+      font-size: clamp(15px, 1.5vw, 17.5px) !important;
+      line-height: 1.55 !important;
+      max-width: 600px !important;
+      margin-bottom: 28px !important;
+    }
+
+    .final-cta-banner .btn-capsule-primary {
+      font-size: 16px !important;
+      padding: 6px 6px 6px 24px !important;
+    }
+
+    .final-cta-banner .btn-capsule-primary .btn-arrow-badge {
+      width: 44px !important;
+      height: 44px !important;
+    }
+
+    .final-cta-banner .email-copy-trigger {
+      font-size: 15px !important;
+      padding: 12px 22px !important;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      .hero-section.karate-hero-fullpage {
+        padding-top: 110px !important;
+        padding-bottom: 50px !important;
+        min-height: auto !important;
+      }
+
+      .hero-section.karate-hero-fullpage .hero-title {
+        font-size: clamp(36px, 5.5vw, 48px) !important;
+      }
+
+      .projects-dark-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 540px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        gap: 18px !important;
+      }
+    }
+
+    /* ============================================================== */
+    /* MOBILE PHONES (≤ 767px) - 100% RESPONSIVE PERFECTION           */
+    /* ============================================================== */
+    @media screen and (max-width: 767px) {
+      html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+      }
+
+      .container,
+      .container-wide {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+
+      /* Hero Section Mobile */
+      .hero-section.karate-hero-fullpage {
+        padding-top: clamp(85px, 14vh, 110px) !important;
+        padding-bottom: 50px !important;
+        min-height: 100svh !important;
+        text-align: center !important;
+      }
+
+      .hero-section.karate-hero-fullpage .hero-title {
+        font-size: clamp(28px, 8.2vw, 38px) !important;
+        letter-spacing: -0.6px !important;
+        line-height: 1.15 !important;
+        margin-bottom: 12px !important;
+      }
+
+      .hero-section.karate-hero-fullpage .hero-subhead {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 22px !important;
+        padding: 0 4px !important;
+      }
+
+      .hero-section.karate-hero-fullpage .hero-btn-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        max-width: 310px !important;
+        gap: 10px !important;
+        margin: 0 auto !important;
+      }
+
+      .hero-section.karate-hero-fullpage .btn-capsule-primary,
+      .hero-section.karate-hero-fullpage .btn-capsule-secondary {
+        width: 100% !important;
+        justify-content: space-between !important;
+        padding: 5px 6px 5px 20px !important;
+        font-size: 14.5px !important;
+      }
+
+      .hero-scroll-indicator {
+        bottom: 14px !important;
+      }
+
+      /* Product Cards Mobile */
+      .projects-atmospheric-card.karate-products-card {
+        padding: 28px 14px 32px !important;
+        border-radius: 18px !important;
+      }
+
+      .section-header.centered {
+        margin-bottom: 20px !important;
+      }
+
+      .section-header .section-title {
+        font-size: clamp(21px, 6.2vw, 26px) !important;
+      }
+
+      .section-header .section-subhead {
+        font-size: 13.5px !important;
+        line-height: 1.48 !important;
+      }
+
+      .projects-dark-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        margin-bottom: 20px !important;
+      }
+
+      .projects-atmospheric-card.karate-products-card .project-card-dark {
+        padding: 18px 16px 14px !important;
+        border-radius: 16px !important;
+      }
+
+      .projects-atmospheric-card.karate-products-card .project-name-dark {
+        font-size: 19px !important;
+      }
+
+      .project-feature-list {
+        margin: 10px 0 14px !important;
+        gap: 8px !important;
+      }
+
+      .project-feature-item {
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+      }
+
+      .project-card-watermark {
+        width: 80px !important;
+        height: 80px !important;
+        top: -2px !important;
+        right: -2px !important;
+        opacity: 0.05 !important;
+      }
+
+      /* Pitch banner Mobile */
+      .projects-bottom-pitch {
+        padding: 20px 16px !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        text-align: left !important;
+        gap: 14px !important;
+        border-radius: 16px !important;
+      }
+
+      .btn-pitch-cta {
+        width: 100% !important;
+        justify-content: space-between !important;
+      }
+
+      /* Final CTA Banner Mobile */
+      .final-cta-banner {
+        padding: 34px 16px !important;
+        border-radius: 18px !important;
+        margin-bottom: 22px !important;
+      }
+
+      .final-cta-banner .cta-title {
+        font-size: clamp(22px, 6.2vw, 28px) !important;
+        letter-spacing: -0.5px !important;
+        margin-bottom: 10px !important;
+      }
+
+      .final-cta-banner .cta-subhead {
+        font-size: 13.5px !important;
+        line-height: 1.45 !important;
+        margin-bottom: 20px !important;
+      }
+
+      .final-cta-banner .cta-btn-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        max-width: 310px !important;
+        gap: 10px !important;
+        margin: 0 auto !important;
+      }
+
+      .final-cta-banner .btn-capsule-primary {
+        width: 100% !important;
+        justify-content: space-between !important;
+        padding: 5px 6px 5px 20px !important;
+        font-size: 14.5px !important;
+      }
+
+      .copy-email-wrapper {
+        width: 100% !important;
+      }
+
+      .final-cta-banner .email-copy-trigger {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 11px 18px !important;
+        font-size: 14px !important;
+      }
+
+      /* Footer Mobile */
+      .footer-minimal-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 14px !important;
+      }
+
+      .footer-min-links {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 12px 18px !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="has-grid-bg">
 
-  <!-- Navigation Component -->
-  <load src="src/components/navbar.html" />
+  <!-- ============================================================== -->
+  <!-- FLOATING PILL NAVBAR                                           -->
+  <!-- ============================================================== -->
+  <header class="navbar-wrapper">
+    <div class="navbar-balance-spacer" aria-hidden="true"></div>
+
+    <nav class="navbar-island">
+      <a href="/" class="brand-logo" aria-label="Crux Studios Home">
+        <img src="/logo.webp" alt="Crux Studios Logo" class="logo-img" width="120" height="30" decoding="async" />
+        <span class="brand-name-text">Crux Studios</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#products" class="nav-pill-link">Products</a>
+        <a href="https://cruxstudios.dev" class="nav-pill-link" target="_blank" rel="noopener noreferrer">Visit Our Studio</a>
+        <a href="#contact" class="nav-pill-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="https://cruxstudios.dev" target="_blank" rel="noopener noreferrer" class="nav-cta-capsule">
+          <span>Visit Studio</span>
+          <div class="capsule-icon-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      <!-- Mobile Controls (Theme Toggle + Menu Toggle) -->
+      <div class="nav-mobile-controls">
+        <button class="mobile-navbar-theme-toggle" data-theme-toggle aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-toggle-track">
+            <svg class="theme-toggle-icon icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="theme-toggle-icon icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+        </button>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Theme Toggle -->
+    <button class="navbar-theme-toggle" data-theme-toggle aria-label="Toggle theme" title="Toggle theme">
+      <span class="theme-toggle-track">
+        <svg class="theme-toggle-icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-toggle-icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </span>
+    </button>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <div class="mobile-theme-row">
+        <span class="mobile-theme-label">Theme Mode</span>
+        <button class="theme-toggle-btn mobile-theme-btn" data-theme-toggle aria-label="Toggle theme"
+          title="Toggle theme">
+          <span class="theme-toggle-track">
+            <svg class="theme-toggle-icon icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="theme-toggle-icon icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <a href="#products" class="mobile-link">Products</a>
+      <a href="https://cruxstudios.dev" class="mobile-link" target="_blank" rel="noopener noreferrer">Visit Crux Studios</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <a href="https://cruxstudios.dev" target="_blank" rel="noopener noreferrer" class="mobile-cta-btn">Visit Crux Studios</a>
+    </div>
+  </header>
 
   <main>
-    <!-- Section 1: Hero -->
-    <load src="src/sections/hero.html" />
 
-    <!-- Section 2: Shipped Work -->
-    <load src="src/sections/projects.html" />
+    <!-- ============================================================== -->
+    <!-- HERO INTRO (FULL PAGE)                                         -->
+    <!-- ============================================================== -->
+    <section class="hero-section karate-hero-fullpage" id="hero">
+      <div class="hero-backdrop-container">
+        <div class="hero-mesh-image"></div>
+        <div class="hero-ambient-spotlight"></div>
+      </div>
 
-    <!-- Section 3: Why Crux Stats -->
-    <load src="src/sections/stats.html" />
+      <div class="container container-wide hero-content">
+        <div class="hero-intro-wrapper">
+          <span class="section-badge reveal" style="margin-bottom: 20px;">
+            Engineered by Crux Studios
+          </span>
 
-    <!-- Section 4: What We Build For You -->
-    <load src="src/sections/services.html" />
+          <h1 class="hero-title reveal">
+            Karate Digital Suite
+          </h1>
 
-    <!-- Section 5: Cross-Platform -->
-    <load src="src/sections/platforms.html" />
+          <p class="hero-subhead reveal" style="max-width: 680px; margin-bottom: 32px;">
+            Three dedicated software applications built for martial arts academies, tournament organizers, and coaches. Click any product below to launch.
+          </p>
 
-    <!-- Section 6: Who It's For -->
-    <load src="src/sections/personas.html" />
+          <div class="hero-btn-group reveal">
+            <a href="#products" class="btn-capsule-primary">
+              <span>View Products</span>
+              <div class="btn-arrow-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </a>
+            <a href="https://cruxstudios.dev" target="_blank" rel="noopener noreferrer" class="btn-capsule-secondary">
+              <span>Visit Crux Studios</span>
+              <div class="btn-arrow-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
 
-    <!-- Section 7: Process -->
-    <load src="src/sections/architecture.html" />
+      <!-- Scroll Down Indicator -->
+      <a href="#products" class="hero-scroll-indicator" aria-label="Scroll to products">
+        <span>Products</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+    </section>
 
-    <!-- Section 8: Team -->
-    <load src="src/sections/team.html" />
+    <!-- ============================================================== -->
+    <!-- THE 3 PRODUCTS (CRUX ATMOSPHERIC DARK SHOWCASE)                -->
+    <!-- ============================================================== -->
+    <section class="section-projects-featured" id="products">
+      <div class="container container-wide">
 
-    <!-- Section 9: FAQs -->
-    <load src="src/sections/faqs.html" />
+        <div class="projects-atmospheric-card karate-products-card reveal">
+          <div class="projects-card-backdrop-mesh"></div>
+          <div class="projects-card-ambient-glow" id="projects-ambient-glow"></div>
+          <div class="projects-matrix-grid"></div>
 
-    <!-- Section 10: Footer & Final CTA -->
-    <load src="src/components/footer.html" />
+          <div class="projects-content-layer">
+
+            <!-- Section Header -->
+            <div class="section-header centered">
+              <span class="section-badge badge-dark-theme">
+                <span class="pulse-dot-cyan"></span>
+                Official Applications
+              </span>
+              <h2 class="section-title text-center text-white">
+                Choose an application to <span class="text-gradient-cyan">launch</span>
+              </h2>
+              <p class="section-subhead text-center text-gray">
+                Direct access to the student database, live tournament scoring, and coach registration portal.
+              </p>
+            </div>
+
+            <!-- The 3 Product Cards Grid (3 columns on desktop) -->
+            <div class="projects-dark-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-bottom: 32px;">
+
+              <!-- 01: RingFlow -->
+              <a href="https://ringflow.cruxstudios.dev" target="_blank" rel="noopener noreferrer"
+                class="project-card-dark reveal" data-category="commercial">
+                <div class="project-card-watermark" aria-hidden="true">
+                  <img src="/assets/products/icon-Photoroom.png" onerror="this.src='./assets/products/icon-Photoroom.png'" alt="" class="ringflow-watermark" width="140" height="140" loading="lazy" />
+                </div>
+                <div class="project-card-header">
+                  <div class="project-title-row">
+                    <span class="project-num-dark">01</span>
+                    <img src="/assets/products/icon-Photoroom.png" onerror="this.src='./assets/products/icon-Photoroom.png'" alt="RingFlow" class="project-mini-favicon ringflow-mini-favicon" width="26" height="26" />
+                    <h3 class="project-name-dark">RingFlow</h3>
+                  </div>
+                </div>
+                <div class="project-category-tag">Live Tatami &amp; Match Management</div>
+                <p class="project-tagline-dark">Real-time tournament floor management and live scoring.</p>
+                <ul class="project-feature-list">
+                  <li class="project-feature-item">
+                    <svg class="feature-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"></polyline>
+                    </svg>
+                    <span>Automated tournament draw brackets generated instantly with live bracket updates</span>
+                  </li>
+                  <li class="project-feature-item">
+                    <svg class="feature-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"></polyline>
+                    </svg>
+                    <span>Live scoreboard display for parents, coaches, and spectators ringside</span>
+                  </li>
+                  <li class="project-feature-item">
+                    <svg class="feature-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"></polyline>
+                    </svg>
+                    <span>Instant referee scoring touchpads for penalties, Senshu, and Kata marks</span>
+                  </li>
+                  <li class="project-feature-item">
+                    <svg class="feature-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"></polyline>
+                    </svg>
+                    <span>Zero paper scorecards or match delays to keep the day running on time</span>
+                  </li>
+                </ul>
+                <div class="project-footer-dark">
+                  <span class="project-view-link-dark">ringflow.cruxstudios.dev</span>
+                  <div class="project-link-badge-dark">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+
+              <!-- 02: EntryDesk -->
+              <a href="https://entrydesk.cruxstudios.dev" target="_blank" rel="noopener noreferrer"
+                class="project-card-dark reveal" data-category="commercial">
+                <div class="project-card-watermark" aria-hidden="true">
+                  <img src="/assets/products/entrydesk-icon.svg" onerror="this.src='./assets/products/entrydesk-icon.svg'" alt="" width="140" height="140" loading="lazy" />
+                </div>
+                <div class="project-card-header">
+                  <div class="project-title-row">
+                    <span class="project-num-dark">02</span>
+                    <img src="/assets/products/entrydesk-icon.svg" onerror="this.src='./assets/products/entrydesk-icon.svg'" alt="EntryDesk" class="project-mini-favicon" width="24" height="24" />
+                    <h3 class="project-name-dark">EntryDesk</h3>
+                  </div>
+                </div>
+                <div class="project-category-tag">Tournament Registration Platform</div>
+                <p class="project-tagline-dark">Coach entries and registration management with zero chaos.</p>
+                <ul class="project-feature-list">
+                  <li class="project-feature-item">
+                    <svg class="feature-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"></polyline>
+                    </svg>
+                    <span>Dedicated online registration portal for tournament organizers and dojo senseis</span>
+                  </li>
+                  <li class="project-feature-item">
+                    <svg class="feature-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"></polyline>
+                    </svg>
+                    <span>Coaches manage competitor rosters and athlete profiles directly</span>
+                  </li>
+                  <li class="project-feature-item">
+                    <svg class="feature-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"></polyline>
+                    </svg>
+                    <span>Submit entries across Kata and Kumite by age, belt, and weight categories</span>
+                  </li>
+                  <li class="project-feature-item">
+                    <svg class="feature-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"></polyline>
+                    </svg>
+                    <span>Organizers review, verify, and approve incoming registrations with zero chaos</span>
+                  </li>
+                </ul>
+                <div class="project-footer-dark">
+                  <span class="project-view-link-dark">entrydesk.cruxstudios.dev</span>
+                  <div class="project-link-badge-dark">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+
+              <!-- 03: HonorLog -->
+              <a href="https://honorlog.shorinkai.in" target="_blank" rel="noopener noreferrer"
+                class="project-card-dark reveal" data-category="commercial">
+                <div class="project-card-watermark" aria-hidden="true">
+                  <img src="/assets/products/honorlog-logo.png" onerror="this.src='./assets/products/honorlog-logo.png'" alt="" width="140" height="140" loading="lazy" />
+                </div>
+                <div class="project-card-header">
+                  <div class="project-title-row">
+                    <span class="project-num-dark">03</span>
+                    <img src="/assets/products/honorlog-logo.png" onerror="this.src='./assets/products/honorlog-logo.png'" alt="HonorLog" class="project-mini-favicon" width="24" height="24" />
+                    <h3 class="project-name-dark">HonorLog</h3>
+                  </div>
+                </div>
+                <div class="project-category-tag">Student Database &amp; Belt Registry</div>
+                <p class="project-tagline-dark">Achievement &amp; belt tracking for martial arts academies.</p>
+                <ul class="project-feature-list">
+                  <li class="project-feature-item">
+                    <svg class="feature-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"></polyline>
+                    </svg>
+                    <span>Complete digital martial arts profile for every student from White to Black Belt</span>
+                  </li>
+                  <li class="project-feature-item">
+                    <svg class="feature-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"></polyline>
+                    </svg>
+                    <span>Official record of belt promotions, exam dates, and sensei grading feedback</span>
+                  </li>
+                  <li class="project-feature-item">
+                    <svg class="feature-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"></polyline>
+                    </svg>
+                    <span>Medal cabinet and tournament achievement showcase for every student</span>
+                  </li>
+                  <li class="project-feature-item">
+                    <svg class="feature-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"></polyline>
+                    </svg>
+                    <span>Easy online access for parents and karatekas to track progress anytime</span>
+                  </li>
+                </ul>
+                <div class="project-footer-dark">
+                  <span class="project-view-link-dark">honorlog.shorinkai.in</span>
+                  <div class="project-link-badge-dark">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+
+            <!-- Pitch Banner: Visit Crux Studios -->
+            <div class="projects-bottom-pitch reveal">
+              <div class="pitch-content">
+                <div class="pitch-badge">CRUX STUDIOS</div>
+                <h3 class="pitch-title">Need custom software or an app built for your team?</h3>
+                <p class="pitch-desc">We engineer custom web apps, mobile apps, and specialized software engines with 100% code ownership transferred.</p>
+              </div>
+              <a href="https://cruxstudios.dev" target="_blank" rel="noopener noreferrer" class="btn-pitch-cta">
+                <span>Visit Crux Studios</span>
+                <div class="btn-arrow-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- FOOTER OF CRUXSTUDIOS.DEV (EXACT COPY)                         -->
+    <!-- ============================================================== -->
+    <footer class="footer-wrapper" id="contact">
+      <div class="container container-wide">
+
+        <!-- Curved Final CTA Banner -->
+        <div class="final-cta-banner reveal">
+          <div class="ambient-glow glow-cta"></div>
+          <div class="cta-inner-content">
+            <span class="section-badge">Dojo &amp; Organization Inquiries</span>
+            <h2 class="cta-title">Want to use these softwares for your dojo or organization?</h2>
+            <p class="cta-subhead" style="margin-bottom: 32px;">
+              Equip your academy, dojo, or tournament circuit with RingFlow, EntryDesk, or HonorLog. We provide dedicated setups and turnkey deployments tailored for your team.
+            </p>
+
+            <div class="cta-btn-row">
+              <a href="mailto:contact@cruxstudios.dev?subject=Karate%20Software%20or%20App%20Inquiry%20-%20Crux%20Studios&body=Hi%20Crux%20Studios%20Team%2C%0A%0AI%20would%20like%20to%20inquire%20about%3A%0A%5B%20%5D%20Deploying%20HonorLog%20%2F%20RingFlow%20%2F%20EntryDesk%20for%20our%20dojo%20or%20organization%0A%5B%20%5D%20Building%20a%20new%20custom%20web%20or%20mobile%20app%0A%0AName%20%2F%20Organization%3A%0AContact%20Number%3A%0ADetails%3A%0A%0ABest%20regards"
+                class="btn-capsule-primary">
+                <span>Contact Crux Studios</span>
+                <div class="btn-arrow-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+              </a>
+              <div class="copy-email-wrapper">
+                <button type="button" class="btn-solid-pill btn-pill-white email-copy-trigger" id="email-copy-btn"
+                  aria-label="Copy email address" data-email="contact@cruxstudios.dev">
+                  <span class="email-text">contact@cruxstudios.dev</span>
+                  <span class="email-copied-feedback" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M13.5 4.5L6.5 11.5L2.5 7.5"></path>
+                    </svg>
+                    <span>Copied to clipboard!</span>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Direct Phone Lines with Anti-Scrape & Tap-to-Reveal Protection -->
+            <div class="direct-contacts-wrapper">
+              <div class="direct-contacts-label">
+                <span class="direct-label-line"></span>
+                <span class="direct-label-text">Direct Inquiries &amp; Calls</span>
+                <span class="direct-label-line"></span>
+              </div>
+              <div class="direct-contacts-grid">
+                <!-- Ullas -->
+                <div class="phone-contact-card" data-contact="ullas" data-cipher="NDA0ODEgMjQ2MzYgMTkr" data-dial-cipher="NDA0ODEyNDYzNjE5Kw==">
+                  <div class="contact-card-main">
+                    <div class="contact-avatar-pill">U</div>
+                    <div class="contact-meta">
+                      <span class="contact-name">Ullas</span>
+                      <button type="button" class="contact-number-pill" aria-label="Tap to reveal phone number for Ullas" title="Tap to reveal phone number">
+                        <span class="phone-digits-display">+91 63642 •••••</span>
+                        <span class="reveal-badge">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                          </svg>
+                          <span>Reveal</span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="contact-card-actions">
+                    <button type="button" class="btn-contact-action btn-call-trigger" aria-label="Call Ullas directly" title="Call directly">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                      <span>Call</span>
+                    </button>
+                    <button type="button" class="btn-contact-action btn-copy-trigger" aria-label="Copy Ullas's phone number" title="Copy number">
+                      <svg class="copy-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <svg class="check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      <span class="copy-text">Copy</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Prateek -->
+                <div class="phone-contact-card" data-contact="prateek" data-cipher="MjQyNjcgMTA4MzkgMTkr" data-dial-cipher="MjQyNjcxMDgzOTE5Kw==">
+                  <div class="contact-card-main">
+                    <div class="contact-avatar-pill">P</div>
+                    <div class="contact-meta">
+                      <span class="contact-name">Prateek</span>
+                      <button type="button" class="contact-number-pill" aria-label="Tap to reveal phone number for Prateek" title="Tap to reveal phone number">
+                        <span class="phone-digits-display">+91 93801 •••••</span>
+                        <span class="reveal-badge">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                          </svg>
+                          <span>Reveal</span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="contact-card-actions">
+                    <button type="button" class="btn-contact-action btn-call-trigger" aria-label="Call Prateek directly" title="Call directly">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                      <span>Call</span>
+                    </button>
+                    <button type="button" class="btn-contact-action btn-copy-trigger" aria-label="Copy Prateek's phone number" title="Copy number">
+                      <svg class="copy-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <svg class="check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      <span class="copy-text">Copy</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Hidden Honeypot Trap for Bot Crawlers -->
+              <div class="bot-honeypot-trap" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;">
+                <a href="tel:+18005550199" tabindex="-1" rel="nofollow">Direct automated dialer trap</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Giant Full Brand Wordmark with SVG 'X' -->
+        <div class="footer-giant-wordmark-container" aria-hidden="true">
+          <div class="giant-wordmark-text">
+            Cru<span class="x-brand-accent"><svg class="giant-x-svg" viewBox="106 102 322 327" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g fill="currentColor"><path d="M0 0 C1.1471196 0.00707474 2.2942392 0.01414948 3.47612 0.0214386 C7.13448713 0.04939312 10.79131538 0.11213839 14.44921875 0.17578125 C16.9316185 0.20086253 19.41404227 0.22367599 21.89648438 0.24414062 C27.97708621 0.29922347 34.05679253 0.38286227 40.13671875 0.48828125 C38.86716087 3.26700787 37.56431793 5.30854054 35.3997345 7.45904541 C34.84335297 8.01673111 34.28697144 8.57441681 33.71372986 9.14900208 C33.10541824 9.74855209 32.49710663 10.34810211 31.87036133 10.96582031 C31.2278241 11.6070433 30.58528687 12.2482663 29.92327881 12.90892029 C27.7971595 15.02854744 25.66415475 17.1411091 23.53125 19.25390625 C22.04821246 20.73066999 20.56569116 22.20795232 19.08366394 23.68572998 C15.17624515 27.57983844 11.26330936 31.46835182 7.34875488 35.35528564 C1.10004389 41.5609229 -5.14208701 47.77315924 -11.38082314 53.98882294 C-13.55357457 56.15141861 -15.72974689 58.31052654 -17.90629578 60.46929932 C-19.25430035 61.81046753 -20.6021913 63.15174995 -21.94995117 64.49316406 C-22.54814163 65.08461716 -23.14633209 65.67607025 -23.76264954 66.28544617 C-26.73191688 69.24682475 -29.57499361 72.26645385 -32.31660461 75.44061279 C-35.87909103 79.55916551 -39.65937754 83.41163085 -43.5234375 87.24609375 C-44.254487 87.97568298 -44.9855365 88.70527222 -45.73873901 89.45697021 C-47.31281511 91.0272661 -48.88804448 92.59640665 -50.46432495 94.16448975 C-52.96438575 96.65168712 -55.46122197 99.14208217 -57.95727539 101.63330078 C-64.15459051 107.81730679 -70.35735139 113.99584123 -76.55993652 120.17456055 C-81.81088122 125.40572094 -87.05973736 130.63896032 -92.30587769 135.87493896 C-94.75598223 138.31860005 -97.20909818 140.75920973 -99.66235352 143.19970703 C-101.1760932 144.7098114 -102.6896911 146.22005792 -104.203125 147.73046875 C-105.21486282 148.73445709 -105.21486282 148.73445709 -106.24703979 149.75872803 C-110.03967597 153.55094578 -113.61624179 157.46254983 -117.12150002 161.52065468 C-120.01529218 164.78966588 -123.10531561 167.85291422 -126.20385742 170.92651367 C-126.90071152 171.6219075 -127.59756561 172.31730133 -128.3155365 173.0337677 C-129.81431625 174.52876985 -131.31424909 176.02261675 -132.81523705 177.51540184 C-135.19265523 179.87995828 -137.56684937 182.24771051 -139.94026184 184.61628723 C-144.97429118 189.63894181 -150.0122499 194.65764347 -155.05078125 199.67578125 C-160.90275868 205.50412669 -166.75309712 211.33409787 -172.59923744 217.16829872 C-174.93481855 219.49741251 -177.27339732 221.82348747 -179.61210632 224.14945984 C-181.04518173 225.57890238 -182.47811674 227.0084857 -183.91088867 228.43823242 C-184.55876343 229.08094086 -185.20663818 229.72364929 -185.87414551 230.38583374 C-189.10013418 233.61144414 -192.06139654 236.87812102 -194.86328125 240.48828125 C-196.5097481 242.17490583 -198.17511192 243.84339831 -199.86328125 245.48828125 C-200.30118484 246.02524124 -200.73908844 246.56220123 -201.19026184 247.11543274 C-203.52146916 249.02837797 -205.07858845 248.85016742 -208.0690918 248.82885742 C-209.12996506 248.82863083 -210.19083832 248.82840424 -211.28385925 248.82817078 C-212.99959892 248.80494499 -212.99959892 248.80494499 -214.75 248.78125 C-215.92214554 248.77700516 -217.09429108 248.77276031 -218.30195618 248.76838684 C-222.05179659 248.75157197 -225.80110282 248.71391357 -229.55078125 248.67578125 C-232.09048704 248.66073809 -234.63020124 248.64704905 -237.16992188 248.63476562 C-243.40122444 248.60165921 -249.63221469 248.55143153 -255.86328125 248.48828125 C-251.97739162 243.83242938 -247.93758024 239.43339914 -243.6171875 235.1796875 C-243.04298569 234.60927231 -242.46878387 234.03885712 -241.87718201 233.45115662 C-239.45442679 231.0445291 -237.02569587 228.64396696 -234.59741211 226.24291992 C-232.81019871 224.47398511 -231.0261474 222.7019025 -229.2421875 220.9296875 C-228.70654678 220.40234512 -228.17090607 219.87500275 -227.61903381 219.3316803 C-224.8429953 216.57325362 -222.20106894 213.75258446 -219.65489197 210.77989197 C-215.94493291 206.52357017 -212.02564629 202.52313275 -208.01953125 198.546875 C-207.26897461 197.79777863 -206.51841797 197.04868225 -205.74511719 196.27688599 C-204.12847877 194.66402882 -202.510687 193.05232701 -200.8918457 191.44168091 C-198.32457747 188.88727133 -195.76052927 186.32966788 -193.19726562 183.77124023 C-186.83299772 177.4202844 -180.4632854 171.07479808 -174.09375 164.72912598 C-168.70188695 159.3570439 -163.31210992 153.98288509 -157.92504883 148.60598755 C-155.40846602 146.0958503 -152.88887225 143.58876289 -150.36914062 141.08178711 C-148.81495504 139.5312367 -147.26091117 137.98054423 -145.70703125 136.4296875 C-145.01383789 135.74166046 -144.32064453 135.05363342 -143.60644531 134.34475708 C-140.46411331 131.20276285 -137.42433603 128.02705098 -134.52966309 124.65466309 C-130.06086139 119.48094256 -125.20203709 114.70301103 -120.35742188 109.88476562 C-119.31334926 108.84261627 -118.26950711 107.80023599 -117.22587585 106.75764465 C-114.99240778 104.52731802 -112.75740071 102.2985497 -110.52116394 100.07099915 C-106.97897628 96.54242823 -103.44069032 93.00996183 -99.9029541 89.47692871 C-91.75515444 81.3411294 -83.60233202 73.21036949 -75.44945526 65.07965851 C-67.9721393 57.62256739 -60.49591032 50.1643949 -53.02373457 42.70215273 C-49.51300791 39.19638236 -45.99986404 35.69305859 -42.48479462 32.19164276 C-40.29225091 30.0066032 -38.10182128 27.81945348 -35.91193581 25.63175011 C-34.9030759 24.6247486 -33.89335889 23.61860487 -32.88268089 22.61342812 C-26.4517497 16.21637706 -20.07042268 9.82496399 -14.66723633 2.51879883 C-10.12455755 -0.7708363 -5.45717697 -0.12668804 0 0 Z " transform="translate(361.86328125,103.51171875)"/><path d="M0 0 C3.97403445 1.55721269 6.32507139 4.32077634 9.07421875 7.44921875 C14.22462813 13.16478619 19.56578416 18.65573532 25.01953125 24.08203125 C25.81374481 24.87294159 26.60795837 25.66385193 27.42623901 26.47872925 C29.88636112 28.9253073 32.348991 31.36933257 34.8125 33.8125 C38.09282453 37.06602814 41.36966774 40.32300736 44.64453125 43.58203125 C45.38008743 44.30928909 46.11564362 45.03654694 46.87348938 45.7858429 C50.17161275 49.06843622 53.37407086 52.37675831 56.40698242 55.90698242 C60.64118137 60.81851497 65.23894641 65.34474716 69.84375 69.90625 C71.2619165 71.31862932 72.68008007 72.73101161 74.09807587 74.14356232 C76.56323132 76.59787501 79.03170509 79.04884533 81.5 81.5 C84.44985631 84.42937203 87.39907839 87.35936285 90.34436035 90.29333496 C92.17068429 92.11220613 93.99925361 93.92882652 95.83044434 95.74279785 C99.62280181 99.52020253 103.31247515 103.30161088 106.77172852 107.38818359 C109.40548114 110.4573819 112.01445183 112.58635981 115.49609375 114.6953125 C123.42240445 120.32429421 130.59718854 126.08339347 132.6071167 135.9934082 C134.65911731 152.81727188 133.31100856 170.15633718 132 187 C127.92523683 183.56568458 123.96117535 180.0883627 120.1875 176.3203125 C119.33929688 175.47339844 118.49109375 174.62648438 117.6171875 173.75390625 C116.75351562 172.88636719 115.88984375 172.01882813 115 171.125 C113.70449219 169.83529297 113.70449219 169.83529297 112.3828125 168.51953125 C111.11050781 167.24529297 111.11050781 167.24529297 109.8125 165.9453125 C109.05582031 165.18750488 108.29914063 164.42969727 107.51953125 163.64892578 C105.52221903 161.54903842 103.62229713 159.42199641 101.73242188 157.22802734 C97.84030652 152.75014496 93.68562832 148.57654797 89.46875 144.40625 C88.67400269 143.61528931 87.87925537 142.82432861 87.0604248 142.00939941 C84.54271568 139.50380477 82.02178554 137.00149142 79.5 134.5 C76.17411811 131.2008832 72.85167664 127.89835626 69.53125 124.59375 C68.78000854 123.85080688 68.02876709 123.10786377 67.25476074 122.34240723 C63.24328276 118.34939352 59.43977567 114.25793313 55.74597168 109.9708252 C52.68868497 106.51980835 49.40369033 103.30150701 46.125 100.0625 C45.39684082 99.33812744 44.66868164 98.61375488 43.91845703 97.86743164 C41.61474354 95.57581697 39.30780526 93.28749348 37 91 C33.95535221 87.98214919 30.91417033 84.96086584 27.875 81.9375 C27.18937988 81.26017822 26.50375977 80.58285645 25.79736328 79.88500977 C22.59006133 76.69381898 19.49146539 73.46493581 16.53833008 70.03613281 C12.73939941 65.63338839 8.65352627 61.56261227 4.51171875 57.484375 C2.90286475 55.88815189 1.29414463 54.29179384 -0.31445312 52.6953125 C-2.82534306 50.20934149 -5.33781945 47.72501392 -7.8527832 45.24316406 C-10.29814849 42.82792989 -12.73731529 40.40657182 -15.17578125 37.984375 C-16.3085424 36.87180328 -16.3085424 36.87180328 -17.46418762 35.73675537 C-18.16218979 35.04213196 -18.86019196 34.34750854 -19.5793457 33.63183594 C-20.19332718 33.02531189 -20.80730865 32.41878784 -21.43989563 31.79388428 C-23.03614436 29.95843945 -24.01748586 28.21570526 -25 26 C-19.80505635 19.86715384 -14.27368741 14.15136031 -8.5625 8.5 C-7.73556641 7.67757812 -6.90863281 6.85515625 -6.05664062 6.0078125 C-4.04005041 4.00287887 -2.02114764 2.00033747 0 0 Z " transform="translate(293,242)"/><path d="M0 0 C7.34550246 -0.30605055 14.68934563 -0.51511914 22.03979492 -0.65917969 C24.53586241 -0.71926751 27.03151204 -0.80096914 29.52612305 -0.90527344 C51.36483971 -1.79504739 51.36483971 -1.79504739 56.67041016 2.24121094 C59.01249304 4.8261987 60.89496067 7.32226049 62.76547241 10.24133301 C65.02605354 13.46168179 67.90950453 16.07655917 70.734375 18.796875 C71.89855778 19.95038917 73.06131516 21.10534366 74.22265625 22.26171875 C75.39813093 23.42478909 76.57391396 24.58754786 77.75 25.75 C90.90469502 38.75402767 90.90469502 38.75402767 96.18847656 44.96582031 C100.39464944 49.68897832 104.99902899 54.05936758 109.5 58.5 C115.89769335 64.81192791 122.19762207 71.12580312 128 78 C129.98 80.31 131.96 82.62 134 85 C125.42 93.58 116.84 102.16 108 111 C104.65455634 109.32727817 103.3923611 108.62600074 101.06640625 106.04296875 C100.51017578 105.43517578 99.95394531 104.82738281 99.38085938 104.20117188 C98.78080078 103.53666016 98.18074219 102.87214844 97.5625 102.1875 C90.36790616 94.35274007 82.89637383 86.82761833 75.32250977 79.36010742 C71.65591778 75.72900869 68.03408772 72.11789049 64.6875 68.1875 C59.4858751 62.12096791 53.67976188 56.6131278 48 51 C35.1829974 38.33336447 35.1829974 38.33336447 29.90039062 32.12744141 C25.25509559 26.92714581 20.1976661 22.09763013 15.25 17.1875 C14.10262969 16.04515775 12.95549259 14.90258123 11.80859375 13.75976562 C9.71530011 11.67457828 7.6207286 9.59069517 5.52441406 7.50854492 C4.69135742 6.6807251 3.85830078 5.85290527 3 5 C2.39124023 4.43321533 1.78248047 3.86643066 1.15527344 3.2824707 C0 2 0 2 0 0 Z " transform="translate(106,104)"/></g></svg></span><span class="wordmark-space-gap"></span>Studios
+          </div>
+        </div>
+
+        <!-- Clean Minimal Footer Row -->
+        <div class="footer-minimal-row">
+          <div class="footer-min-brand">
+            <img src="/logo.webp" alt="Crux Studios" class="min-logo-img" width="96" height="24" loading="lazy" decoding="async" />
+            <span class="min-brand-title">Crux Studios</span>
+            <span class="min-location">Bangalore, India</span>
+          </div>
+
+          <div class="footer-min-links">
+            <a href="https://ringflow.cruxstudios.dev" target="_blank" rel="noopener noreferrer">RingFlow</a>
+            <a href="https://entrydesk.cruxstudios.dev" target="_blank" rel="noopener noreferrer">EntryDesk</a>
+            <a href="https://honorlog.shorinkai.in" target="_blank" rel="noopener noreferrer">HonorLog</a>
+            <a href="https://cruxstudios.dev" target="_blank" rel="noopener noreferrer">Visit Our Studio</a>
+          </div>
+
+          <div class="footer-min-right">
+            <span class="min-copyright">© 2026 Crux Studios. All rights reserved.</span>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
   </main>
 
   <!-- Global Floating Cursor Badge for Copy Email -->
-  <load src="src/components/email-cursor.html" />
+  <div class="email-cursor-badge" id="email-cursor-badge" aria-hidden="true">
+    <svg class="copy-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5.5" y="5.5" width="8" height="8" rx="1.5"></rect>
+      <path d="M3.5 10.5H2.5C1.94772 10.5 1.5 10.0523 1.5 9.5V2.5C1.5 1.94772 1.94772 1.5 2.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5"></path>
+    </svg>
+    <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M13.5 4.5L6.5 11.5L2.5 7.5"></path>
+    </svg>
+    <span class="badge-text">Copy Email</span>
+  </div>
 
+  <!-- Crux Studios Interaction Scripts -->
   <script type="module" src="/src/scripts/main.js"></script>
+  <!-- Floating "Visit" Pill Cursor Badge for the 3 Product Cards -->
+  <div class="product-cursor-badge" id="product-cursor-badge" aria-hidden="true">
+    <span class="product-cursor-text">Visit</span>
+    <div class="product-cursor-arrow-badge">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="7" y1="17" x2="17" y2="7"></line>
+        <polyline points="7 7 17 7 17 17"></polyline>
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    // Floating "Visit" cursor pill badge tracking for the 3 product cards
+    (function () {
+      const cursorBadge = document.getElementById('product-cursor-badge');
+      const cards = document.querySelectorAll('.projects-dark-grid .project-card-dark');
+
+      if (!cursorBadge || !cards.length) return;
+
+      const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+      if (!isFinePointer) return;
+
+      let mouseX = 0;
+      let mouseY = 0;
+      let currentX = 0;
+      let currentY = 0;
+      let isHovering = false;
+      let rafId = null;
+
+      function render() {
+        currentX += (mouseX - currentX) * 0.35;
+        currentY += (mouseY - currentY) * 0.35;
+        cursorBadge.style.left = currentX + 'px';
+        cursorBadge.style.top = currentY + 'px';
+
+        if (isHovering || Math.abs(mouseX - currentX) > 0.5 || Math.abs(mouseY - currentY) > 0.5) {
+          rafId = requestAnimationFrame(render);
+        } else {
+          rafId = null;
+        }
+      }
+
+      function startLoop() {
+        if (!rafId) {
+          rafId = requestAnimationFrame(render);
+        }
+      }
+
+      cards.forEach(function (card) {
+        card.addEventListener('mouseenter', function (e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          currentX = e.clientX;
+          currentY = e.clientY;
+          cursorBadge.style.left = currentX + 'px';
+          cursorBadge.style.top = currentY + 'px';
+          cursorBadge.classList.add('visible');
+          isHovering = true;
+          startLoop();
+        });
+
+        card.addEventListener('mousemove', function (e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          if (!isHovering) {
+            cursorBadge.classList.add('visible');
+            isHovering = true;
+          }
+          startLoop();
+        });
+
+        card.addEventListener('mouseleave', function () {
+          isHovering = false;
+          cursorBadge.classList.remove('visible');
+        });
+      });
+
+      window.addEventListener('blur', function () {
+        isHovering = false;
+        cursorBadge.classList.remove('visible');
+      });
+    })();
+
+    // Anti-Scraping Protected Phone Contacts (Tap-to-Reveal, Direct Dial & Copy)
+    (function initAntiScrapePhoneContacts() {
+      const cards = document.querySelectorAll('.phone-contact-card');
+      if (!cards.length) return;
+
+      function decodeCipher(cipher) {
+        try {
+          return atob(cipher).split('').reverse().join('');
+        } catch (e) {
+          return '';
+        }
+      }
+
+      function revealCard(card) {
+        if (card.classList.contains('is-revealed')) return;
+        const cipher = card.getAttribute('data-cipher');
+        if (!cipher) return;
+        const decoded = decodeCipher(cipher);
+        const displayEl = card.querySelector('.phone-digits-display');
+        const badgeEl = card.querySelector('.reveal-badge');
+        if (displayEl) {
+          displayEl.textContent = decoded;
+          displayEl.classList.add('digit-revealed');
+        }
+        if (badgeEl) {
+          badgeEl.style.display = 'none';
+        }
+        card.classList.add('is-revealed');
+      }
+
+      function dialContact(card) {
+        revealCard(card);
+        const dialCipher = card.getAttribute('data-dial-cipher') || card.getAttribute('data-cipher');
+        const rawNumber = decodeCipher(dialCipher).replace(/[^\d+]/g, '');
+        if (rawNumber) {
+          window.location.href = 'tel:' + rawNumber;
+        }
+      }
+
+      async function copyToClipboard(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          try {
+            await navigator.clipboard.writeText(text);
+            return true;
+          } catch (_) {}
+        }
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.focus();
+          ta.select();
+          const res = document.execCommand('copy');
+          document.body.removeChild(ta);
+          return res;
+        } catch (_) {
+          return false;
+        }
+      }
+
+      cards.forEach(card => {
+        // Reveal / Tap to Dial on number pill
+        const numberPill = card.querySelector('.contact-number-pill');
+        if (numberPill) {
+          numberPill.addEventListener('click', (e) => {
+            if (!e.isTrusted) return; // Anti-bot protection
+            e.preventDefault();
+            if (!card.classList.contains('is-revealed')) {
+              revealCard(card);
+            } else {
+              dialContact(card);
+            }
+          });
+        }
+
+        // Direct Call button
+        const callBtn = card.querySelector('.btn-call-trigger');
+        if (callBtn) {
+          callBtn.addEventListener('click', (e) => {
+            if (!e.isTrusted) return; // Anti-bot protection
+            e.preventDefault();
+            dialContact(card);
+          });
+        }
+
+        // Copy button
+        const copyBtn = card.querySelector('.btn-copy-trigger');
+        if (copyBtn) {
+          let copyTimer = null;
+          copyBtn.addEventListener('click', async (e) => {
+            if (!e.isTrusted) return; // Anti-bot protection
+            e.preventDefault();
+            revealCard(card);
+            const cipher = card.getAttribute('data-cipher');
+            const phone = decodeCipher(cipher);
+
+            await copyToClipboard(phone);
+
+            if ('vibrate' in navigator) {
+              try { navigator.vibrate(35); } catch (_) {}
+            }
+
+            copyBtn.classList.add('is-copied');
+            const label = copyBtn.querySelector('.copy-text');
+            if (label) label.textContent = 'Copied!';
+
+            if (copyTimer) clearTimeout(copyTimer);
+            copyTimer = setTimeout(() => {
+              copyBtn.classList.remove('is-copied');
+              if (label) label.textContent = 'Copy';
+            }, 2000);
+          });
+        }
+      });
+    })();
+  </script>
 </body>
 
 </html>
