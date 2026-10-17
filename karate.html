@@ -867,13 +867,27 @@
       width: 100%;
     }
 
+    .direct-contacts-wrapper {
+      max-width: 440px;
+      margin: 18px auto 20px auto;
+      width: 100%;
+    }
+
+    .direct-contacts-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      width: 100%;
+    }
+
     .phone-contact-card {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.07);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 9999px;
-      padding: 7px 10px 7px 12px;
+      height: 44px;
+      padding: 0 6px 0 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -882,14 +896,13 @@
       box-sizing: border-box;
       cursor: pointer;
       user-select: none;
-      transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+      transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
     }
 
     .phone-contact-card:hover {
-      background: rgba(255, 255, 255, 0.14);
-      border-color: rgba(0, 240, 255, 0.35);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
-      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(0, 240, 255, 0.4);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     }
 
     .phone-contact-card:focus-visible {
@@ -904,137 +917,63 @@
     .contact-card-main {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       min-width: 0;
       flex: 1;
-    }
-
-    .contact-avatar-pill {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #FFFFFF;
-      color: #0B0D11;
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 11.5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .contact-meta {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2px;
-      min-width: 0;
-      text-align: left;
+      overflow: hidden;
     }
 
     .contact-name {
       font-family: var(--font-heading);
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 700;
-      letter-spacing: 0.3px;
+      letter-spacing: -0.1px;
       color: #FFFFFF;
-      line-height: 1.1;
+      white-space: nowrap;
     }
 
-    .contact-phone-display-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1px;
+    .contact-sep {
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 12px;
+      user-select: none;
     }
 
     .phone-digits-display {
       font-family: var(--font-body);
       font-size: 13.5px;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.9);
-      letter-spacing: 0.3px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.85);
+      letter-spacing: 0.2px;
       font-variant-numeric: tabular-nums;
       white-space: nowrap;
       transition: color 0.2s ease;
     }
 
     .phone-contact-card.is-revealed .phone-digits-display {
-      color: #FFFFFF;
-      font-size: 13.5px;
-      font-weight: 700;
-    }
-
-    .phone-digits-display.digit-revealed {
-      color: #FFFFFF;
-      animation: digitGlow 0.4s ease-out;
-    }
-
-    @keyframes digitGlow {
-      0% {
-        opacity: 0.5;
-        filter: blur(3px);
-        transform: scale(0.96);
-      }
-
-      100% {
-        opacity: 1;
-        filter: blur(0);
-        transform: scale(1);
-      }
-    }
-
-    .tap-reveal-hint {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-family: var(--font-body);
-      font-size: 11px;
-      font-weight: 500;
-      color: #38BDF8;
-      letter-spacing: 0.1px;
-      line-height: 1.2;
-      opacity: 0.95;
-      transition: color 0.2s ease, opacity 0.2s ease;
-    }
-
-    .tap-reveal-hint svg {
-      flex-shrink: 0;
-    }
-
-    .phone-contact-card:hover .tap-reveal-hint {
       color: #00F0FF;
-    }
-
-    .phone-contact-card.is-revealed .tap-reveal-hint {
-      display: none !important;
+      font-weight: 600;
     }
 
     .contact-card-actions {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       flex-shrink: 0;
     }
 
     .btn-contact-action {
-      height: 28px;
-      padding: 0 10px;
-      font-size: 11.5px;
-      border-radius: 9999px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.1);
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.08);
       color: #FFFFFF;
-      font-family: var(--font-heading);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.2px;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      justify-content: center;
       cursor: pointer;
+      flex-shrink: 0;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -1042,12 +981,12 @@
       background: #FFFFFF;
       color: #0B0D11;
       border-color: #FFFFFF;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transform: scale(1.06);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     }
 
     .btn-contact-action:active {
-      transform: scale(0.96);
+      transform: scale(0.92);
     }
 
     .btn-copy-trigger .check-icon {
@@ -1070,45 +1009,26 @@
 
     @media (max-width: 540px) {
       .phone-contact-card {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        border-radius: 9999px;
-        padding: 7px 10px 7px 10px;
+        height: 40px;
+        padding: 0 5px 0 14px;
         gap: 8px;
       }
 
       .contact-card-main {
-        min-width: 0;
-        flex: 1;
-        gap: 10px;
-      }
-
-      .contact-meta {
-        min-width: 0;
-      }
-
-      .contact-name {
-        font-size: 12.5px;
-      }
-
-      .phone-digits-display {
-        font-size: 13px;
-      }
-
-      .tap-reveal-hint {
-        font-size: 10px;
-      }
-
-      .contact-card-actions {
-        flex-shrink: 0;
         gap: 6px;
       }
 
+      .contact-name {
+        font-size: 13px;
+      }
+
+      .phone-digits-display {
+        font-size: 12.5px;
+      }
+
       .btn-contact-action {
-        height: 30px;
-        padding: 0 9px;
-        font-size: 11px;
+        width: 29px;
+        height: 29px;
       }
     }
 
@@ -2448,47 +2368,33 @@
                 <!-- Ullas -->
                 <div class="phone-contact-card" data-contact="ullas" data-cipher="NDA0ODEgMjQ2MzYgMTkr"
                   data-dial-cipher="NDA0ODEyNDYzNjE5Kw==" role="button" tabindex="0"
-                  aria-label="Ullas - Tap here to reveal phone number">
+                  aria-label="Ullas - Tap to reveal or call directly">
                   <div class="contact-card-main">
-                    <div class="contact-avatar-pill">U</div>
-                    <div class="contact-meta">
-                      <span class="contact-name">Ullas</span>
-                      <div class="contact-phone-display-wrap">
-                        <span class="phone-digits-display">+91 63642 •••••</span>
-                        <span class="tap-reveal-hint">
-                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                          </svg>
-                          <span>Tap here to reveal phone number</span>
-                        </span>
-                      </div>
-                    </div>
+                    <span class="contact-name">Ullas</span>
+                    <span class="contact-sep">•</span>
+                    <span class="phone-digits-display">+91 63642 •••••</span>
                   </div>
                   <div class="contact-card-actions">
                     <button type="button" class="btn-contact-action btn-call-trigger" aria-label="Call Ullas directly"
                       title="Call directly">
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
                         <path
                           d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
                         </path>
                       </svg>
-                      <span>Call</span>
                     </button>
                     <button type="button" class="btn-contact-action btn-copy-trigger"
                       aria-label="Copy Ullas's phone number" title="Copy number">
-                      <svg class="copy-icon" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                      <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                       </svg>
-                      <svg class="check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                      <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span class="copy-text">Copy</span>
                     </button>
                   </div>
                 </div>
@@ -2496,47 +2402,33 @@
                 <!-- Prateek -->
                 <div class="phone-contact-card" data-contact="prateek" data-cipher="MjQyNjcgMTA4MzkgMTkr"
                   data-dial-cipher="MjQyNjcxMDgzOTE5Kw==" role="button" tabindex="0"
-                  aria-label="Prateek - Tap here to reveal phone number">
+                  aria-label="Prateek - Tap to reveal or call directly">
                   <div class="contact-card-main">
-                    <div class="contact-avatar-pill">P</div>
-                    <div class="contact-meta">
-                      <span class="contact-name">Prateek</span>
-                      <div class="contact-phone-display-wrap">
-                        <span class="phone-digits-display">+91 93801 •••••</span>
-                        <span class="tap-reveal-hint">
-                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                          </svg>
-                          <span>Tap here to reveal phone number</span>
-                        </span>
-                      </div>
-                    </div>
+                    <span class="contact-name">Prateek</span>
+                    <span class="contact-sep">•</span>
+                    <span class="phone-digits-display">+91 93801 •••••</span>
                   </div>
                   <div class="contact-card-actions">
                     <button type="button" class="btn-contact-action btn-call-trigger" aria-label="Call Prateek directly"
                       title="Call directly">
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
                         <path
                           d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
                         </path>
                       </svg>
-                      <span>Call</span>
                     </button>
                     <button type="button" class="btn-contact-action btn-copy-trigger"
                       aria-label="Copy Prateek's phone number" title="Copy number">
-                      <svg class="copy-icon" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                      <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                       </svg>
-                      <svg class="check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                      <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span class="copy-text">Copy</span>
                     </button>
                   </div>
                 </div>
