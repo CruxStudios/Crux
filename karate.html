@@ -1679,9 +1679,9 @@
         height: 36px !important;
       }
 
-      /* FAQ Mobile */
+      /* FAQ Mobile - Uniform Breathing Room */
       .section-karate-faq {
-        padding: 32px 0 24px !important;
+        padding: 56px 0 32px !important;
       }
 
       .faq-card {
@@ -1724,17 +1724,51 @@
     /* KARATE SOFTWARE FAQ & SEO KNOWLEDGE SECTION                    */
     /* ============================================================== */
     .section-karate-faq {
-      padding: clamp(20px, 2.5vw, 36px) 0 clamp(28px, 4vw, 48px) !important;
+      padding: clamp(56px, 6.5vw, 88px) 0 clamp(40px, 5vw, 64px) !important;
       position: relative;
       z-index: 1;
     }
 
     .section-karate-faq .section-header {
-      margin-bottom: 18px !important;
+      margin-bottom: 24px !important;
     }
 
     .section-karate-faq .section-badge {
-      margin-bottom: 8px !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-family: var(--font-heading);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin-bottom: 12px !important;
+      background: rgba(0, 0, 0, 0.06) !important;
+      color: #0F172A !important;
+      border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    }
+
+    [data-theme="dark"] .section-karate-faq .section-badge {
+      background: rgba(255, 255, 255, 0.08) !important;
+      color: #FFFFFF !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    }
+
+    .section-karate-faq .pulse-dot-cyan {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #0284C7;
+      box-shadow: 0 0 8px rgba(2, 132, 199, 0.6);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    [data-theme="dark"] .section-karate-faq .pulse-dot-cyan {
+      background: #00F0FF;
+      box-shadow: 0 0 8px rgba(0, 240, 255, 0.7);
     }
 
     .faq-container {
@@ -1846,31 +1880,29 @@
       font-family: var(--font-heading);
       font-size: clamp(22px, 2.8vw, 32px);
       font-weight: 700;
-      color: #FFFFFF;
+      color: #0F172A !important;
       text-align: center;
       margin: 4px 0 8px !important;
       letter-spacing: -0.02em;
       line-height: 1.25;
     }
 
+    [data-theme="dark"] .faq-section-title {
+      color: #FFFFFF !important;
+    }
+
     .faq-section-subhead {
       font-family: var(--font-body);
       font-size: clamp(13.5px, 1.1vw, 15px);
-      color: #94A3B8;
+      color: #475569 !important;
       text-align: center;
       max-width: 640px;
       margin: 0 auto !important;
       line-height: 1.5;
     }
 
-    :root:not([data-theme="dark"]) .faq-section-title,
-    [data-theme="light"] .faq-section-title {
-      color: #0F172A !important;
-    }
-
-    :root:not([data-theme="dark"]) .faq-section-subhead,
-    [data-theme="light"] .faq-section-subhead {
-      color: #475569 !important;
+    [data-theme="dark"] .faq-section-subhead {
+      color: #94A3B8 !important;
     }
 
     /* ============================================================== */
@@ -2304,8 +2336,7 @@
       <div class="container container-wide">
         <div class="faq-container">
           <div class="section-header centered reveal">
-            <span class="section-badge badge-dark-theme">
-              <span class="pulse-dot-cyan"></span>
+            <span class="section-badge">
               Frequently Asked Questions
             </span>
             <h2 class="faq-section-title">
@@ -2410,7 +2441,7 @@
                       <div class="contact-name-row">
                         <span class="contact-name">Ullas</span>
                         <span class="contact-sep">•</span>
-                        <span class="phone-digits-display">+91 63642 •••••</span>
+                        <span class="phone-digits-display">+91 63••• •••••</span>
                       </div>
                       <span class="tap-reveal-hint">
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -2456,7 +2487,7 @@
                       <div class="contact-name-row">
                         <span class="contact-name">Prateek</span>
                         <span class="contact-sep">•</span>
-                        <span class="phone-digits-display">+91 93801 •••••</span>
+                        <span class="phone-digits-display">+91 93••• •••••</span>
                       </div>
                       <span class="tap-reveal-hint">
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -2573,6 +2604,7 @@
             <a href="https://ringflow.cruxstudios.dev" target="_blank" rel="noopener noreferrer">RingFlow</a>
             <a href="https://entrydesk.cruxstudios.dev" target="_blank" rel="noopener noreferrer">EntryDesk</a>
             <a href="https://honorlog.shorinkai.in" target="_blank" rel="noopener noreferrer">HonorLog</a>
+            <a href="#faq">FAQ</a>
             <a href="https://cruxstudios.dev" target="_blank" rel="noopener noreferrer">Visit Our Studio</a>
           </div>
 
