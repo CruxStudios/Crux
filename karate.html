@@ -829,7 +829,7 @@
     .direct-contacts-wrapper {
       margin: 14px auto 16px auto;
       width: 100%;
-      max-width: 320px;
+      max-width: 310px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -876,14 +876,14 @@
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 9999px;
-      height: 50px;
-      padding: 0 6px 0 16px;
+      height: 48px;
+      padding: 0 6px 0 15px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
       width: 100%;
-      max-width: 320px;
+      max-width: 310px;
       box-sizing: border-box;
       cursor: pointer;
       user-select: none;
@@ -917,8 +917,16 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 3px;
+      gap: 2px;
       min-width: 0;
+    }
+
+    .contact-name-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+      line-height: 1.15;
     }
 
     .contact-name {
@@ -928,20 +936,17 @@
       letter-spacing: -0.1px;
       color: #FFFFFF;
       white-space: nowrap;
-      line-height: 1.2;
     }
 
-    .contact-phone-display-wrap {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      min-width: 0;
-      line-height: 1.2;
+    .contact-sep {
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 11px;
+      user-select: none;
     }
 
     .phone-digits-display {
       font-family: var(--font-body);
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 500;
       color: rgba(255, 255, 255, 0.85);
       letter-spacing: 0.2px;
@@ -958,15 +963,14 @@
     .tap-reveal-hint {
       display: inline-flex;
       align-items: center;
-      gap: 3.5px;
+      gap: 4px;
       font-family: var(--font-body);
-      font-size: 9.5px;
+      font-size: 10px;
       font-weight: 500;
       color: #38BDF8;
       letter-spacing: 0.1px;
-      line-height: 1;
+      line-height: 1.1;
       opacity: 0.95;
-      white-space: nowrap;
       transition: color 0.2s ease, opacity 0.2s ease;
     }
 
@@ -1037,10 +1041,10 @@
 
     @media (max-width: 540px) {
       .phone-contact-card {
-        height: 50px;
+        height: 48px;
         padding: 0 6px 0 14px;
         gap: 8px;
-        max-width: 320px;
+        max-width: 310px;
       }
 
       .contact-name {
@@ -1647,7 +1651,7 @@
         margin-top: 0 !important;
         margin-bottom: 16px !important;
         width: 100% !important;
-        max-width: 320px !important;
+        max-width: 310px !important;
       }
 
       .cta-actions-wrapper {
@@ -2403,18 +2407,19 @@
                   aria-label="Ullas - Tap to reveal or call directly">
                   <div class="contact-card-main">
                     <div class="contact-meta">
-                      <span class="contact-name">Ullas</span>
-                      <div class="contact-phone-display-wrap">
+                      <div class="contact-name-row">
+                        <span class="contact-name">Ullas</span>
+                        <span class="contact-sep">•</span>
                         <span class="phone-digits-display">+91 63642 •••••</span>
-                        <span class="tap-reveal-hint">
-                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                          </svg>
-                          <span>Tap here to reveal</span>
-                        </span>
                       </div>
+                      <span class="tap-reveal-hint">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span>Tap here to reveal</span>
+                      </span>
                     </div>
                   </div>
                   <div class="contact-card-actions">
@@ -2448,18 +2453,19 @@
                   aria-label="Prateek - Tap to reveal or call directly">
                   <div class="contact-card-main">
                     <div class="contact-meta">
-                      <span class="contact-name">Prateek</span>
-                      <div class="contact-phone-display-wrap">
+                      <div class="contact-name-row">
+                        <span class="contact-name">Prateek</span>
+                        <span class="contact-sep">•</span>
                         <span class="phone-digits-display">+91 93801 •••••</span>
-                        <span class="tap-reveal-hint">
-                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                          </svg>
-                          <span>Tap here to reveal</span>
-                        </span>
                       </div>
+                      <span class="tap-reveal-hint">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span>Tap here to reveal</span>
+                      </span>
                     </div>
                   </div>
                   <div class="contact-card-actions">
