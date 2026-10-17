@@ -353,13 +353,24 @@
   will-change: opacity, transform;
 }
 
-/* Only hide-until-revealed when JS has loaded and added .js-loaded to <html> */
-.js-loaded .reveal {
+/* Only hide-until-revealed when JS has loaded on a real interactive user session (never for crawlers) */
+.js-loaded:not(.is-crawler) .reveal:not(.revealed) {
   opacity: 0;
   transform: translateY(24px);
 }
 
-.js-loaded .reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
+.js-loaded .reveal.revealed,
+.is-crawler .reveal {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
+
+@media (prefers-reduced-motion: reduce), print {
+  .reveal,
+  .js-loaded .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+

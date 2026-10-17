@@ -199,13 +199,20 @@
   <!-- Crux Master Styles -->
   <link rel="stylesheet" href="/src/styles/main.css" />
 
-  <!-- Anti-Flash Theme Script -->
+  <!-- Anti-Flash Theme & Search Crawler Full-Visibility Script -->
   <script>
     (function () {
       try {
         const saved = localStorage.getItem('crux_theme');
         const theme = saved === 'dark' ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', theme);
+
+        // Immediate Search Engine Crawler Detection
+        // Guarantees all animated elements remain 100% visible without relying on scroll events
+        const isBot = /bot|google|crawler|spider|robot|crawling|headless|lighthouse|bing|baidu|yandex/i.test(navigator.userAgent) || navigator.webdriver;
+        if (isBot) {
+          document.documentElement.classList.add('is-crawler');
+        }
       } catch (e) { }
     })();
   </script>
@@ -1889,6 +1896,29 @@
     :root:not([data-theme="dark"]) .faq-section-subhead,
     [data-theme="light"] .faq-section-subhead {
       color: #475569 !important;
+    }
+
+    /* ============================================================== */
+    /* SEARCH ENGINE CRAWLER & ACCESSIBILITY VISIBILITY GUARANTEE     */
+    /* Prevents content from ever being hidden (opacity: 0) to Google */
+    /* ============================================================== */
+    html.is-crawler .reveal,
+    html.is-crawler .js-loaded .reveal,
+    .no-js .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+      transition: none !important;
+    }
+
+    @media (prefers-reduced-motion: reduce), print {
+      .reveal,
+      .js-loaded .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
+        transition: none !important;
+      }
     }
   </style>
 </head>
